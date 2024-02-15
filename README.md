@@ -53,14 +53,14 @@ Once that is done follow these steps:
 1. Make sure Docker is running
 2. Open VSCode and run `Dev Containers: Clone Repository in Container Volume`
 3. Select `GitHub` as the remote Source
-4. Find your clone of this repo
+4. Find your fork of this repo
 5. Select the branch you want to work from
-6. At any point once the container has started, drag the RuneScriptCompiler.jar into the root of your repo
-7. Once the startup script is finished, run `npm run start`
+6. At any point once the container has started and you can see the files in VSCode, drag the RuneScriptCompiler.jar into the root of your repo
+7. Once the startup script is finished, run `npm start`
 
-If you let the startup script finish before moving RuneSCriptCompiler.jar into the root of your repo and it fails, you just need to run `npm run server:build` again before starting your server.
+Once the container starts, it automatically starts running `setup.sh`. You can cancel this and do the [Getting Started](#getting-started) steps manually as well. If you let the startup script finish before moving RuneScriptCompiler.jar into the root of your repo and the script fails, you just need to run `npm run server:build` again before starting your server.
 
-If you'd rather, you can clone your repository onto your local machine and instead run `Dev Containers: Open Folder in Container` and work that way by mounting local files into your container. This way, you can have RuneScriptCompiler.jar in your workspace from the get-go. **Note: The npm scripts are much slower when the container is running this way.**
+Another option for building your Dev Container is to instead clone your repository onto your local machine first and then run `Dev Containers: Open Folder in Container` and work that way by mounting the local files into your container. This way, you can have RuneScriptCompiler.jar in your workspace from the get-go. **Note: The npm scripts are much slower when the container is running this way.**
 
 ## Development Workflow
 
