@@ -1,25 +1,25 @@
 [oplocu,loc_2409]
 switch_obj(last_useitem) {
-    case bronze_axe, iron_axe, steel_axe, black_axe, mithril_axe, adamant_axe, rune_axe : 
+    case bronze_axe, iron_axe, steel_axe, black_axe, mithril_axe, adamant_axe, rune_axe :
         p_oploc(1); // gets delayed by a tick >:(
-    case raw_herring, herring : 
+    case raw_herring, herring :
         mes("This is not the mightiest tree in the forest.");
         return;
-    case default : @nothing_interesting_happens;
+    case default : ~displaymessage(^dm_default);
 };
 
-
 [oploc1,loc_2409]
-~require_members_feature;
+if (map_members = false) {
+    mes(^mes_members_do_that);
+    return;
+}
 def_namedobj $axe = ~woodcutting_axe_checker();
-// this is when using axes didnt have a wc req, for later rev change to mes("You do not have an axe which you have the level to use.");
 if ($axe = null) {
-    mes("You need an axe to chop down this tree.");
     return;
 }
 def_coord $shamus_spawnpoint = 0_49_50_3_11;
-if (npc_finduid(~npc_within_distance($shamus_spawnpoint, shamus, 15)) = true) {
-    ~chatnpc_specific("Shamus", shamus, angry, "Hey! Yer big elephant! Don't go choppin' down me house, now!");
+if (npc_find($shamus_spawnpoint, shamus, 15, 0) = true) {
+    ~chatnpc_specific("Shamus", shamus, "<p,angry>Hey! Yer big elephant! Don't go choppin' down me house, now!");
     return;
 }
 npc_add($shamus_spawnpoint, shamus, 100);
@@ -31,10 +31,7 @@ if(%zanaris_progress < ^zanaris_spoken_shamus) {
     return;
 }
 def_namedobj $axe = ~woodcutting_axe_checker();
-// this is when using axes didnt have a wc req
-if ($axe = null) { // These messages are different than the ones used for other trees (see cut.rs2)
-    mes("You need an axe to chop down this tree.");
-    //mes("You do not have an axe that you have the Woodcutting level to use.");
+if ($axe = null) {
     return;
 }
 if(stat(woodcutting) < 36) {
@@ -44,7 +41,7 @@ if(stat(woodcutting) < 36) {
 }
 if(%zanaris_progress = ^zanaris_spoken_shamus) {
     def_coord $spawn = 0_44_152_44_9;
-    if(npc_finduid(~npc_within_distance($spawn, tree_spirit_zanaris, 6)) = false) { // based off testing, edges will spawn another spirit
+    if(npc_find($spawn, tree_spirit_zanaris, 6, 0) = false) { // based off testing, edges will spawn another spirit
         npc_add($spawn, tree_spirit_zanaris, 1000);
     }
     npc_say("You must defeat me before touching the tree!");
@@ -75,10 +72,9 @@ anim(null, 0);
 if(last_useitem = knife) {
     @cut_dramenstaff;
 }
-@nothing_interesting_happens;
+~displaymessage(^dm_default);
 
 [label,cut_dramenstaff]
-~require_members_use_item;
 if(stat(crafting) < 31) {
     mes("You need at least level 31 Crafting to make this into a staff.");
     return;
@@ -92,25 +88,7 @@ inv_add(inv, dramenstaff, 1);
 
 [oploc1,loc_2406]
 def_boolean $entering = ~check_axis(coord, loc_coord, loc_angle);
-def_int $x;
-def_int $z;
-def_int $angle = loc_angle;
-def_locshape $shape = loc_shape;
-def_coord $loc_coord = loc_coord;
-$x, $z = ~door_open($angle, loc_shape);
-def_coord $dest = $loc_coord;
-sound_synth(door_open, 0, 0);
-if ($entering = true) {
-    if (coord ! $loc_coord) {
-        p_teleport($loc_coord);
-        p_delay(1);
-    }
-    $dest = movecoord(loc_coord, $x, 0, $z);
-}
-p_teleport($dest);
-loc_del(2);
-loc_add($loc_coord, loc_83, $angle, $shape, 2);
-loc_add(movecoord($loc_coord, $x, 0, $z), loc_1532, modulo(add($angle, 1), 4), $shape, 2);
+~open_and_close_door2(loc_1532, $entering, door_open);
 if($entering = false) {
     if(inv_total(worn, dramenstaff) > 0 & map_members = true) {
         mes("The world starts to shimmer..."); // not sure what seq/spotanim would've been played here, just going to assume it was like a normal tele
@@ -124,4 +102,5 @@ if($entering = false) {
 
 [queue,zanaris_quest_complete]
 %zanaris_progress = ^zanaris_complete;
+session_log(^log_adventure, "Quest complete: Lost City");
 ~send_quest_complete(questlist:zanaris, coins, 250, ^zanaris_questpoints, "You have completed the\\nLost City of Zanaris Quest!");

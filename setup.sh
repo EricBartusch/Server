@@ -1,5 +1,6 @@
 #!/bin/bash
 
+<<<<<<< HEAD
 echo "Running npm ci..."
 npm ci
 
@@ -21,3 +22,10 @@ npm run client:pack
 
 echo "Running server:build..."
 npm run server:build
+=======
+echo "Installing node dependencies..."
+npm i
+
+echo "Building..."
+npm run build
+>>>>>>> 4515da47bce3f2e7871afc3da37cd94696b6f1e4

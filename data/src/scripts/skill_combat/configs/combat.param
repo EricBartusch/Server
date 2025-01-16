@@ -111,7 +111,7 @@ default=null
 
 [defend_anim]
 type=seq
-default=human_unarmedblock
+default=human_defend_cowardly
 autodisable=yes
 
 [rangeattack_anim]
@@ -131,6 +131,10 @@ default=null
 type=spotanim
 default=null
 
+[proj_height]
+type=int
+default=96
+
 [undead]
 type=int
 default=0
@@ -138,3 +142,26 @@ default=0
 [zamorakitem]
 type=int
 default=0
+
+[poison_severity]
+type=int
+default=0
+
+// npcs that reduces the players max hit. Such as strange plant
+[max_dealt]
+type=int
+// high default value to avoid any issues
+default=1000
+
+// 1000 = 1x
+[combat_xp_multiplier]
+type=int
+default=1000
+
+[magicattack_anim]
+type=seq
+default=null
+
+[npc_ammo]
+type=namedobj
+default=null

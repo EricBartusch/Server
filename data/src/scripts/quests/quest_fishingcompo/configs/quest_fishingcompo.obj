@@ -2,8 +2,8 @@
 name=Red vine worm
 desc=Wormy.
 model=model_2519_obj
-recol1s=5698
-recol1d=960
+recol1s=25096
+recol1d=30753
 members=yes
 stackable=yes
 2dxof=8
@@ -13,6 +13,7 @@ stackable=yes
 2dxan=340
 2dxan=404
 weight=10g
+tradeable=no
 
 [fishing_trophy]
 name=Fishing trophy
@@ -24,6 +25,7 @@ members=yes
 2dyan=124
 2dxan=104
 weight=3oz
+tradeable=no
 
 [fishing_pass]
 name=Fishing pass
@@ -36,3 +38,4 @@ members=yes
 2dyan=120
 2dxan=380
 weight=6g
+tradeable=no

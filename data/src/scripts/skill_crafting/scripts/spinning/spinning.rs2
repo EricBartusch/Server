@@ -2,12 +2,15 @@
 switch_obj (last_useitem) 
 {
     case wool : @craft_spinning(last_useitem);
-    case flax : 
-        ~require_members_feature; 
+    case flax :
+        if (map_members = false) {
+            mes(^mes_members_feature);
+            return;
+        }
         @craft_spinning(last_useitem);
-    case ball_of_wool : ~objbox(ball_of_wool, "You have already spun this wool.");
-    case bow_string : ~objbox(bow_string, "You have already spun this bow string.");
-    case default : @nothing_interesting_happens;
+    case ball_of_wool : ~objbox(ball_of_wool, "You have already spun this wool.", 250, 0, divide(^objbox_height, 2));
+    case bow_string : ~objbox(bow_string, "You have already spun this bow string.", 250, 0, divide(^objbox_height, 2));
+    case default : ~displaymessage(^dm_default);
 };
 
 [label,craft_spinning](obj $spinning_obj)
@@ -18,6 +21,11 @@ if (stat(crafting) < $level) {
     ~mesbox("You need level <tostring($level)> Crafting to make that.");
     return;
 }
+// macro event
+if (afk_event = ^true) {
+    ~macro_event_general_spawn(~macro_event_set_random);
+    return;
+}
 // play human animation
 anim(human_spinningwheel, 0);
 loc_anim(spinningwheel);
@@ -25,14 +33,14 @@ loc_anim(spinningwheel);
 inv_del(inv, struct_param($struct, ingredient), 1);
 inv_add(inv, struct_param($struct, product), 1);
 mes(struct_param($struct, processmessage));
-givexp(crafting, struct_param($struct, productexp));
+stat_advance(crafting, struct_param($struct, productexp));
 p_delay(3);
 //weakqueue(crafting_spinning, 2, $struct);
 
 /**
 //May have not used weakqueue for this back then https://youtu.be/eQEYx8hwA_I?t=410
-// TODO flax spinning must have been queue because of 2 diff messages: https://youtu.be/HQEpeWAUMbI?t=51
-// TODO one for in queue and one out of queue. -jordan
+// todo flax spinning must have been queue because of 2 diff messages: https://youtu.be/HQEpeWAUMbI?t=51
+// todo one for in queue and one out of queue. -jordan
 [weakqueue,crafting_spinning](struct $struct)
 // delete item
 inv_del(inv, struct_param($struct, ingredient), 1);
@@ -42,7 +50,7 @@ inv_add(inv, struct_param($struct, product), 1);
 // display game message
 mes(struct_param($struct, processmessage));
 
-givexp(crafting, struct_param($struct, productexp));
+stat_advance(crafting, struct_param($struct, productexp));
 */
 
 

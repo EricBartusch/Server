@@ -9,15 +9,14 @@ model=model_2674_obj
 iop1=Bury
 weight=500g
 category=bones
-tradeable=yes
 param=bone_exp,45
 
 [burnt_bones]
 name=Burnt bones
 desc=Bones are for burying!
 model=model_2674_obj
-recol1s=127
-recol1d=28
+recol1s=32767
+recol1d=7399
 2dxof=2
 2dzoom=1410
 2dyan=368
@@ -25,7 +24,6 @@ recol1d=28
 iop1=Bury
 weight=500g
 category=bones
-tradeable=yes
 param=bone_exp,45
 
 [bat_bones]
@@ -40,8 +38,9 @@ iop1=Bury
 category=bones
 weight=300g
 members=yes
-tradeable=yes
 param=bone_exp,45
+param=grindable_ingredient_refined,ground_bat_bones
+param=grindable_ingredient_message,You grind the bones to a powder.
 
 [big_bones]
 name=Big bones
@@ -53,7 +52,7 @@ model=model_222_obj
 iop1=Bury
 weight=800g
 category=bones
-tradeable=yes
+respawnrate=50
 param=bone_exp,150
 
 [babydragon_bones]
@@ -67,7 +66,6 @@ model=model_222_obj
 iop1=Bury
 weight=800g
 category=bones
-tradeable=yes
 param=bone_exp,300
 
 [dragon_bones]
@@ -81,15 +79,14 @@ iop1=Bury
 weight=1500g
 category=bones
 members=yes
-tradeable=yes
 param=bone_exp,720
 
 [wolf_bones]
 name=Wolf bones
 desc=Bones of a recently slain wolf.
 model=model_2674_obj
-recol1s=127
-recol1d=10326
+recol1s=32767
+recol1d=23252
 cost=1
 weight=500g
 members=yes
@@ -99,5 +96,4 @@ members=yes
 2dxan=400
 iop1=Bury
 category=bones
-tradeable=yes
 param=bone_exp,45

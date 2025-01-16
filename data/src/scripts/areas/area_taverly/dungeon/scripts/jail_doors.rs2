@@ -3,17 +3,20 @@
 if(last_useitem = jail_key) {
     @unlock_taverly_jaildoor(true);
 } 
-@nothing_interesting_happens;
+~displaymessage(^dm_default);
 
 [oploc1,loc_2623] @unlock_taverly_jaildoor(false);
 [oplocu,loc_2623]
 if(last_useitem = dusty_key) {
     @unlock_taverly_jaildoor(true);
 } 
-@nothing_interesting_happens;
+~displaymessage(^dm_default);
 
 [oploc1,loc_37] // Might be used somewhere else?
-mes("This door doesn't seem to open from here...");
+switch_coord(loc_coord) {
+    case 0_40_150_35_57 : @clock_tower_first_door_for_rat_cage;
+    case default : mes("This door doesn't seem to open from here...");
+}
 
 [label,unlock_taverly_jaildoor](boolean $key_used)
 def_boolean $entering = ~check_axis(coord, loc_coord, loc_angle);
@@ -29,26 +32,4 @@ if($key_used = true) {
 } else {
     mes("The <$name> locks shut behind you.");
 }
-~open_taverly_jaildoor($entering);
-
-[proc,open_taverly_jaildoor](boolean $entering)
-def_int $x;
-def_int $z;
-def_int $angle = loc_angle;
-def_locshape $shape = loc_shape;
-def_coord $loc_coord = loc_coord;
-$x, $z = ~door_open($angle, loc_shape);
-def_coord $dest = $loc_coord;
-sound_synth(door_open, 0, 0); // iron_gate_open in OSRS 
-if ($entering = true) {
-    if (coord ! $loc_coord) {
-        p_teleport($loc_coord);
-        p_delay(1);
-    }
-    $dest = movecoord(loc_coord, $x, 0, $z);
-}
-p_teleport($dest);
-
-loc_del(2);
-loc_add($loc_coord, loc_83, $angle, $shape, 2);
-loc_add(movecoord($loc_coord, $x, 0, $z), loc_37, modulo(add($angle, 1), 4), $shape, 2);
+~open_and_close_door2(loc_37, $entering, grate_open);

@@ -16,12 +16,12 @@ return(calc($effective_stat * ($bonus + 64)));
 if ($weapon = null | (map_members = false & oc_members($weapon) = true)) {
     return(weapon_unarmed_table);
 }
-// TODO: allow outputtype=dbrow
+// todo: allow outputtype=dbrow
 // return(enum(category, dbrow, combat_style_enum, oc_category($weapon)));
 switch_category(oc_category($weapon)) {
     case weapon_2h_sword : return(weapon_2h_sword_table);
     case weapon_axe : return(weapon_axe_table);
-    case weapon_blunt : return(weapon_blunt_table);
+    case weapon_blunt : return(weapon_blunt_table); // https://i.imgur.com/jFiwBP8.png
     case weapon_pickaxe : return(weapon_pickaxe_table);
     case weapon_scythe : return(weapon_scythe_table);
     case weapon_slash : return(weapon_slash_table);
@@ -59,18 +59,18 @@ switch_int($damagestyle) {
 }
 
 // returns the swing anim to use for this weapon and selected style.
-[proc,combat_swing_anim_and_synth](obj $weapon, int $damagetype)(seq, synth)
+[proc,combat_swing_anim_and_synth](obj $weapon, int $damagetype, int $damagestyle, int $attackstyle)(seq, synth)
 // unarmed
-if ($weapon = null | (map_members = false & oc_members($weapon) = true)) {
-    switch_int (%attackstyle) {
-        case 0: return(human_unarmedpunch, unarmed_punch);
-        case 1: return(human_unarmedkick, unarmed_kick);
-        case 2: return(human_unarmedpunch, unarmed_punch);
+if ($weapon = null | (map_members = false & oc_members($weapon) = true) | oc_category($weapon) = null) {
+    switch_int ($attackstyle) {
+        case 0 : return(human_unarmedpunch, unarmed_punch);
+        case 1 : return(human_unarmedkick, unarmed_kick);
+        case 2 : return(human_unarmedpunch, unarmed_punch);
     }
 }
 // manually handle scythe defensive
 if (oc_category($weapon) = weapon_scythe) {
-    if (%damagestyle = ^style_melee_defensive & $damagetype = ^slash_style) {
+    if ($damagestyle = ^style_melee_defensive & $damagetype = ^slash_style) {
         return(human_scythe_spin, oc_param($weapon, slash_sound));
     }
 }
@@ -82,36 +82,94 @@ switch_int ($damagetype) {
     case ^ranged_style : return(oc_param($weapon, rangeattack_anim), oc_param($weapon, rangeattack_sound));
 }
 
-[proc,give_combat_experience](int $damagestyle, int $damage)
+// default multiplier is 1000
+[proc,give_combat_experience](int $damagestyle, int $damage, int $multiplier)
 def_int $base = multiply($damage, 10);
-switch_int($damagestyle) {
-    case ^style_melee_accurate : 
-        givexp(attack, scale(400, 100, $base));
-    case ^style_melee_aggressive : 
-        givexp(strength, scale(400, 100, $base));
-    case ^style_melee_defensive : 
-        givexp(defence, scale(400, 100, $base));
-    case ^style_melee_controlled : 
-        givexp(attack, scale(133, 100, $base));
-        givexp(strength, scale(133, 100, $base));
-        givexp(defence, scale(133, 100, $base));
-    case ^style_ranged_accurate, ^style_ranged_rapid : 
-        givexp(ranged, scale(400, 100, $base));
-    case ^style_ranged_longrange : 
-        givexp(ranged, scale(200, 100, $base));
-        givexp(defence, scale(200, 100, $base));
-    case ^style_magic_normal :
-        givexp(magic, scale(200, 100, $base));
-    case ^style_magic_defensive : 
-        givexp(magic, scale(133, 100, $base));
-        givexp(defence, scale(100, 100, $base));
-    case default : return;
+// not a multiplier (some npcs have that), but exactly 1xp * hit for all cb styles (including controlled), prob a better way of doing this
+// not sure if this is the only npc that has this mechanic (not 100% sure if this existed in 2004 either)
+if(npc_type = black_knight_titan) { 
+    switch_int($damagestyle) {
+        case ^style_melee_accurate :
+            stat_advance(attack, $base);
+        case ^style_melee_aggressive :
+            stat_advance(strength, $base);
+        case ^style_melee_defensive :
+            stat_advance(defence, $base);
+        case ^style_melee_controlled :
+            stat_advance(attack, $base);
+            stat_advance(strength, $base);
+            stat_advance(defence, $base);
+        case ^style_ranged_accurate, ^style_ranged_rapid :
+            stat_advance(ranged, $base);
+        case ^style_ranged_longrange :
+            stat_advance(ranged, $base);
+            stat_advance(defence, $base);
+        case ^style_magic_normal :
+            stat_advance(magic, $base);
+        case ^style_magic_defensive :
+            stat_advance(magic, $base);
+            stat_advance(defence, $base);
+        case default : return;
+    }
+    stat_advance(hitpoints, scale(133, 100, $base));
+    return;
 }
-givexp(hitpoints, scale(133, 100, $base));
+if (%tutorial_progress < ^tutorial_complete) {
+    switch_int($damagestyle) {
+        case ^style_melee_accurate :
+            ~tutorial_give_xp(attack, scale($multiplier, 1000, scale(400, 100, $base)));
+        case ^style_melee_aggressive :
+            ~tutorial_give_xp(strength, scale($multiplier, 1000, scale(400, 100, $base)));
+        case ^style_melee_defensive :
+            ~tutorial_give_xp(defence, scale($multiplier, 1000, scale(400, 100, $base)));
+        case ^style_melee_controlled :
+            ~tutorial_give_xp(attack, scale($multiplier, 1000, scale(133, 100, $base)));
+            ~tutorial_give_xp(strength, scale($multiplier, 1000, scale(133, 100, $base)));
+            ~tutorial_give_xp(defence, scale($multiplier, 1000, scale(133, 100, $base)));
+        case ^style_ranged_accurate, ^style_ranged_rapid :
+            ~tutorial_give_xp(ranged, scale($multiplier, 1000, scale(400, 100, $base)));
+        case ^style_ranged_longrange :
+            ~tutorial_give_xp(ranged, scale($multiplier, 1000, scale(200, 100, $base)));
+            ~tutorial_give_xp(defence, scale($multiplier, 1000, scale(200, 100, $base)));
+        case ^style_magic_normal :
+            ~tutorial_give_xp(magic, scale($multiplier, 1000, scale(200, 100, $base)));
+        case ^style_magic_defensive :
+            ~tutorial_give_xp(magic, scale($multiplier, 1000, scale(133, 100, $base)));
+            ~tutorial_give_xp(defence, scale($multiplier, 1000, scale(100, 100, $base)));
+        case default : return;
+    }
+    ~tutorial_give_xp(hitpoints, scale($multiplier, 1000, scale(133, 100, $base)));
+} else {
+    switch_int($damagestyle) {
+        case ^style_melee_accurate :
+            stat_advance(attack, scale($multiplier, 1000, scale(400, 100, $base)));
+        case ^style_melee_aggressive :
+            stat_advance(strength, scale($multiplier, 1000, scale(400, 100, $base)));
+        case ^style_melee_defensive :
+            stat_advance(defence, scale($multiplier, 1000, scale(400, 100, $base)));
+        case ^style_melee_controlled :
+            stat_advance(attack, scale($multiplier, 1000, scale(133, 100, $base)));
+            stat_advance(strength, scale($multiplier, 1000, scale(133, 100, $base)));
+            stat_advance(defence, scale($multiplier, 1000, scale(133, 100, $base)));
+        case ^style_ranged_accurate, ^style_ranged_rapid :
+            stat_advance(ranged, scale($multiplier, 1000, scale(400, 100, $base)));
+        case ^style_ranged_longrange :
+            stat_advance(ranged, scale($multiplier, 1000, scale(200, 100, $base)));
+            stat_advance(defence, scale($multiplier, 1000, scale(200, 100, $base)));
+        case ^style_magic_normal :
+            stat_advance(magic, scale($multiplier, 1000, scale(200, 100, $base)));
+        case ^style_magic_defensive :
+            stat_advance(magic, scale($multiplier, 1000, scale(133, 100, $base)));
+            stat_advance(defence, scale($multiplier, 1000, scale(100, 100, $base)));
+        case default : return;
+    }
+    stat_advance(hitpoints, scale($multiplier, 1000, scale(133, 100, $base)));
+}
+
 
 // returns the defend anim to use for this combat
 [proc,combat_defend_anim](obj $weapon)(seq)
-if ($weapon = null) {
+if ($weapon = null | (map_members = false & oc_members($weapon) = true)) {
     return(human_unarmedblock);
 }
 return(oc_param($weapon, defend_anim));

@@ -1,4 +1,4 @@
-[ai_queue3,npc_181](int $arg)
+[ai_queue3,chaos_druid]
 gosub(npc_death);
 if (npc_findhero = false) {
     return;
@@ -41,8 +41,8 @@ if ($random < 7)  {
 } else if ($random < 89) {
     obj_add(npc_coord, snape_grass, 1, ^lootdrop_duration);
 } else if ($random < 90) {
-    // TODO - only if Observatory Quest is complete.
+    // todo - only if Observatory Quest is complete.
     obj_add(npc_coord, unholy_mould, 1, ^lootdrop_duration);
 } else if ($random < 91) {
-    ~lootdrop(npc_coord, ~randomjewel, ^lootdrop_duration);
+    obj_add(npc_coord, ~randomjewel, ^lootdrop_duration);
 }

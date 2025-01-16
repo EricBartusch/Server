@@ -2,8 +2,8 @@
 name=Opal bolttips
 desc=I can make bolts with these.
 model=model_2780_obj
-recol1s=41191
-recol1d=10465
+recol1s=20159
+recol1d=29587
 2dxof=-1
 2dyof=7
 2dzoom=490
@@ -14,7 +14,6 @@ stackable=yes
 cost=30
 weight=4g
 category=category_530
-tradeable=yes
 
 [obj_46]
 name=Pearl bolttips
@@ -30,7 +29,6 @@ stackable=yes
 cost=56
 weight=4g
 category=category_530
-tradeable=yes
 
 [obj_47]
 name=Barb bolttips
@@ -46,4 +44,3 @@ cost=95
 2dxan=492
 weight=4g
 category=category_530
-tradeable=yes

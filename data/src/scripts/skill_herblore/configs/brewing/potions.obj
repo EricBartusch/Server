@@ -6,16 +6,17 @@ desc=4 doses of strength potion.
 iop1=Drink
 cost=14
 model=model_2789_obj
-recol1s=61
-recol1d=11080
+recol1s=15855
+recol1d=29543
 2dyof=-1
 2dzoom=550
 2dyan=1996
 2dxan=84
 weight=35g
 category=category_69
-tradeable=yes
 param=next_obj_stage,3dose1strength
+param=decant_potion_enum,potion_1strength
+param=dose_count,4
 // jagex name
 
 [3dose1strength]
@@ -24,16 +25,17 @@ desc=3 doses of strength potion.
 iop1=Drink
 cost=13
 model=model_2697_obj
-recol1s=61
-recol1d=11080
+recol1s=15855
+recol1d=29543
 2dyof=-1
 2dzoom=550
 2dyan=1996
 2dxan=84
 weight=30g
 category=category_69
-tradeable=yes
 param=next_obj_stage,2dose1strength
+param=decant_potion_enum,potion_1strength
+param=dose_count,3
 // jagex name
 
 [2dose1strength]
@@ -43,15 +45,16 @@ desc=2 doses of strength potion.
 iop1=Drink
 cost=13
 model=model_2384_obj
-recol1s=61
-recol1d=11080
+recol1s=15855
+recol1d=29543
 2dyof=-1
 2dzoom=550
 2dyan=1996
 2dxan=84
 weight=25g
-tradeable=yes
 param=next_obj_stage,1dose1strength
+param=decant_potion_enum,potion_1strength
+param=dose_count,2
 // jagex name
 
 [1dose1strength]
@@ -61,15 +64,16 @@ desc=1 dose of strength potion.
 iop1=Drink
 cost=11
 model=model_2621_obj
-recol1s=61
-recol1d=11080
+recol1s=15855
+recol1d=29543
 2dyof=-1
 2dzoom=550
 2dyan=1996
 2dxan=84
 weight=20g
-tradeable=yes
 param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_1strength
+param=dose_count,1
 // jagex name
 
 [3dose1attack]
@@ -78,8 +82,8 @@ desc=3 doses of attack potion.
 iop1=Drink
 cost=12
 model=model_2697_obj
-recol1s=61
-recol1d=33608
+recol1s=15855
+recol1d=7037
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -87,8 +91,9 @@ recol1d=33608
 weight=30g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,2dose1attack
+param=decant_potion_enum,potion_1attack
+param=dose_count,3
 // jagex name
 
 [2dose1attack]
@@ -97,8 +102,8 @@ desc=2 doses of attack potion.
 iop1=Drink
 cost=9
 model=model_2384_obj
-recol1s=61
-recol1d=33608
+recol1s=15855
+recol1d=7037
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -106,8 +111,9 @@ recol1d=33608
 weight=25g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,1dose1attack
+param=decant_potion_enum,potion_1attack
+param=dose_count,2
 // jagex name
 
 [1dose1attack]
@@ -116,8 +122,8 @@ desc=1 dose of attack potion.
 iop1=Drink
 cost=6
 model=model_2621_obj
-recol1s=61
-recol1d=33608
+recol1s=15855
+recol1d=7037
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -125,8 +131,9 @@ recol1d=33608
 weight=20g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_1attack
+param=dose_count,1
 // jagex name
 
 [3dose1restore]
@@ -135,8 +142,8 @@ desc=3 doses of stat restoration potion.
 iop1=Drink
 cost=88
 model=model_2697_obj
-recol1s=61
-recol1d=840
+recol1s=15855
+recol1d=28903
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -144,8 +151,9 @@ recol1d=840
 weight=30g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,2dose1restore
+param=decant_potion_enum,potion_1restore
+param=dose_count,3
 // jagex name
 
 [2dose1restore]
@@ -154,8 +162,8 @@ desc=2 doses of stat restoration potion.
 iop1=Drink
 cost=66
 model=model_2384_obj
-recol1s=61
-recol1d=840
+recol1s=15855
+recol1d=28903
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -163,8 +171,9 @@ recol1d=840
 weight=25g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,1dose1restore
+param=decant_potion_enum,potion_1restore
+param=dose_count,2
 // jagex name
 
 [1dose1restore]
@@ -173,8 +182,8 @@ desc=1 dose of stat restoration potion.
 iop1=Drink
 cost=44
 model=model_2621_obj
-recol1s=61
-recol1d=840
+recol1s=15855
+recol1d=28903
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -182,8 +191,9 @@ recol1d=840
 weight=20g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_1restore
+param=dose_count,1
 // jagex name
 
 [3dose1defense]
@@ -192,8 +202,8 @@ desc=3 doses of defence potion.
 iop1=Drink
 cost=120
 model=model_2697_obj
-recol1s=61
-recol1d=22344
+recol1s=15855
+recol1d=7078
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -201,8 +211,9 @@ recol1d=22344
 weight=30g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,2dose1defense
+param=decant_potion_enum,potion_1defense
+param=dose_count,3
 // jagex name
 
 [2dose1defense]
@@ -211,8 +222,8 @@ desc=2 doses of defence potion.
 iop1=Drink
 cost=90
 model=model_2384_obj
-recol1s=61
-recol1d=22344
+recol1s=15855
+recol1d=7078
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -220,8 +231,9 @@ recol1d=22344
 weight=25g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,1dose1defense
+param=decant_potion_enum,potion_1defense
+param=dose_count,2
 // jagex name
 
 [1dose1defense]
@@ -230,8 +242,8 @@ desc=1 dose of defence potion.
 iop1=Drink
 cost=60
 model=model_2621_obj
-recol1s=61
-recol1d=22344
+recol1s=15855
+recol1d=7078
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -239,8 +251,9 @@ recol1d=22344
 weight=20g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_1defense
+param=dose_count,1
 // jagex name
 
 [3doseprayerrestore]
@@ -249,8 +262,8 @@ desc=3 doses of restore prayer potion.
 iop1=Drink
 cost=152
 model=model_2697_obj
-recol1s=61
-recol1d=28488
+recol1s=15855
+recol1d=7091
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -258,8 +271,9 @@ recol1d=28488
 weight=30g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,2doseprayerrestore
+param=decant_potion_enum,potion_prayerrestore
+param=dose_count,3
 // jagex name
 
 [2doseprayerrestore]
@@ -268,8 +282,8 @@ desc=2 doses of restore prayer potion.
 iop1=Drink
 cost=114
 model=model_2384_obj
-recol1s=61
-recol1d=28488
+recol1s=15855
+recol1d=7091
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -277,8 +291,9 @@ recol1d=28488
 weight=25g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,1doseprayerrestore
+param=decant_potion_enum,potion_prayerrestore
+param=dose_count,2
 // jagex name
 
 [1doseprayerrestore]
@@ -287,8 +302,8 @@ desc=1 dose of restore prayer potion.
 iop1=Drink
 cost=76
 model=model_2621_obj
-recol1s=61
-recol1d=28488
+recol1s=15855
+recol1d=7091
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -296,8 +311,9 @@ recol1d=28488
 weight=20g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_prayerrestore
+param=dose_count,1
 // jagex name
 
 [3dose2attack]
@@ -306,8 +322,8 @@ desc=3 doses of super attack potion.
 iop1=Drink
 cost=180
 model=model_2697_obj
-recol1s=61
-recol1d=43848
+recol1s=15855
+recol1d=6365
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -315,8 +331,9 @@ recol1d=43848
 weight=30g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,2dose2attack
+param=decant_potion_enum,potion_2attack
+param=dose_count,3
 // jagex name
 
 [2dose2attack]
@@ -325,8 +342,8 @@ desc=2 doses of super attack potion.
 iop1=Drink
 cost=135
 model=model_2384_obj
-recol1s=61
-recol1d=43848
+recol1s=15855
+recol1d=6365
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -334,8 +351,9 @@ recol1d=43848
 weight=25g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,1dose2attack
+param=decant_potion_enum,potion_2attack
+param=dose_count,2
 // jagex name
 
 [1dose2attack]
@@ -344,8 +362,8 @@ desc=1 dose of super attack potion.
 iop1=Drink
 cost=90
 model=model_2621_obj
-recol1s=61
-recol1d=43848
+recol1s=15855
+recol1d=6365
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -353,8 +371,9 @@ recol1d=43848
 weight=20g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_2attack
+param=dose_count,1
 // jagex name
 
 [3dosefisherspotion]
@@ -363,8 +382,8 @@ desc=3 doses of fishing potion.
 iop1=Drink
 cost=200
 model=model_2697_obj
-recol1s=61
-recol1d=24
+recol1s=15855
+recol1d=6342
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -372,8 +391,9 @@ recol1d=24
 weight=30g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,2dosefisherspotion
+param=decant_potion_enum,potion_fisherspotion
+param=dose_count,3
 // jagex name
 
 [2dosefisherspotion]
@@ -382,8 +402,8 @@ desc=2 doses of fishing potion.
 iop1=Drink
 cost=150
 model=model_2384_obj
-recol1s=61
-recol1d=24
+recol1s=15855
+recol1d=6342
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -391,8 +411,9 @@ recol1d=24
 weight=25g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,1dosefisherspotion
+param=decant_potion_enum,potion_fisherspotion
+param=dose_count,2
 // jagex name
 
 [1dosefisherspotion]
@@ -401,8 +422,8 @@ desc=1 dose of fishing potion.
 iop1=Drink
 cost=100
 model=model_2621_obj
-recol1s=61
-recol1d=24
+recol1s=15855
+recol1d=6342
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -410,8 +431,9 @@ recol1d=24
 weight=20g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_fisherspotion
+param=dose_count,1
 // jagex name
 
 [3dose2strength]
@@ -420,8 +442,8 @@ desc=3 doses of super strength potion.
 iop1=Drink
 cost=220
 model=model_2697_obj
-recol1s=61
-recol1d=119
+recol1s=15855
+recol1d=30653
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -429,8 +451,9 @@ recol1d=119
 weight=30g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,2dose2strength
+param=decant_potion_enum,potion_2strength
+param=dose_count,3
 // jagex name
 
 [2dose2strength]
@@ -439,8 +462,8 @@ desc=2 doses of super strength potion.
 iop1=Drink
 cost=165
 model=model_2384_obj
-recol1s=61
-recol1d=119
+recol1s=15855
+recol1d=30653
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -448,8 +471,9 @@ recol1d=119
 weight=25g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,1dose2strength
+param=decant_potion_enum,potion_2strength
+param=dose_count,2
 // jagex name
 
 [1dose2strength]
@@ -458,8 +482,8 @@ desc=1 dose of super strength potion.
 iop1=Drink
 cost=110
 model=model_2621_obj
-recol1s=61
-recol1d=119
+recol1s=15855
+recol1d=30653
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -467,8 +491,9 @@ recol1d=119
 weight=20g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_2strength
+param=dose_count,1
 // jagex name
 
 [3dose2defense]
@@ -477,8 +502,8 @@ desc=3 doses of super defence potion.
 iop1=Drink
 cost=264
 model=model_2697_obj
-recol1s=61
-recol1d=8008
+recol1s=15855
+recol1d=29351
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -486,8 +511,9 @@ recol1d=8008
 weight=30g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,2dose2defense
+param=decant_potion_enum,potion_2defense
+param=dose_count,3
 // jagex name
 
 [2dose2defense]
@@ -496,8 +522,8 @@ desc=2 doses of super defence potion.
 iop1=Drink
 cost=198
 model=model_2384_obj
-recol1s=61
-recol1d=8008
+recol1s=15855
+recol1d=29351
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -505,8 +531,9 @@ recol1d=8008
 weight=25g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,1dose2defense
+param=decant_potion_enum,potion_2defense
+param=dose_count,2
 // jagex name
 
 [1dose2defense]
@@ -515,8 +542,8 @@ desc=1 dose of super defence potion.
 iop1=Drink
 cost=132
 model=model_2621_obj
-recol1s=61
-recol1d=8008
+recol1s=15855
+recol1d=29351
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -524,8 +551,9 @@ recol1d=8008
 weight=20g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_2defense
+param=dose_count,1
 // jagex name
 
 [3doserangerspotion]
@@ -534,8 +562,8 @@ desc=3 doses of ranging potion.
 iop1=Drink
 cost=288
 model=model_2697_obj
-recol1s=61
-recol1d=36680
+recol1s=15855
+recol1d=6845
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -543,8 +571,9 @@ recol1d=36680
 weight=30g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,2doserangerspotion
+param=decant_potion_enum,potion_rangerspotion
+param=dose_count,3
 // jagex name
 
 [2doserangerspotion]
@@ -553,8 +582,8 @@ desc=2 doses of ranging potion.
 iop1=Drink
 cost=216
 model=model_2384_obj
-recol1s=61
-recol1d=36680
+recol1s=15855
+recol1d=6845
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -562,8 +591,9 @@ recol1d=36680
 weight=25g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,1doserangerspotion
+param=decant_potion_enum,potion_rangerspotion
+param=dose_count,2
 // jagex name
 
 [1doserangerspotion]
@@ -572,8 +602,8 @@ desc=1 dose of ranging potion.
 iop1=Drink
 cost=144
 model=model_2621_obj
-recol1s=61
-recol1d=36680
+recol1s=15855
+recol1d=6845
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -581,8 +611,9 @@ recol1d=36680
 weight=20g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_rangerspotion
+param=dose_count,1
 // jagex name
 
 [3doseantipoison]
@@ -591,8 +622,8 @@ desc=3 doses of antipoison potion.
 iop1=Drink
 cost=288
 model=model_2697_obj
-recol1s=61
-recol1d=18372
+recol1s=15855
+recol1d=13251
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -600,8 +631,10 @@ recol1d=18372
 weight=30g
 category=category_69
 members=yes
-tradeable=yes
+param=cures_poison,yes
 param=next_obj_stage,2doseantipoison
+param=decant_potion_enum,potion_antipoison
+param=dose_count,3
 // jagex name
 
 [2doseantipoison]
@@ -610,8 +643,8 @@ desc=2 doses of antipoison potion.
 iop1=Drink
 cost=216
 model=model_2384_obj
-recol1s=61
-recol1d=18372
+recol1s=15855
+recol1d=13251
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -619,8 +652,10 @@ recol1d=18372
 weight=25g
 category=category_69
 members=yes
-tradeable=yes
+param=cures_poison,yes
 param=next_obj_stage,1doseantipoison
+param=decant_potion_enum,potion_antipoison
+param=dose_count,2
 // jagex name
 
 [1doseantipoison]
@@ -629,8 +664,8 @@ desc=1 dose of antipoison potion.
 iop1=Drink
 cost=144
 model=model_2621_obj
-recol1s=61
-recol1d=18372
+recol1s=15855
+recol1d=13251
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -638,8 +673,10 @@ recol1d=18372
 weight=20g
 category=category_69
 members=yes
-tradeable=yes
+param=cures_poison,yes
 param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_antipoison
+param=dose_count,1
 // jagex name
 
 [3dose2antipoison]
@@ -648,8 +685,8 @@ desc=3 doses of super antipoison potion.
 iop1=Drink
 cost=288
 model=model_2697_obj
-recol1s=61
-recol1d=62404
+recol1s=15855
+recol1d=30828
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -657,8 +694,10 @@ recol1d=62404
 weight=30g
 category=category_69
 members=yes
-tradeable=yes
+param=cures_poison,yes
 param=next_obj_stage,2dose2antipoison
+param=decant_potion_enum,potion_2antipoison
+param=dose_count,3
 // jagex name
 
 [2dose2antipoison]
@@ -667,8 +706,8 @@ desc=2 doses of super antipoison potion.
 iop1=Drink
 cost=216
 model=model_2384_obj
-recol1s=61
-recol1d=62404
+recol1s=15855
+recol1d=30828
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -676,8 +715,10 @@ recol1d=62404
 weight=25g
 category=category_69
 members=yes
-tradeable=yes
+param=cures_poison,yes
 param=next_obj_stage,1dose2antipoison
+param=decant_potion_enum,potion_2antipoison
+param=dose_count,2
 // jagex name
 
 [1dose2antipoison]
@@ -686,8 +727,8 @@ desc=1 dose of super antipoison potion.
 iop1=Drink
 cost=144
 model=model_2621_obj
-recol1s=61
-recol1d=62404
+recol1s=15855
+recol1d=30828
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -695,8 +736,10 @@ recol1d=62404
 weight=20g
 category=category_69
 members=yes
-tradeable=yes
+param=cures_poison,yes
 param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_2antipoison
+param=dose_count,1
 // jagex name
 
 [weapon_poison]
@@ -704,8 +747,8 @@ name=Weapon poison
 desc=For use on daggers and projectiles.
 cost=144
 model=model_2789_obj
-recol1s=61
-recol1d=39876
+recol1s=15855
+recol1d=2463
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -713,7 +756,6 @@ recol1d=39876
 weight=25g
 category=category_69
 members=yes
-tradeable=yes
 // jagex name
 
 [3dosepotionofzamorak]
@@ -722,8 +764,8 @@ desc=3 doses of a potion of Zamorak.
 iop1=Drink
 cost=25
 model=model_2697_obj
-recol1s=61
-recol1d=7099
+recol1s=15855
+recol1d=29217
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -731,8 +773,9 @@ recol1d=7099
 weight=30g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,2dosepotionofzamorak
+param=decant_potion_enum,potion_potionofzamorak
+param=dose_count,3
 // jagex name
 
 [2dosepotionofzamorak]
@@ -741,8 +784,8 @@ desc=2 doses of a potion of Zamorak.
 iop1=Drink
 cost=25
 model=model_2384_obj
-recol1s=61
-recol1d=7099
+recol1s=15855
+recol1d=29217
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -750,8 +793,9 @@ recol1d=7099
 weight=25g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,1dosepotionofzamorak
+param=decant_potion_enum,potion_potionofzamorak
+param=dose_count,2
 // jagex name
 
 [1dosepotionofzamorak]
@@ -760,8 +804,8 @@ desc=1 dose of a potion of Zamorak.
 iop1=Drink
 cost=25
 model=model_2621_obj
-recol1s=61
-recol1d=7099
+recol1s=15855
+recol1d=29217
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -769,8 +813,9 @@ recol1d=7099
 weight=20g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_potionofzamorak
+param=dose_count,1
 // jagex name
 
 [4dose1attack]
@@ -780,16 +825,17 @@ category=category_69
 iop1=Drink
 cost=15
 model=model_2789_obj
-recol1s=61
-recol1d=33608
+recol1s=15855
+recol1d=7037
 2dyof=-1
 2dzoom=550
 2dyan=1996
 2dxan=84
 weight=35g
 members=yes
-tradeable=yes
 param=next_obj_stage,3dose1attack
+param=decant_potion_enum,potion_1attack
+param=dose_count,4
 // jagex name
 
 [4dose1restore]
@@ -798,8 +844,8 @@ desc=4 doses of stat restoration potion.
 iop1=Drink
 cost=110
 model=model_2789_obj
-recol1s=61
-recol1d=840
+recol1s=15855
+recol1d=28903
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -807,8 +853,9 @@ recol1d=840
 weight=35g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,3dose1restore
+param=decant_potion_enum,potion_1restore
+param=dose_count,1
 // jagex name
 
 [4dose1defense]
@@ -817,8 +864,8 @@ desc=4 doses of defence potion.
 iop1=Drink
 cost=150
 model=model_2789_obj
-recol1s=61
-recol1d=22344
+recol1s=15855
+recol1d=7078
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -826,8 +873,9 @@ recol1d=22344
 weight=35g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,3dose1defense
+param=decant_potion_enum,potion_1defense
+param=dose_count,4
 // jagex name
 
 [4doseprayerrestore]
@@ -836,8 +884,8 @@ desc=4 doses of restore prayer potion.
 iop1=Drink
 cost=190
 model=model_2789_obj
-recol1s=61
-recol1d=28488
+recol1s=15855
+recol1d=7091
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -845,8 +893,9 @@ recol1d=28488
 weight=35g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,3doseprayerrestore
+param=decant_potion_enum,potion_prayerrestore
+param=dose_count,4
 // jagex name
 
 [4dose2attack]
@@ -855,8 +904,8 @@ desc=4 doses of super attack potion.
 iop1=Drink
 cost=225
 model=model_2789_obj
-recol1s=61
-recol1d=43848
+recol1s=15855
+recol1d=6365
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -864,8 +913,9 @@ recol1d=43848
 weight=35g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,3dose2attack
+param=decant_potion_enum,potion_2attack
+param=dose_count,4
 // jagex name
 
 [4dosefisherspotion]
@@ -874,8 +924,8 @@ desc=4 doses of fishing potion.
 iop1=Drink
 cost=250
 model=model_2789_obj
-recol1s=61
-recol1d=24
+recol1s=15855
+recol1d=6342
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -883,8 +933,9 @@ recol1d=24
 weight=35g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,3dosefisherspotion
+param=decant_potion_enum,potion_fisherspotion
+param=dose_count,4
 // jagex name
 
 [4dose2strength]
@@ -893,8 +944,8 @@ desc=4 doses of super strength potion.
 iop1=Drink
 cost=275
 model=model_2789_obj
-recol1s=61
-recol1d=119
+recol1s=15855
+recol1d=30653
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -902,8 +953,9 @@ recol1d=119
 weight=35g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,3dose2strength
+param=decant_potion_enum,potion_2strength
+param=dose_count,4
 // jagex name
 
 [4dose2defense]
@@ -912,8 +964,8 @@ desc=4 doses of super defence potion.
 iop1=Drink
 cost=330
 model=model_2789_obj
-recol1s=61
-recol1d=8008
+recol1s=15855
+recol1d=29351
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -921,8 +973,9 @@ recol1d=8008
 weight=35g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,3dose2defense
+param=decant_potion_enum,potion_2defense
+param=dose_count,4
 // jagex name
 
 [4doserangerspotion]
@@ -931,8 +984,8 @@ desc=4 doses of ranging potion.
 iop1=Drink
 cost=360
 model=model_2789_obj
-recol1s=61
-recol1d=36680
+recol1s=15855
+recol1d=6845
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -940,8 +993,9 @@ recol1d=36680
 weight=35g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,3doserangerspotion
+param=decant_potion_enum,potion_rangerspotion
+param=dose_count,4
 // jagex name
 
 [4doseantipoison]
@@ -950,8 +1004,8 @@ desc=4 doses of antipoison potion.
 iop1=Drink
 cost=360
 model=model_2789_obj
-recol1s=61
-recol1d=18372
+recol1s=15855
+recol1d=13251
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -959,8 +1013,10 @@ recol1d=18372
 weight=35g
 category=category_69
 members=yes
-tradeable=yes
+param=cures_poison,yes
 param=next_obj_stage,3doseantipoison
+param=decant_potion_enum,potion_antipoison
+param=dose_count,4
 // jagex name
 
 [4dose2antipoison]
@@ -969,8 +1025,8 @@ desc=4 doses of super antipoison potion.
 iop1=Drink
 cost=360
 model=model_2789_obj
-recol1s=61
-recol1d=62404
+recol1s=15855
+recol1d=30828
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -978,8 +1034,10 @@ recol1d=62404
 weight=35g
 category=category_69
 members=yes
-tradeable=yes
+param=cures_poison,yes
 param=next_obj_stage,3dose2antipoison
+param=decant_potion_enum,potion_2antipoison
+param=dose_count,4
 // jagex name
 
 [4dosepotionofzamorak]
@@ -988,8 +1046,8 @@ desc=4 doses of a potion of Zamorak.
 iop1=Drink
 cost=25
 model=model_2789_obj
-recol1s=61
-recol1d=7099
+recol1s=15855
+recol1d=29217
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -997,8 +1055,9 @@ recol1d=7099
 weight=35g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,3dosepotionofzamorak
+param=decant_potion_enum,potion_potionofzamorak
+param=dose_count,4
 // jagex name
 
 [4dose1antidragon]
@@ -1007,8 +1066,8 @@ desc=4 doses of anti-firebreath potion.
 iop1=Drink
 cost=330
 model=model_2789_obj
-recol1s=61
-recol1d=51109
+recol1s=15855
+recol1d=11282
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -1016,8 +1075,9 @@ recol1d=51109
 weight=35g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,3dose1antidragon
+param=decant_potion_enum,potion_1antidragon
+param=dose_count,4
 // jagex name
 
 [3dose1antidragon]
@@ -1026,8 +1086,8 @@ desc=3 doses of anti-firebreath potion.
 iop1=Drink
 cost=264
 model=model_2697_obj
-recol1s=61
-recol1d=51109
+recol1s=15855
+recol1d=11282
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -1035,8 +1095,9 @@ recol1d=51109
 weight=30g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,2dose1antidragon
+param=decant_potion_enum,potion_1antidragon
+param=dose_count,3
 // jagex name
 
 [2dose1antidragon]
@@ -1045,8 +1106,8 @@ desc=2 doses of anti-firebreath potion.
 iop1=Drink
 cost=198
 model=model_2384_obj
-recol1s=61
-recol1d=51109
+recol1s=15855
+recol1d=11282
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -1054,8 +1115,9 @@ recol1d=51109
 weight=25g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,1dose1antidragon
+param=decant_potion_enum,potion_1antidragon
+param=dose_count,2
 // jagex name
 
 [1dose1antidragon]
@@ -1064,8 +1126,8 @@ desc=1 dose of anti-firebreath potion.
 iop1=Drink
 cost=132
 model=model_2621_obj
-recol1s=61
-recol1d=51109
+recol1s=15855
+recol1d=11282
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -1073,5 +1135,22 @@ recol1d=51109
 weight=20g
 category=category_69
 members=yes
-tradeable=yes
 param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_1antidragon
+param=dose_count,1
+
+[blamish_oil]
+name=Blamish oil
+desc=Made from the finest snail slime.
+iop1=Drink
+cost=10
+model=model_2789_obj
+recol1s=10615
+recol1d=28570
+2dyof=-1
+2dzoom=550
+2dyan=1996
+2dxan=84
+weight=25g
+members=yes
+tradeable=no

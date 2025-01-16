@@ -1,11 +1,10 @@
 // https://oldschool.runescape.wiki/w/Man#Drops
-[ai_queue3,_citizen](int $arg) @man_drop_table;
-[ai_queue3,alkharid_warrior](int $arg) @man_drop_table;
-[ai_queue3,npc_8](int $arg) @man_drop_table;
-[ai_queue3,npc_282](int $arg) @man_drop_table;
+[ai_queue3,_citizen] @man_drop_table;
+[ai_queue3,alkharid_warrior] @man_drop_table;
+[ai_queue3,thief] @man_drop_table;
+[ai_queue3,npc_282] @man_drop_table;
 
 [label,man_drop_table]
-
 gosub(npc_death);
 if (npc_findhero = false) {
     return;
@@ -16,6 +15,7 @@ obj_add(npc_coord, npc_param(death_drop), 1, ^lootdrop_duration);
 
 // Tertiary
 ~trail_easycluedrop(128, npc_coord);
+~trail_checkmediumdrop;
 
 def_int $random = random(128);
 

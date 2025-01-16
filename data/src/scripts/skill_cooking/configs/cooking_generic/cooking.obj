@@ -4,17 +4,16 @@ desc=Probably the finest ale in Asgarnia.
 cost=2
 iop1=Drink
 model=model_2491_obj
-recol1s=7091
-recol1d=6059
-recol2s=7116
-recol2d=5943
+recol1s=25025
+recol1d=20801
+recol2s=31367
+recol2d=24995
 2dxof=-3
 2dyof=2
 2dzoom=660
 2dyan=1904
 2dxan=140
 weight=550g
-tradeable=yes
 category=alcoholic_drinks
 param=next_obj_stage,beer_glass
 
@@ -24,17 +23,16 @@ desc=It's got strange bubbles in it.
 cost=2
 iop1=Drink
 model=model_2491_obj
-recol1s=7091
-recol1d=43208
-recol2s=7116
-recol2d=43216
+recol1s=25025
+recol1d=15860
+recol2s=31367
+recol2d=17974
 2dxof=-3
 2dyof=2
 2dzoom=660
 2dyan=1904
 2dxan=140
 weight=550g
-tradeable=yes
 category=alcoholic_drinks
 param=next_obj_stage,beer_glass
 
@@ -45,17 +43,16 @@ cost=2
 iop1=Drink
 members=yes
 model=model_2491_obj
-recol1s=7091
-recol1d=6059
-recol2s=7116
-recol2d=5943
+recol1s=25025
+recol1d=20801
+recol2s=31367
+recol2d=24995
 2dxof=-3
 2dyof=2
 2dzoom=660
 2dyan=1904
 2dxan=140
 weight=550g
-tradeable=yes
 category=alcoholic_drinks
 param=next_obj_stage,beer_glass
 
@@ -66,17 +63,16 @@ cost=2
 iop1=Drink
 members=yes
 model=model_2491_obj
-recol1s=7091
-recol1d=4001
-recol2s=7116
-recol2d=3759
+recol1s=25025
+recol1d=15521
+recol2s=31367
+recol2d=19748
 2dxof=-3
 2dyof=2
 2dzoom=660
 2dyan=1904
 2dxan=140
 weight=550g
-tradeable=yes
 category=alcoholic_drinks
 param=next_obj_stage,beer_glass
 
@@ -86,17 +82,16 @@ desc=A pint of thick dark beer.
 cost=2
 iop1=Drink
 model=model_2491_obj
-recol1s=7091
-recol1d=8
-recol2s=7116
-recol2d=33
+recol1s=25025
+recol1d=2114
+recol2s=31367
+recol2d=8456
 2dxof=-3
 2dyof=2
 2dzoom=660
 2dyan=1904
 2dxan=140
 weight=550g
-tradeable=yes
 category=alcoholic_drinks
 param=next_obj_stage,beer_glass
 
@@ -107,17 +102,16 @@ cost=3
 iop1=Drink
 members=yes
 model=model_2491_obj
-recol1s=7091
-recol1d=21681
-recol2s=7116
-recol2d=21689
+recol1s=25025
+recol1d=10698
+recol2s=31367
+recol2d=11819
 2dxof=-3
 2dyof=2
 2dzoom=660
 2dyan=1904
 2dxan=140
 weight=550g
-tradeable=yes
 category=alcoholic_drinks
 param=next_obj_stage,beer_glass
 
@@ -133,7 +127,6 @@ model=model_2491_obj
 2dyan=1904
 2dxan=140
 weight=550g
-tradeable=yes
 category=alcoholic_drinks
 param=next_obj_stage,beer_glass
 
@@ -148,7 +141,6 @@ model=model_2548_obj
 2dyan=1904
 2dxan=140
 weight=50g
-tradeable=yes
 param=crafting_glass_struct,beer_glass
 
 [swamp_tar]
@@ -165,15 +157,14 @@ members=yes
 stackable=yes
 weight=1lb
 category=category_135
-tradeable=yes
 
 [raw_swamp_paste]
 name=Raw swamp paste
 desc=A thick tar like substance mixed with flour.
 cost=1
 model=model_2499_obj
-recol1s=16
-recol1d=28
+recol1s=4228
+recol1d=7399
 2dxof=1
 2dyof=-22
 2dzoom=710
@@ -182,7 +173,6 @@ recol1d=28
 members=yes
 stackable=yes
 weight=18oz
-tradeable=yes
 
 [swamp_paste]
 name=Swamp paste
@@ -197,15 +187,14 @@ model=model_2386_obj
 members=yes
 stackable=yes
 weight=18oz
-tradeable=yes
 
 [chefshat]
 name=Chef's hat
 desc=What a silly hat.
 cost=2
 model=model_2782_obj
-recol1s=61
-recol1d=127
+recol1s=15855
+recol1d=32767
 2dxof=-4
 2dyof=3
 2dzoom=580
@@ -217,7 +206,6 @@ manhead=model_41_obj_wear
 womanhead=model_99_obj_wear
 iop2=Wear
 weight=2lb
-tradeable=yes
 
 [pumpkin]
 name=Pumpkin
@@ -232,9 +220,8 @@ model=model_2591_obj
 2dxan=132
 weight=500g
 category=category_131
-tradeable=yes
 
-[obj_1961]
+[easter_egg]
 name=Easter egg
 desc=Happy Easter.
 cost=10
@@ -245,7 +232,6 @@ model=model_2534_obj
 2dxan=2044
 weight=3oz
 category=category_59
-tradeable=yes
 
 // Typo of `bannana` in model name is Jagex consistent.
 [banana]
@@ -261,7 +247,6 @@ model=inv_bannana
 2dxan=280
 weight=1oz
 category=category_86
-tradeable=yes
 
 [cabbage]
 name=Cabbage
@@ -275,7 +260,6 @@ iop1=Eat
 cost=1
 weight=1lb
 category=category_131
-tradeable=yes
 param=batta_message,You add the Cabbage to the gnome batta.
 
 [cabbage_draynor]
@@ -290,7 +274,6 @@ iop1=Eat
 cost=1
 weight=350g
 category=category_59
-tradeable=yes
 
 [spinach_roll]
 iop1=Eat
@@ -303,7 +286,6 @@ model=model_2829_obj
 cost=1
 weight=100g
 category=category_59
-tradeable=yes
 
 [kebab]
 name=Kebab
@@ -319,15 +301,14 @@ model=model_2822_obj
 2dxan=1876
 weight=250g
 category=category_59
-tradeable=yes
 
 [chocolaty_milk]
 iop1=Drink
 cost=2
 members=yes
 model=model_2504_obj
-recol1s=39834
-recol1d=3619
+recol1s=173
+recol1d=13540
 2dyof=-18
 2dzoom=1020
 2dyan=1688
@@ -337,6 +318,7 @@ category=category_59
 name=Chocolaty milk
 desc=Milk with chocolate in it.
 param=next_obj_stage,bucket_empty
+tradeable=no
 
 [cup_of_tea]
 name=Cup of tea
@@ -351,7 +333,6 @@ model=model_2468_obj
 2dxan=156
 weight=150g
 members=yes
-tradeable=yes
 param=next_obj_stage,cup_empty
 
 [cup_empty]
@@ -359,12 +340,12 @@ name=Empty cup
 desc=An empty cup.
 cost=2
 model=model_2347_obj
-recol1s=7236
-recol1d=127
-recol2s=5173
-recol2d=82
-recol3s=5177
-recol3d=107
+recol1s=18991
+recol1d=32767
+recol2s=14764
+recol2d=21140
+recol3s=15821
+recol3d=27482
 2dxof=-1
 2dyof=-2
 2dzoom=500
@@ -372,16 +353,15 @@ recol3d=107
 2dxan=156
 weight=50g
 members=yes
-tradeable=yes
 
 [rotten_apples]
 name=Rotten apples
 desc=Rotten!
 model=model_2404_obj
-recol1s=17331
-recol1d=9761
-recol2s=22422
-recol2d=3350
+recol1s=12033
+recol1d=12644
+recol2s=352
+recol2d=7332
 2dzoom=940
 2dyan=80
 2dxan=212
@@ -390,28 +370,28 @@ members=yes
 cost=1
 weight=120g
 category=category_86
+tradeable=no
 
 [onion]
 name=Onion
 desc=A strong smelling onion.
 cost=3
 model=model_loc_3366_8
-recol1s=7283
-recol1d=4552
+recol1s=31674
+recol1d=24108
 2dzoom=670
 2dyan=116
 2dxan=116
 weight=150g
 category=category_131
-tradeable=yes
 param=ugthanki_kebab_struct,onion_kebab
 
 [chocolate_dust]
 cost=2
 members=yes
 model=model_2742_obj
-recol1s=82
-recol1d=3738
+recol1s=21140
+recol1d=11426
 2dxof=-6
 2dzoom=1210
 2dyan=1892
@@ -420,7 +400,6 @@ weight=150g
 category=category_59
 name=Chocolate dust
 desc=It's ground up chocolate.
-tradeable=yes
 param=cocktail_message,You sprinkle the chocolate dust over the drink.
 
 [pot_empty]
@@ -434,20 +413,20 @@ model=model_2345_obj
 2dxan=112
 cost=1
 weight=1lb
-tradeable=yes
 
 [obj_1946]
 name=Flour
 desc=A little heap of flour.
 cost=2
 model=model_2742_obj
-recol1s=82
-recol1d=111
+recol1s=21140
+recol1d=28539
 2dxof=-6
 2dzoom=1210
 2dyan=1892
 2dxan=264
 weight=500g
+tradeable=no
 
 [grain]
 name=Grain
@@ -460,4 +439,3 @@ model=model_2398_obj
 2dyan=88
 2dxan=292
 weight=600g
-tradeable=yes

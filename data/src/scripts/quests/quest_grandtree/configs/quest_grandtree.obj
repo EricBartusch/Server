@@ -1,30 +1,31 @@
-[obj_783]
+[bark_sample]
 name=Bark sample
 desc=A sample of the bark from the Grand Tree.
 members=yes
 cost=2
 model=model_2625_obj
-recol1s=6024
-recol1d=6028
+recol1s=4160
+recol1d=6240
 2dxof=2
 2dyof=64
 2dzoom=900
 2dyan=76
 2dxan=264
 weight=15g
+tradeable=no
 
-[obj_784]
+[translation_book]
 name=Translation book
 desc=A book to translate the ancient gnome language into English.
 members=yes
 cost=2
 model=model_2543_obj
-recol1s=5018
-recol1d=18721
-recol2s=61
-recol2d=7952
-recol3s=11177
-recol3d=7952
+recol1s=13472
+recol1d=7494
+recol2s=15855
+recol2d=7329
+recol3s=20033
+recol3d=7329
 2dxof=1
 2dyof=-21
 2dzoom=830
@@ -32,17 +33,18 @@ recol3d=7952
 2dxan=244
 iop1=Read
 weight=18oz
+tradeable=no
 
-[obj_785]
+[gloughs_journal]
 name=Glough's journal
 desc=Perhaps I should read it and see what Glough is up to!
 members=yes
 cost=2
 model=model_2633_obj
-recol1s=5018
-recol1d=17682
-recol2s=10351
-recol2d=15591
+recol1s=13472
+recol1d=4291
+recol2s=29594
+recol2d=27635
 2dxof=1
 2dyof=22
 2dzoom=860
@@ -50,8 +52,9 @@ recol2d=15591
 2dxan=276
 iop1=Read
 weight=18oz
+tradeable=no
 
-[obj_786]
+[hazelmeres_scroll]
 name=Hazelmere's scroll
 desc=Hazelmere wrote something down on this scroll.
 members=yes
@@ -64,8 +67,9 @@ model=model_2600_obj
 2dxan=380
 iop1=Read
 weight=20g
+tradeable=no
 
-[obj_787]
+[lumber_order]
 name=Lumber order
 desc=An order from the Karamja shipyard.
 members=yes
@@ -78,8 +82,9 @@ model=model_2600_obj
 2dxan=380
 iop1=Read
 weight=20g
+tradeable=no
 
-[obj_788]
+[gloughs_key]
 name=Glough's key
 desc=The key to Glough's chest.
 members=yes
@@ -90,8 +95,9 @@ model=model_2372_obj
 2dyan=20
 2dxan=328
 weight=10g
+tradeable=no
 
-[obj_789]
+[twigs_t]
 name=Twigs
 desc=Twigs bound together in the shape of a T.
 model=model_2530_obj
@@ -102,8 +108,9 @@ members=yes
 2dyan=88
 2dxan=440
 weight=20g
+tradeable=no
 
-[obj_790]
+[twigs_u]
 name=Twigs
 desc=Twigs bound together in the shape of a U.
 model=model_2533_obj
@@ -114,8 +121,9 @@ members=yes
 2dyan=2036
 2dxan=364
 weight=20g
+tradeable=no
 
-[obj_791]
+[twigs_z]
 name=Twigs
 desc=Twigs bound together in the shape of a Z.
 model=model_2538_obj
@@ -124,8 +132,9 @@ members=yes
 2dyan=48
 2dxan=420
 weight=20g
+tradeable=no
 
-[obj_792]
+[twigs_o]
 name=Twigs
 desc=Twigs bound together in the shape of a O.
 model=model_2526_obj
@@ -135,11 +144,12 @@ members=yes
 2dzoom=1500
 2dxan=452
 weight=20g
+tradeable=no
 
-[obj_793]
+[daconia_rock]
 model=model_2394_obj
-recol1s=5790
-recol1d=41240
+recol1s=13570
+recol1d=4264
 name=Daconia rock
 desc=An ancient rock with strange magical properties.
 2dyof=-12
@@ -148,8 +158,9 @@ desc=An ancient rock with strange magical properties.
 2dxan=144
 weight=2lb
 members=yes
+tradeable=no
 
-[obj_794]
+[invasion_plans]
 name=Invasion plans
 desc=This is plans for an invasion!
 members=yes
@@ -162,3 +173,4 @@ model=model_2600_obj
 2dxan=380
 iop1=Read
 weight=20g
+tradeable=no

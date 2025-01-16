@@ -1,4 +1,4 @@
-[obj_604]
+[bone_shard]
 name=Bone shard
 desc=A slender bone shard given to you by Zadimus.
 model=model_2654_obj
@@ -10,13 +10,14 @@ model=model_2654_obj
 members=yes
 iop1=Inspect
 weight=10g
+tradeable=no
 
-[obj_605]
+[bone_key]
 name=Bone key
 desc=A bone key fashioned from a shard of bone.
 model=model_2372_obj
-recol1s=8128
-recol1d=127
+recol1s=31393
+recol1d=32767
 2dxof=-3
 2dyof=5
 2dzoom=700
@@ -24,8 +25,9 @@ recol1d=127
 2dxan=328
 members=yes
 weight=10g
+tradeable=no
 
-[obj_606]
+[stoneplaque]
 name=Stone-plaque
 desc=A stone plaque with carved letters in it.
 model=model_2510_obj
@@ -37,13 +39,14 @@ model=model_2510_obj
 iop1=Read
 weight=800g
 members=yes
+tradeable=no
 
-[obj_607]
+[tattered_scroll]
 name=Tattered scroll
 desc=An ancient tattered scroll.
 model=model_2600_obj
-recol1s=10351
-recol1d=231
+recol1s=29594
+recol1d=29398
 2dxof=1
 2dyof=7
 2dzoom=1040
@@ -52,13 +55,14 @@ recol1d=231
 iop1=Read
 weight=20g
 members=yes
+tradeable=no
 
-[obj_608]
+[crumpled_scroll]
 name=Crumpled scroll
 desc=An ancient crumpled scroll.
 model=model_2600_obj
-recol1s=10351
-recol1d=21704
+recol1s=29594
+recol1d=16015
 2dxof=1
 2dyof=7
 2dzoom=1040
@@ -67,8 +71,9 @@ recol1d=21704
 iop1=Read
 weight=20g
 members=yes
+tradeable=no
 
-[obj_609]
+[rashiliya_corpse]
 name=Rashiliya corpse
 desc=The remains of the Zombie Queen.
 model=model_2595_obj
@@ -79,8 +84,9 @@ model=model_2595_obj
 2dxan=320
 weight=300g
 members=yes
+tradeable=no
 
-[obj_610]
+[zadimus_corpse]
 name=Zadimus corpse
 desc=The remains of Zadimus.
 2dxof=-4
@@ -92,6 +98,7 @@ model=model_2595_obj
 iop1=Bury
 weight=500g
 members=yes
+tradeable=no
 
 [zqcrystal]
 name=Locating crystal
@@ -105,13 +112,14 @@ model=model_2744_obj
 members=yes
 iop1=Activate
 weight=2lb
+tradeable=no
 
 [zqcrystal_blue]
 name=Locating crystal
 desc=A magical crystal sphere.
 model=model_2744_obj
-recol1s=50396
-recol1d=44742
+recol1s=24217
+recol1d=8443
 2dxof=1
 2dyof=-8
 2dzoom=1270
@@ -119,14 +127,15 @@ recol1d=44742
 2dxan=120
 weight=2lb
 members=yes
+tradeable=no
 
 [zqcrystal_red]
 name=Locating crystal
 desc=A magical crystal sphere.
 cost=1
 model=model_2744_obj
-recol1s=50396
-recol1d=65222
+recol1s=24217
+recol1d=26889
 2dxof=1
 2dyof=-8
 2dzoom=1270
@@ -134,14 +143,15 @@ recol1d=65222
 2dxan=120
 weight=2lb
 members=yes
+tradeable=no
 
 [zqcrystal_yellow]
 name=Locating crystal
 desc=A magical crystal sphere.
 cost=1
 model=model_2744_obj
-recol1s=50396
-recol1d=13266
+recol1s=24217
+recol1d=27594
 2dxof=1
 2dyof=-8
 2dzoom=1270
@@ -149,14 +159,15 @@ recol1d=13266
 2dxan=120
 weight=2lb
 members=yes
+tradeable=no
 
 [zqcrystal_white]
 name=Locating crystal
 desc=A magical crystal sphere.
 cost=1
 model=model_2744_obj
-recol1s=50396
-recol1d=127
+recol1s=24217
+recol1d=32767
 2dxof=1
 2dyof=-8
 2dzoom=1270
@@ -164,14 +175,15 @@ recol1d=127
 2dxan=120
 weight=2lb
 members=yes
+tradeable=no
 
-[obj_616]
+[zqbeadsofthedead]
 name=Beads of the dead
 desc=A curious looking neck ornament.
 cost=1
 model=model_2713_obj
-recol1s=28
-recol1d=4032
+recol1s=7399
+recol1d=31041
 2dyof=-16
 2dzoom=1020
 2dyan=2020
@@ -194,8 +206,9 @@ param=magicdefence,1
 param=rangedefence,1
 param=strengthbonus,1
 param=prayerbonus,1
+tradeable=no
 
-[coins_shilo]
+[zqcoins]
 cost=1
 name=Coins
 desc=Lovely money!
@@ -206,8 +219,9 @@ model=model_2667_obj
 2dxan=184
 weight=2g
 members=yes
+tradeable=no
 
-[obj_618]
+[zqbonebeads]
 name=Bone beads
 desc=Beads carved out of a bone.
 model=model_2561_obj
@@ -217,8 +231,9 @@ model=model_2561_obj
 2dxan=304
 weight=1g
 members=yes
+tradeable=no
 
-[obj_623]
+[zqpommel]
 name=Sword pommel
 desc=An ivory sword pommel.
 model=model_2547_obj
@@ -230,14 +245,15 @@ cost=1
 2dxan=604
 weight=3oz
 members=yes
+tradeable=no
 
-[obj_624]
+[bervirius_notes]
 name=Bervirius notes
 desc=Notes taken from the tomb of Bervirius.
 cost=1
 model=model_2600_obj
-recol1s=10351
-recol1d=43344
+recol1s=29594
+recol1d=16919
 2dxof=1
 2dyof=7
 2dzoom=1040
@@ -246,8 +262,9 @@ recol1d=43344
 iop1=Read
 weight=20g
 members=yes
+tradeable=no
 
-[obj_625]
+[wampum_belt]
 name=Wampum belt
 desc=A decorated belt used to trade information between distant villages.
 cost=5
@@ -257,3 +274,4 @@ model=model_3155_obj
 2dxan=436
 weight=1lb
 members=yes
+tradeable=no

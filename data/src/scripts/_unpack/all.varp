@@ -1,74 +1,82 @@
-[varp_6]
-
 [varp_7]
 
 [varp_8]
 
-[gnome_course_progress]
-scope=perm
-
-[barbarian_course_progress]
-scope=perm
-
-[wilderness_course_progress]
-scope=perm
-
 [damagetype]
+protect=no
 
 [damagestyle]
+protect=no
 
 [lastcombat]
 protect=no
 
-[magic_utility_delay]
+[varp_35]
+
+[lastcombat_pvp]
+protect=no
 
 [eat_delay]
 
-[varp_41]
+[aggressive_npc]
+type=npc_uid
+protect=no
 
-[varp_42]
+[frozen]
 
+// not perm: https://youtu.be/HAeh4qE3WJ4?t=34
 [attackstyle]
 transmit=yes
-scope=perm
 
 [com_stabattack]
+protect=no
 
 [com_stabdef]
+protect=no
 
 [com_slashattack]
+protect=no
 
 [com_slashdef]
+protect=no
 
 [com_crushattack]
+protect=no
 
 [com_crushdef]
+protect=no
 
 [com_magicattack]
+protect=no
 
 [com_magicdef]
+protect=no
 
 [com_rangeattack]
+protect=no
 
 [com_rangedef]
+protect=no
 
 [com_attackanim]
+protect=no
 type=seq
 
 [com_defendanim]
+protect=no
 type=seq
 
 [com_attacksound]
+protect=no
 type=synth
 
 [com_maxhit]
+protect=no
 
 [action_delay]
 
 [autocast_spell]
 scope=perm
-
-[autocast_delay]
 
 [gobdip_progress]
 scope=perm
@@ -79,85 +87,84 @@ scope=perm
 [waterfall_golrie_and_puzzle]
 scope=perm
 
-[varp_69]
-
 [boat_takeoff]
 transmit=yes
 
-[spell]
+[pk_skull]
+protect=no
+scope=perm
 
 [xplamp]
 transmit=yes
 
-[varp_81]
-
 [questpoints]
 transmit=yes
+protect=no
 
-[varp_102]
+[poison]
+scope=perm
 
 [stunned]
 
 [multiway]
 type=boolean
 
-[varp_105]
-
 [newcomers_pos]
 transmit=yes
 
+// not perm: https://runescape.wiki/w/Update:Game_Improvements
 [attackstyle_magic]
 transmit=yes
+
+[trawler]
 scope=perm
 
-[varp_109]
-
-[varp_110]
-
-[varp_113]
-
-[varp_114]
+[trawler_catch]
+scope=perm
+protect=no
 
 [bank_noted]
 transmit=yes
+
+[zq_map_mechanisms]
 scope=perm
 
-[varp_117]
+[zq_rash_timer]
 
-[varp_118]
+[pk_predator1]
+protect=no
+type=player_uid
 
-[varp_119]
+[pk_predator2]
+protect=no
+type=player_uid
 
-[varp_120]
+[pk_predator3]
+protect=no
+type=player_uid
 
-[varp_121]
-
-[varp_123]
+[pk_binder]
+protect=no
+type=player_uid
 
 [skill_anim]
 
 [skill_sound]
 
-[last_stolen_from_stall_baker]
+[thieving_stall_timer]
 scope=perm
 
-[last_stolen_from_stall_tea]
-scope=perm
+[varp_133]
 
-[last_stolen_from_stall_silk]
-scope=perm
+[varp_134]
 
-[last_stolen_from_stall_fur]
-scope=perm
+[varp_135]
 
-[last_stolen_from_stall_silver]
-scope=perm
+[varp_136]
 
-[last_stolen_from_stall_spice]
-scope=perm
+[varp_137]
 
-[last_stolen_from_stall_gem]
-scope=perm
+[varp_138]
 
 [legends_progress]
 scope=perm
@@ -176,42 +183,21 @@ transmit=yes
 [open_book]
 type=obj
 
-[varp_151]
-
-[varp_152]
-
 [glider_takeoff]
 transmit=yes
 
 [shantay_jail_progress]
 scope=perm
 
-[varp_155]
-
-[target1]
-transmit=yes
-
-[target2]
-transmit=yes
-
-[target3]
-transmit=yes
-
-[upass_progress]
+[gnomeball_progress]
 scope=perm
-
-[varp_162]
-
-[varp_163]
 
 [varp_164]
 
 [elena_progress]
 scope=perm
 
-[varp_181]
-
-[varp_182]
+[varp_174]
 
 [varp_189]
 
@@ -219,25 +205,14 @@ scope=perm
 
 [varp_191]
 
-[varp_193]
-
-[varp_194]
-
-[varp_195]
-
-[varp_196]
-
-[varp_198]
+[desert]
 
 [varp_199]
 
-[varp_206]
+[varp_202]
 
-[varp_207]
-
-[varp_208]
-
-[varp_209]
+[mill_flour]
+scope=perm
 
 [smithing_bars]
 transmit=yes
@@ -253,19 +228,19 @@ transmit=yes
 
 [varp_216]
 
-[varp_217]
+[pk_prey1]
+protect=no
+type=player_uid
 
-[varp_218]
+[pk_prey2]
+protect=no
+type=player_uid
 
 [varp_219]
 
 [varp_220]
 
 [varp_221]
-
-[varp_224]
-
-[varp_225]
 
 [gnome_drink_ingredient1]
 type=obj
@@ -357,7 +332,8 @@ type=obj
 [thread_used]
 scope=perm
 
-[varp_260]
+[temp]
+scope=temp
 
 [option1]
 transmit=yes
@@ -368,56 +344,40 @@ transmit=yes
 [option3]
 transmit=yes
 
-[varp_264]
-
-[varp_265]
-
-[varp_266]
-
-[magearena_progress]
+[magearena]
+protect=no
 scope=perm
 
-[varp_268]
+[saradomin_strike_casts]
+scope=perm
 
-[varp_269]
+[claws_of_guthix_casts]
+scope=perm
 
-[varp_270]
+[flames_of_zamorak_casts]
+scope=perm
 
 [varp_271]
 
-[varp_272]
-
-[varp_274]
-
-[varp_275]
-
-[varp_276]
+[charge_god_spell]
+scope=perm
 
 [antifire]
-protect=no
+scope=perm
 
-[varp_278]
+[antipoison]
+scope=perm
 
 [varp_279]
 
 [varp_280]
 
-[varp_282]
-
 [varp_283]
-
-[varp_284]
-
-[varp_285]
-
-[duel_settings]
-transmit=yes
-
-[varp_288]
 
 [varp_289]
 
 [ring_of_recoil]
+scope=perm
 
 [ring_of_forging]
 scope=perm

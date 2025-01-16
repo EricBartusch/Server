@@ -30,7 +30,8 @@ sound_synth(door_open, 0, 0);
 
 [oplocu,loc_152]
 if(last_useitem ! spade) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 anim(human_dig, 0);
 mes("You dig through the compost heap.");
@@ -52,7 +53,8 @@ if(coordx(coord) <= coordx(loc_coord) & inv_total(inv, key_haunted) = 0) {
 
 [oplocu,loc_131]
 if(last_useitem ! key_haunted) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 @ernest_open_key_door;
 
@@ -73,16 +75,16 @@ if($dist > 0) {
 ~open_and_close_door(loc_1532, $locked, true);
 
 [oploc1,loc_153]
-if(%manor_fountain_poisoned = 1) {
+if(%haunted_manor_fountain_poisoned = 1) {
     if(inv_total(inv, pressure_gauge) = 0 & %haunted_progress < ^haunted_complete) {
-        ~chatplayer(quiz, "There seems to be a pressure gauge in here.|There are also some dead fish.");
+        ~chatplayer("<p,quiz>There seems to be a pressure gauge in here.|There are also some dead fish.");
         ~mesbox("You get the pressure gauge from the fountain.");
         inv_add(inv, pressure_gauge, 1);
     } else {
         ~mesbox("It's full of dead fish!"); // same message as OSRS but should probably be a mesbox according to rsc
     }
 } else {
-    ~chatplayer(quiz, "There seems to be a pressure gauge in here.|There are a lot of pirhanas in there though.|I can't get the gauge out.");
+    ~chatplayer("<p,quiz>There seems to be a pressure gauge in here.|There are a lot of pirhanas in there though.|I can't get the gauge out.");
 }
 
 [opheldu,poison]
@@ -99,7 +101,8 @@ mes("You poison the fish food.");
 
 [oplocu,loc_153]
 if(last_useitem ! poisoned_fish_good) { 
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 anim(human_pickpocket, 0);
 inv_del(inv, poisoned_fish_good, 1);
@@ -108,7 +111,7 @@ p_delay(3);
 mes("You see the pirhanas eating the food.");
 p_delay(1);
 mes("The pirhanas drop dead and float to the surface.");
-%manor_fountain_poisoned = 1;
+%haunted_manor_fountain_poisoned = 1;
 
 [oploc1,_manor_bookcase]
 if(coordx(coord) < coordx(loc_coord)) {
@@ -123,26 +126,25 @@ facesquare(movecoord(coord, 1, 0, 0));
 mes("The lever opens the secret door!");
 anim(human_leverdown, 0);
 sound_synth(lever, 0, 0);
-loc_del(3);
-loc_add(loc_coord, loc_161, loc_angle, loc_shape, 3);
+loc_change(loc_161, 3);
 p_teleport(movecoord(coord, 0, 0, 1));
 p_delay(1);
 @manor_bookcase_door(movecoord(coord, 2, 0, 0));
 
+// todo: This is borked for opening the doors now. Using the lever is fine.
+// Gotta think through how to make this work with find all zone.
 [label,manor_bookcase_door](coord $dest)
 def_coord $start_coord = coord;
 p_delay(0);
 // If you search from the north end of the northern bookcase, you will be in a different zone
-// than the bookcases, this is a small workaround 
-loc_findallzone(movecoord(coord, 0, 0, -1)); 
+// than the bookcases, this is a small workaround
+loc_findallzone(movecoord(coord, 0, 0, -1));
 while (loc_findnext = true) {
     if(loc_type = loc_155) {
-        loc_del(2);
-        loc_add(loc_coord, loc_83, loc_angle, loc_shape, 2);
+        loc_change(loc_83, 2);
         loc_add(movecoord(loc_coord, 0, 0, -1), loc_157, loc_angle, loc_shape, 2);
     } else if(loc_type = loc_156) {
-        loc_del(2);
-        loc_add(loc_coord, loc_83, loc_angle, loc_shape, 2);
+        loc_change(loc_83, 2);
         loc_add(movecoord(loc_coord, 0, 0, 1), loc_157, loc_angle, loc_shape, 2);
     }
 }
@@ -192,10 +194,10 @@ if((loc_type = loc_137 & (testbit(%haunted_lever, 0) = false & testbit(%haunted_
     def_boolean $entering = true;
     def_coord $player_coord = coord;
     def_coord $start_coord = loc_coord;
-    if(loc_angle = 0 & (coordx(coord) < coordx(loc_coord))) {
+    if(loc_angle = ^loc_west & (coordx(coord) < coordx(loc_coord))) {
         $entering = false;
         $start_coord = movecoord(loc_coord, -1, 0, 0);
-    } else if(loc_angle = 3 & (coordz(coord) < coordz(loc_coord))) {
+    } else if(loc_angle = ^loc_south & (coordz(coord) < coordz(loc_coord))) {
         $entering = false;
         $start_coord = movecoord(loc_coord, 0, 0, -1);
     }
@@ -208,7 +210,7 @@ mes("This door is locked.");
 sound_synth(locked, 0, 0);
 
 [proc,change_ernest]
-if(npc_finduid(~npc_within_distance(coord, ernest_chicken, 8)) = true) {
+if(npc_find(coord, ernest_chicken, 8, 0) = true) {
     npc_changetype(ernest_human);
     npc_settimer(100);
 }
@@ -218,5 +220,6 @@ npc_changetype(ernest_chicken);
 
 [queue,haunted_quest_complete]
 %haunted_progress = ^haunted_complete;
+session_log(^log_adventure, "Quest complete: Ernest the Chicken");
 ~send_quest_complete(questlist:haunted, feather, 250, ^haunted_questpoints, "You have completed the\\nErnest The Chicken Quest!");
 inv_add(inv, coins, 300);

@@ -1,57 +1,30 @@
 [debugproc,hit](int $amount)
-~damage_self($amount);
-
-[proc,combat_clearqueue]
-clearqueue(playerhit_n_retaliate);
-
-[queue,player_death]
-p_stopaction;
-midi_jingle(^death_jingle_2, ^death_jingle_2_millis);
-anim(human_death, 0);
-p_delay(6);
-
-// todo: save 3 items + protect items prayer
-def_int $i = 0;
-def_int $size = inv_size(inv);
-def_obj $prev_wep = inv_getobj(worn, ^wearpos_rhand);
-while ($i < $size) {
-    if (inv_getnum(inv, $i) > 0) {
-        inv_dropslot(inv, coord, $i, 200);
-    }
-
-    $i = calc($i + 1);
-}
-
-$i = 0;
-$size = inv_size(worn);
-while ($i < $size) {
-    if (inv_getnum(worn, $i) > 0) {
-        inv_dropslot(worn, coord, $i, 200);
-    }
-
-    $i = calc($i + 1);
-}
-buildappearance(worn);
-
-p_telejump(0_50_50_22_22); // todo: randomize
-anim(null, 0);
-mes("Oh dear, you are dead!");
-
-stat_heal(hitpoints, 99, 0);
-stat_heal(prayer, 99, 0);
-healenergy(10000);
-~combat_clearqueue;
-// todo: end poison timer ~player_end_poison
-~update_all($prev_wep);
+queue(damage_player, 0, $amount);
 
 [proc,damage_self](int $amount)
+if (stat(hitpoints) = 0) {
+    return;
+}
 if_close;
-def_synth $sound;
-def_int $rand;
 if ($amount > 0) {
     damage(uid, 1, $amount);
-    if (gender() = 0) {
-        $rand = random(2);
+    ~human_hit_sound;
+} else {
+    damage(uid, 0, 0);
+}
+
+if (stat(hitpoints) = 0){
+    queue(player_death, 0);
+    // no early return, ring of life still processes on death. https://youtu.be/LSpyUVXa4LE?t=202
+}
+
+~ring_of_life_check;
+
+[proc,human_hit_sound]
+def_int $rand;
+def_synth $sound;
+if (gender() = 0) {
+        $rand = random(3);
         switch_int($rand) {
             case 0 : $sound = human_hit2;
             case 1 : $sound = human_hit3;
@@ -59,18 +32,12 @@ if ($amount > 0) {
             case default : $sound = human_hit2;
         }
     } else {
-        $rand = random(1);
+        $rand = random(2);
         switch_int($rand) {
             case 0 : $sound = female_hit;
             case 1 : $sound = female_hit2;
             case default : $sound = female_hit;
         }
     }
-    sound_synth($sound, 0, 20);
-} else {
-    damage(uid, 0, 0);
-}
+sound_synth($sound, 0, 20);
 
-if (stat(hitpoints) = 0) {
-    queue(player_death, 0);
-}

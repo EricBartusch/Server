@@ -1,4 +1,11 @@
-[ai_queue3,salarin_the_twisted](int $arg)
+[ai_queue2,salarin_the_twisted]
+// todo: seems to be approx 1/6 based off my testing, but try to confirm 
+if(random(6) = 0 & last_int = 0) {
+    npc_say("Your pitiful attacks cannot hurt me!");
+}
+~npc_default_damage(last_int);
+
+[ai_queue3,salarin_the_twisted]
 gosub(npc_death);
 if (npc_findhero = false) {
     return;
@@ -38,5 +45,5 @@ if ($random < 1) {
 } else if ($random < 90) {
     obj_add(npc_coord, sinister_key, 1, ^lootdrop_duration);
 } else if ($random < 91) {
-    ~lootdrop(npc_coord, ~randomjewel, ^lootdrop_duration);
+    obj_add(npc_coord, ~randomjewel, ^lootdrop_duration);
 }

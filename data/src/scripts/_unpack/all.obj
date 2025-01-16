@@ -9,7 +9,6 @@ model=model_2559_obj
 2dyan=1260
 2dxan=444
 weight=1lb
-tradeable=yes
 
 [bear_fur]
 name=Fur
@@ -22,20 +21,18 @@ model=model_2631_obj
 2dxan=388
 cost=10
 weight=3kg
-tradeable=yes
 
 [silk]
 name=Silk
 desc=It's a sheet of silk.
 cost=30
 model=model_2725_obj
-recol1s=127
-recol1d=54722
+recol1s=32767
+recol1d=22870
 2dyof=-15
 2dzoom=1360
 2dxan=368
 weight=1kg
-tradeable=yes
 
 [spade]
 name=Spade
@@ -51,22 +48,20 @@ womanwear=model_496_obj_wear,0
 2dxan=332
 weight=4lb
 iop1=Dig
-tradeable=yes
 
 [rope]
 name=Rope
 desc=A coil of rope.
 cost=18
 model=model_loc_227_8
-recol1s=6558
-recol1d=7054
+recol1s=11524
+recol1d=7296
 2dxof=-2
 2dyof=-30
 2dzoom=1240
 2dyan=1976
 2dxan=188
 weight=3lb
-tradeable=yes
 
 [flier]
 name=Flier
@@ -79,12 +74,11 @@ model=model_2600_obj
 2dyan=120
 2dxan=380
 weight=15g
-tradeable=yes
 
 [grey_wolf_fur]
 model=model_2631_obj
-recol1s=8103
-recol1d=61
+recol1s=18849
+recol1d=15855
 2dxof=2
 2dzoom=1350
 2dyan=1668
@@ -94,7 +88,6 @@ desc=This would make warm clothing.
 cost=50
 weight=3kg
 members=yes
-tradeable=yes
 
 [plank]
 model=model_2694_obj
@@ -105,7 +98,6 @@ desc=A plank of wood!
 2dxan=356
 weight=800g
 category=category_475
-tradeable=yes
 
 [christmas_cracker]
 name=Christmas cracker
@@ -117,14 +109,13 @@ model=model_2637_obj
 2dyan=1728
 2dxan=272
 weight=200g
-tradeable=yes
 
 [obj_964]
 name=Skull
 desc=Ooooh spooky!
 model=model_2388_obj
-recol1s=5231
-recol1d=7514
+recol1s=29562
+recol1d=28433
 2dxof=-1
 2dyof=-10
 2dzoom=530
@@ -132,7 +123,6 @@ recol1d=7514
 2dzan=1996
 2dxan=160
 weight=80g
-tradeable=yes
 
 [obj_966]
 name=Tile
@@ -144,7 +134,6 @@ model=model_2617_obj
 2dyan=100
 2dxan=340
 weight=70g
-tradeable=yes
 
 [obj_968]
 name=Rock
@@ -156,7 +145,6 @@ model=model_2571_obj
 2dyan=20
 2dxan=204
 weight=1kg
-tradeable=yes
 
 [papyrus]
 name=Papyrus
@@ -170,7 +158,6 @@ womanwear=model_532_obj_wear,6
 2dxan=248
 weight=20g
 members=yes
-tradeable=yes
 
 [obj_972]
 name=Papyrus
@@ -182,6 +169,7 @@ womanwear=model_532_obj_wear,6
 2dxan=248
 weight=20g
 members=yes
+tradeable=no
 
 [charcoal]
 name=Charcoal
@@ -195,15 +183,14 @@ womanwear=model_494_obj_wear,6
 2dyan=220
 2dxan=288
 weight=5g
-tradeable=yes
 
 [machete]
 name=Machete
 desc=A jungle specific slashing device.
 cost=40
 model=model_2841_obj
-recol1s=61
-recol1d=33
+recol1s=15855
+recol1d=8456
 members=yes
 2dxof=-2
 2dyof=-12
@@ -216,42 +203,39 @@ manwear=model_566_obj_wear,0
 womanwear=model_566_obj_wear,6
 category=weapon_slash
 weight=3lb
-tradeable=yes
 param=slashattack,6
 param=crushattack,-2
 param=strengthbonus,5
 param=attackrate,5
 param=slashattack_anim,human_sword_slash
 param=stabattack_anim,human_sword_stab
-param=defend_anim,human_sword_defend
+param=defend_anim,human_sword_defend2
 param=slash_sound,hacksword_slash
 param=stab_sound,hacksword_stab
 
 [obj_977]
 name=Cooking pot
 model=model_loc_692_8
-recol1s=41
-recol1d=6439
-recol2s=22435
-recol2d=6051
-recol3s=22420
-recol3d=5016
+recol1s=10570
+recol1d=12615
+recol2s=544
+recol2d=16673
+recol3s=320
+recol3d=12448
 2dzoom=2050
 2dyan=36
 2dxan=116
 weight=1g
-tradeable=yes
 
-[obj_979]
-name=Highwayman mask
+// jagex name
+[highwayman_mask]
 model=model_2500_obj
 2dxof=3
 2dzoom=290
 2dyan=224
 2dxan=488
-tradeable=yes
 
-[obj_981]
+[disk_of_returning]
 name=Disk of returning
 desc=Used to get out of Thordur's blackhole
 cost=12
@@ -262,21 +246,19 @@ model=model_2724_obj
 2dzan=260
 2dxan=460
 weight=1lb
-tradeable=yes
 
 [brass_key]
 name=Brass key
 desc=A mysterious key made of brass.
 model=model_2372_obj
-recol1s=8128
-recol1d=7087
+recol1s=31393
+recol1d=22945
 2dxof=-3
 2dyof=5
 2dzoom=700
 2dyan=20
 2dxan=328
 weight=10g
-tradeable=yes
 
 [half_key1]
 name=Half of a key
@@ -289,7 +271,6 @@ model=model_2414_obj
 2dyan=8
 2dxan=296
 weight=5g
-tradeable=yes
 
 [half_key2]
 name=Half of a key
@@ -302,51 +283,47 @@ model=model_2415_obj
 2dyan=1980
 2dxan=292
 weight=5g
-tradeable=yes
 
 [crystal_key]
 name=Crystal key
 desc=A very rare and mysterious key.
 members=yes
 model=model_2372_obj
-recol1s=8128
-recol1d=43069
+recol1s=31393
+recol1d=14800
 2dxof=-3
 2dyof=5
 2dzoom=700
 2dyan=20
 2dxan=328
 weight=10g
-tradeable=yes
 
 [muddy_key]
 name=Muddy key
 desc=It looks like a key to a chest.
 model=model_2372_obj
-recol1s=8128
-recol1d=3625
+recol1s=31393
+recol1d=15621
 2dxof=-3
 2dyof=5
 2dzoom=700
 2dyan=20
 2dxan=328
 weight=10g
-tradeable=yes
 
 [sinister_key]
 name=Sinister key
 desc=You get a sense of dread from this key.
 members=yes
 model=model_2372_obj
-recol1s=8128
-recol1d=10508
+recol1s=31393
+recol1d=4226
 2dxof=-3
 2dyof=5
 2dzoom=700
 2dyan=20
 2dxan=328
 weight=10g
-tradeable=yes
 
 [coins]
 name=Coins
@@ -367,10 +344,8 @@ count6=coins_100,100
 count7=coins_250,250
 count8=coins_1000,1000
 count9=coins_10000,10000
-tradeable=yes
 
 [coins_2]
-name=Coins 2
 model=model_2485_obj
 stackable=yes
 2dxof=3
@@ -380,7 +355,6 @@ stackable=yes
 dummyitem=inv_only
 
 [coins_3]
-name=Coins 3
 model=model_2486_obj
 stackable=yes
 2dxof=3
@@ -390,7 +364,6 @@ stackable=yes
 dummyitem=inv_only
 
 [coins_4]
-name=Coins 4
 model=model_2487_obj
 stackable=yes
 2dxof=3
@@ -400,7 +373,6 @@ stackable=yes
 dummyitem=inv_only
 
 [coins_5]
-name=Coins 5
 model=model_2488_obj
 stackable=yes
 2dxof=3
@@ -410,7 +382,6 @@ stackable=yes
 dummyitem=inv_only
 
 [coins_25]
-name=Coins 25
 model=model_2667_obj
 2dxof=3
 2dzoom=710
@@ -420,7 +391,6 @@ stackable=yes
 dummyitem=inv_only
 
 [coins_100]
-name=Coins 100
 model=model_2825_obj
 2dxof=3
 2dzoom=710
@@ -430,7 +400,6 @@ stackable=yes
 dummyitem=inv_only
 
 [coins_250]
-name=Coins 250
 model=model_2423_obj
 2dxof=2
 2dyof=-2
@@ -441,7 +410,6 @@ stackable=yes
 dummyitem=inv_only
 
 [coins_1000]
-name=Coins 1000
 model=model_2710_obj
 2dxof=11
 2dyof=13
@@ -452,7 +420,6 @@ stackable=yes
 dummyitem=inv_only
 
 [coins_10000]
-name=Coins 10000
 model=model_2775_obj
 2dxof=11
 2dzoom=1000
@@ -476,15 +443,14 @@ wearpos=torso
 manwear=model_305_obj_wear,0
 womanwear=model_467_obj_wear,0
 weight=1lb
-tradeable=yes
 
-[obj_1009]
+[brass_necklace]
 cost=30
 name=Brass necklace
 desc=I'd prefer a gold one.
 model=model_2506_obj
-recol1s=9152
-recol1d=7085
+recol1s=31457
+recol1d=21921
 2dxof=5
 2dyof=44
 2dzoom=600
@@ -495,15 +461,14 @@ wearpos=front
 manwear=model_281_obj_wear,0
 womanwear=model_445_obj_wear,0
 weight=10g
-tradeable=yes
 
 [blue_skirt]
 cost=2
 name=Blue skirt
 desc=Leg covering favoured by women and wizards.
 model=model_2521_obj
-recol1s=25238
-recol1d=38814
+recol1s=2340
+recol1d=239
 2dyof=1
 2dzoom=1940
 2dxan=572
@@ -512,17 +477,14 @@ wearpos=legs
 manwear=model_265_obj_wear,0
 womanwear=model_428_idk,0
 weight=2lb
-tradeable=yes
-param=magicattack,2
-param=magicdefence,2
 
 [pink_skirt]
 cost=2
 name=Pink skirt
 desc=A ladies skirt.
 model=model_2521_obj
-recol1s=25238
-recol1d=62928
+recol1s=2340
+recol1d=25073
 2dyof=1
 2dzoom=1940
 2dxan=572
@@ -531,15 +493,14 @@ wearpos=legs
 manwear=model_265_obj_wear,0
 womanwear=model_428_idk,0
 weight=2lb
-tradeable=yes
 
 [black_skirt]
 cost=2
 name=Black skirt
 desc=Clothing favoured by women and dark wizards.
 model=model_2521_obj
-recol1s=25238
-recol1d=10508
+recol1s=2340
+recol1d=4226
 2dyof=1
 2dzoom=1940
 2dxan=572
@@ -548,7 +509,6 @@ wearpos=legs
 manwear=model_265_obj_wear,0
 womanwear=model_428_idk,0
 weight=2lb
-tradeable=yes
 
 [eyepatch]
 name=Eye patch
@@ -566,15 +526,14 @@ manhead=model_68_obj_wear
 womanhead=model_126_obj_wear
 weight=6g
 members=yes
-tradeable=yes
 
 [zamorak_monk_bottom]
 name=Robe of zamorak
 desc=A robe worn by worshippers of Zamorak.
 cost=30
 model=model_2521_obj
-recol1s=25238
-recol1d=937
+recol1s=2340
+recol1d=19489
 2dyof=1
 2dzoom=1940
 2dxan=572
@@ -584,7 +543,6 @@ manwear=model_265_obj_wear,0
 womanwear=model_428_idk,0
 weight=2lb
 members=yes
-tradeable=yes
 param=zamorakitem,1
 param=magicattack,2
 param=magicdefence,3
@@ -594,8 +552,8 @@ param=prayerbonus,3
 name=Robe of zamorak
 desc=A robe worn by worshippers of Zamorak.
 model=model_2786_obj
-recol1s=8741
-recol1d=937
+recol1s=14724
+recol1d=19489
 cost=40
 2dyof=7
 2dzoom=1370
@@ -609,7 +567,6 @@ manwear2=model_292_idk
 womanwear2=model_456_idk
 weight=2lb
 members=yes
-tradeable=yes
 param=zamorakitem,1
 param=magicattack,2
 param=magicdefence,3
@@ -635,6 +592,7 @@ param=slashdefence,7
 param=crushdefence,7
 param=magicdefence,7
 param=rangedefence,7
+tradeable=no
 
 [iban_staff]
 members=yes
@@ -648,10 +606,11 @@ desc=A Magical staff.
 desc=A highly magical staff.
 cost=42500
 iop2=Wield
+wearpos=righthand
+wearpos2=lefthand
 category=weapon_staff
 manwear=model_514_obj_wear,0
 womanwear=model_514_obj_wear,6
-wearpos=righthand
 weight=5lb
 param=stabattack,10
 param=slashattack,-1
@@ -662,8 +621,14 @@ param=slashdefence,3
 param=crushdefence,1
 param=magicdefence,10
 param=strengthbonus,50
-param=ready_baseanim,human_staffready
 param=attackrate,5
+param=ready_baseanim,human_staffready
+param=crushattack_anim,human_blunt_crush
+// param=defend_anim,human_ibanstaff_2h_defend
+// param=crushattack_anim,earthwarrior_chop
+param=defend_anim,human_blunt_defend1
+// osrs use attack seq_401 and defend seq_403 + the weapon was already 1 handed in 2006
+tradeable=no
 
 [broken_iban_staff]
 name=Broken iban staff
@@ -676,6 +641,7 @@ model=model_2835_obj
 members=yes
 cost=20
 weight=4lb
+tradeable=no
 
 [obj_1411]
 name=Farmers fork
@@ -686,7 +652,6 @@ model=model_2411_obj
 2dyan=904
 2dxan=812
 weight=5lb
-tradeable=yes
 
 [obj_1413]
 name=Halberd
@@ -697,7 +662,6 @@ model=model_2791_obj
 2dyan=400
 2dxan=224
 weight=10lb
-tradeable=yes
 
 [obj_1415]
 name=Warhammer
@@ -708,7 +672,6 @@ model=model_2731_obj
 2dyan=456
 2dxan=344
 weight=4lb
-tradeable=yes
 
 [obj_1417]
 name=Javelin
@@ -719,7 +682,6 @@ model=model_2763_obj
 2dyan=1964
 2dxan=268
 weight=3lb
-tradeable=yes
 
 [scythe]
 name=Scythe
@@ -744,14 +706,16 @@ param=crushdefence,1
 param=strengthbonus,10
 param=ready_baseanim,human_ready_scythe
 param=attackrate,7
-param=slashattack_anim,human_spear_slash
+param=slashattack_anim,human_scythe_slash
 param=crushattack_anim,human_scythe_lunge
 param=stabattack_anim,human_scythe_sweep
 param=defend_anim,human_scythe_block
+param=stab_sound,scythe_slash
 param=slash_sound,scythe_slash
 param=crush_sound,scythe_slash
+tradeable=no
 
-[obj_1464]
+[archery_ticket]
 name=Archery ticket
 desc=I can exchange this for equipment.
 model=model_2560_obj
@@ -764,21 +728,21 @@ cost=25
 members=yes
 stackable=yes
 weight=5g
-tradeable=yes
 
 [obj_1465]
 name=Weapon poison
 desc=For use on daggers and projectiles.
 cost=11
 model=model_2789_obj
-recol1s=61
-recol1d=43486
+recol1s=15855
+recol1d=15871
 2dyof=-1
 2dzoom=550
 2dyan=1996
 2dxan=84
 weight=20g
 members=yes
+tradeable=no
 
 [sea_slug]
 cost=4
@@ -792,28 +756,31 @@ model=model_2658_obj
 2dyan=140
 2dxan=272
 weight=8oz
+tradeable=no
 
 [damp_sticks]
 name=Damp sticks
 desc=Some damp wooden sticks.
 members=yes
 model=model_2402_obj
-recol1s=5010
-recol1d=5392
+recol1s=9344
+recol1d=5251
 2dxof=4
 2dyof=20
 2dzoom=1020
 2dyan=188
 2dxan=316
 weight=3oz
+// todo: osrs has a respawnrate of 0. Not sure if its authentic, probably not?
+tradeable=no
 
 [dry_sticks]
 name=Dry sticks
 desc=Some dry wooden sticks.
 members=yes
 model=model_2402_obj
-recol1s=5010
-recol1d=5392
+recol1s=9344
+recol1d=5251
 2dxof=4
 2dyof=20
 2dzoom=1020
@@ -821,8 +788,9 @@ recol1d=5392
 2dxan=316
 iop1=Rub-together
 weight=2oz
+tradeable=no
 
-[broken_glass]
+[seaslug_broken_glass]
 members=yes
 name=Broken glass
 desc=Smashed glass.
@@ -834,16 +802,17 @@ model=model_2676_obj
 2dxan=412
 cost=0
 weight=2oz
+tradeable=no
 
 [amulet_accuracy]
 name=Amulet of accuracy
 desc=It increases my aim.
 cost=100
 model=model_2796_obj
-recol1s=5916
-recol1d=61
-recol2s=11200
-recol2d=4044
+recol1s=13537
+recol1d=15855
+recol2s=31649
+recol2d=31175
 2dxof=1
 2dyof=16
 2dzoom=620
@@ -854,336 +823,11 @@ wearpos=front
 manwear=model_280_obj_wear,0
 womanwear=model_444_obj_wear,0
 weight=10g
-tradeable=yes
 param=stabattack,4
 param=slashattack,4
 param=crushattack,4
 param=magicattack,4
 param=rangeattack,4
-
-[obj_1480]
-name=Rocks
-desc=Some rocks.
-model=model_2394_obj
-weight=1g
-members=yes
-
-[obj_1481]
-name=Orb of light
-desc=A magical sphere that glimmers within.
-cost=10
-model=model_loc_3361_8
-2dzoom=1390
-2dyan=1700
-2dxan=100
-weight=1lb
-members=yes
-param=no_alchemy,1
-
-[obj_1482]
-name=Orb of light
-desc=A magical sphere that glimmers within.
-cost=10
-model=model_loc_3361_8
-2dzoom=1390
-2dyan=1700
-2dxan=100
-weight=1lb
-members=yes
-param=no_alchemy,1
-
-[obj_1483]
-name=Orb of light
-desc=A magical sphere that glimmers within.
-cost=10
-model=model_loc_3361_8
-2dzoom=1390
-2dyan=1700
-2dxan=100
-weight=1lb
-members=yes
-param=no_alchemy,1
-
-[obj_1484]
-name=Orb of light
-desc=A magical sphere that glimmers within.
-cost=20
-model=model_loc_3361_8
-2dzoom=1390
-2dyan=1700
-2dxan=100
-weight=1lb
-members=yes
-param=no_alchemy,1
-
-[obj_1485]
-name=Damp cloth
-desc=A damp, wet cloth.
-cost=10
-model=model_2725_obj
-recol1s=7390
-recol1d=5400
-2dyof=-15
-2dzoom=1360
-2dxan=368
-weight=12g
-members=yes
-
-[obj_1486]
-name=Piece of railing
-desc=A broken piece of railing.
-cost=10
-model=model_2826_obj
-2dxof=1
-2dyof=-37
-2dzoom=1890
-2dyan=1960
-2dxan=240
-weight=2kg
-members=yes
-
-[obj_1487]
-name=Unicorn horn
-desc=A withered unicorn horn.
-model=model_2495_obj
-2dxof=4
-2dyof=-8
-2dzoom=840
-2dyan=132
-2dxan=248
-members=yes
-cost=20
-weight=7g
-
-[obj_1488]
-name=Paladin's badge
-desc=A coat of arms of the Ardougne Paladins.
-cost=10
-model=model_2759_obj
-2dxof=-2
-2dyof=3
-2dzoom=580
-2dyan=156
-2dxan=444
-weight=12g
-members=yes
-
-[obj_1489]
-name=Paladin's badge
-desc=A coat of arms of the Ardougne Paladins.
-cost=10
-model=model_2759_obj
-recol1s=42570
-recol1d=18074
-2dxof=-2
-2dyof=3
-2dzoom=580
-2dyan=156
-2dxan=444
-weight=12g
-members=yes
-
-[obj_1490]
-name=Paladin's badge
-desc=A coat of arms of the Ardougne Paladins.
-cost=10
-model=model_2759_obj
-recol1s=42570
-recol1d=1575
-2dxof=-2
-2dyof=3
-2dzoom=580
-2dyan=156
-2dxan=444
-weight=12g
-members=yes
-
-[obj_1491]
-name=Witches cat
-desc=A cat.
-model=model_3006_obj
-recol1s=61
-recol1d=16
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-weight=1200g
-members=yes
-
-[obj_1492]
-name=Doll of iban
-desc=A simple doll with Iban's likeness.
-cost=2
-model=model_2730_obj
-members=yes
-iop1=Search
-2dxof=2
-2dyof=15
-2dzoom=1040
-2dyan=1736
-2dxan=364
-weight=300g
-
-[obj_1493]
-name=Old journal
-desc=An account of the last times of someone.
-category=category_1328
-cost=1
-model=model_2633_obj
-recol1s=5018
-recol1d=9104
-recol2s=10351
-recol2d=5330
-2dzoom=840
-2dyan=152
-2dxan=256
-weight=8oz
-members=yes
-iop1=Read
-
-[obj_1494]
-name=History of iban
-desc=The tale of Iban.
-category=category_1328
-cost=1
-model=model_2794_obj
-2dzoom=840
-2dyan=152
-2dxan=256
-weight=8oz
-members=yes
-iop1=Read
-
-[obj_1495]
-name=Klank's gauntlets
-desc=Strong dwarvish gloves.
-cost=6
-model=model_2649_obj
-recol1s=10004
-recol1d=30600
-2dxof=8
-2dyof=-8
-2dzoom=930
-2dyan=828
-2dxan=420
-weight=8oz
-members=yes
-iop2=Wear
-wearpos=hands
-manwear=model_179_obj_wear,0
-womanwear=model_356_obj_wear,0
-category=category_16
-param=stabattack,2
-param=slashattack,2
-param=crushattack,2
-param=stabdefence,8
-param=slashdefence,9
-param=crushdefence,7
-param=strengthbonus,2
-
-[obj_1496]
-name=Iban's dove
-desc=I thought you only saw these in pairs?
-cost=1
-model=model_2793_obj
-2dxof=-4
-2dzoom=1920
-2dyan=2012
-2dxan=472
-weight=100g
-members=yes
-
-[obj_1497]
-name=Amulet of othanian
-desc=A mystical demonic amulet.
-cost=0
-model=model_2796_obj
-recol1s=11200
-recol1d=933
-recol2s=127
-recol2d=916
-2dxof=1
-2dyof=16
-2dzoom=620
-2dyan=68
-2dxan=424
-weight=10g
-members=yes
-
-[obj_1498]
-name=Amulet of doomion
-desc=A mystical demonic amulet.
-cost=0
-model=model_2796_obj
-recol1s=11200
-recol1d=933
-recol2s=127
-recol2d=916
-2dxof=1
-2dyof=16
-2dzoom=620
-2dyan=68
-2dxan=424
-weight=10g
-members=yes
-
-[obj_1499]
-name=Amulet of holthion
-desc=A mystical demonic amulet.
-cost=0
-model=model_2796_obj
-recol1s=11200
-recol1d=933
-recol2s=127
-recol2d=916
-2dxof=1
-2dyof=16
-2dzoom=620
-2dyan=68
-2dxan=424
-weight=10g
-members=yes
-
-[obj_1500]
-name=Iban's shadow
-desc=A strange dark liquid.
-cost=2
-model=model_2811_obj
-2dzoom=1640
-2dxan=92
-weight=25g
-members=yes
-
-[obj_1501]
-cost=2
-members=yes
-model=model_2504_obj
-recol1s=39834
-recol1d=9135
-2dyof=-18
-2dzoom=1020
-2dyan=1688
-2dxan=204
-weight=150g
-name=Dwarf brew
-desc=Smells stronger than most spirits.
-
-[obj_1502]
-name=Iban's ashes
-desc=The burnt remains of Iban.
-cost=2
-model=model_2742_obj
-recol1s=82
-recol1d=28
-2dxof=-6
-2dzoom=1210
-2dyan=1892
-2dxan=264
-weight=2oz
-members=yes
 
 [lockpick]
 name=Lockpick
@@ -1197,7 +841,6 @@ members=yes
 cost=20
 weight=10g
 category=category_715
-tradeable=yes
 
 [garlic]
 name=Garlic
@@ -1208,459 +851,16 @@ model=model_loc_3366_8
 2dyan=116
 2dxan=116
 weight=1oz
-tradeable=yes
 
-[obj_1552]
-name=Seasoned sardine
-desc=Sardine flavoured with doogle leaves.
-cost=10
-model=model_2357_obj
-recol1s=61
-recol1d=21962
-recol2s=103
-recol2d=21731
-members=yes
-2dxof=-1
-2dyof=13
-2dzoom=820
-2dyan=1756
-2dzan=1964
-2dxan=320
-weight=120g
-tradeable=yes
-
-[obj_1554]
-name=Fluffs' kitten
-desc=It looks like it's lost.
-model=model_3006_obj
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-weight=750g
-category=category_81
-members=yes
-op1=Use
-
-[obj_1555]
-name=Pet kitten
-desc=This kitten seems to like you.
-model=model_3009_obj
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=750g
-category=category_31
-
-[obj_1556]
-name=Pet kitten
-desc=This kitten seems to like you.
-model=model_3009_obj
-recol1s=127
-recol1d=16
-recol2s=16
-recol2d=61
-recol3s=61
-recol3d=127
-recol4s=123
-recol4d=0
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=750g
-category=category_31
-
-[obj_1557]
-name=Pet kitten
-desc=This kitten seems to like you.
-model=model_3009_obj
-recol1s=61
-recol1d=8105
-recol2s=16
-recol2d=5916
-recol3s=127
-recol3d=5673
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=750g
-category=category_31
-
-[obj_1558]
-name=Pet kitten
-desc=This kitten seems to like you.
-model=model_3009_obj
-recol1s=61
-recol1d=12
-recol2s=16
-recol2d=12
-recol3s=127
-recol3d=33
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=750g
-category=category_31
-
-[obj_1559]
-name=Pet kitten
-desc=This kitten seems to like you.
-model=model_3009_obj
-recol1s=61
-recol1d=7060
-recol2s=16
-recol2d=61
-recol3s=127
-recol3d=45
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=750g
-category=category_31
-
-[obj_1560]
-name=Pet kitten
-desc=This kitten seems to like you.
-model=model_3009_obj
-recol1s=61
-recol1d=43175
-recol2s=16
-recol2d=10304
-recol3s=127
-recol3d=45
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=750g
-category=category_31
-
-[obj_1561]
-name=Pet cat
-desc=This cat definitely likes you.
-model=model_3006_obj
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=1500g
-category=category_30
-
-[obj_1562]
-name=Pet cat
-desc=This cat definitely likes you.
-model=model_3006_obj
-recol1s=127
-recol1d=16
-recol2s=16
-recol2d=61
-recol3s=61
-recol3d=127
-recol4s=123
-recol4d=0
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=1500g
-category=category_30
-
-[obj_1563]
-name=Pet cat
-desc=This cat definitely likes you.
-model=model_3006_obj
-recol1s=61
-recol1d=8105
-recol2s=16
-recol2d=5916
-recol3s=127
-recol3d=5673
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=1500g
-category=category_30
-
-[obj_1564]
-name=Pet cat
-desc=This cat definitely likes you.
-model=model_3006_obj
-recol1s=61
-recol1d=12
-recol2s=16
-recol2d=12
-recol3s=127
-recol3d=33
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=1500g
-category=category_30
-
-[obj_1565]
-name=Pet cat
-desc=This cat definitely likes you.
-model=model_3006_obj
-recol1s=61
-recol1d=7060
-recol2s=16
-recol2d=61
-recol3s=127
-recol3d=45
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=1500g
-category=category_30
-
-[obj_1566]
-name=Pet cat
-desc=This cat definitely likes you.
-model=model_3006_obj
-recol1s=61
-recol1d=43175
-recol2s=16
-recol2d=10304
-recol3s=127
-recol3d=45
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=1500g
-category=category_30
-
-[obj_1567]
-name=Pet cat
-desc=This cat is so well fed it can hardly move.
-model=model_3007_obj
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=2500g
-category=category_29
-
-[obj_1568]
-name=Pet cat
-desc=This cat is so well fed it can hardly move.
-model=model_3007_obj
-recol1s=127
-recol1d=16
-recol2s=16
-recol2d=61
-recol3s=61
-recol3d=127
-recol4s=123
-recol4d=0
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=2500g
-category=category_29
-
-[obj_1569]
-name=Pet cat
-desc=This cat is so well fed it can hardly move.
-model=model_3007_obj
-recol1s=61
-recol1d=8105
-recol2s=16
-recol2d=5916
-recol3s=127
-recol3d=5673
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=2500g
-category=category_29
-
-[obj_1570]
-name=Pet cat
-desc=This cat is so well fed it can hardly move.
-model=model_3007_obj
-recol1s=61
-recol1d=12
-recol2s=16
-recol2d=12
-recol3s=127
-recol3d=33
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=2500g
-category=category_29
-
-[obj_1571]
-name=Pet cat
-desc=This cat is so well fed it can hardly move.
-model=model_3007_obj
-recol1s=61
-recol1d=7060
-recol2s=16
-recol2d=61
-recol3s=127
-recol3d=45
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=2500g
-category=category_29
-
-[obj_1572]
-name=Pet cat
-desc=This cat is so well fed it can hardly move.
-model=model_3007_obj
-recol1s=61
-recol1d=43175
-recol2s=16
-recol2d=10304
-recol3s=127
-recol3d=45
-2dxof=13
-2dyof=21
-2dzoom=880
-2dyan=152
-2dzan=1940
-2dxan=32
-members=yes
-weight=2500g
-category=category_29
-
-[obj_1573]
-name=Doogle leaves
-desc=A tasty herb good for seasoning.
-cost=2
-model=model_2364_obj
-recol1s=61
-recol1d=21962
-recol2s=103
-recol2d=21731
-members=yes
-2dxof=4
-2dzoom=700
-2dyan=1588
-2dxan=376
-weight=7g
-tradeable=yes
-
-[obj_1575]
-cost=350
-name=Cat training medal
-desc=For feline training expertise.
-model=model_2400_obj
-members=yes
-2dyof=9
-2dzoom=500
-2dyan=120
-2dxan=296
-iop2=Wear
-wearpos=front
-manwear=model_289_obj_wear,0
-womanwear=model_453_obj_wear,0
-weight=10g
-tradeable=yes
-
-[obj_1577]
-name=Pete's candlestick
-desc=Scarface Pete's Candlestick.
-cost=5
-model=model_2505_obj
-2dyof=-3
-2dzoom=620
-2dyan=1628
-2dxan=184
-weight=500g
-members=yes
-tradeable=yes
-
-[obj_1579]
-name=Thieves' armband
-desc=This denotes a Master Thief.
-cost=2
-model=model_2820_obj
-2dxof=1
-2dyof=17
-2dzoom=450
-2dyan=1924
-2dxan=296
-weight=25g
-members=yes
-
-[obj_1580]
+[ice_gloves]
 name=Ice gloves
 desc=These will keep my hands cold!
 cost=6
 model=model_2649_obj
-recol1s=10004
-recol1d=35290
-recol2s=5532
-recol2d=35290
+recol1s=9473
+recol1d=14175
+recol2s=10468
+recol2d=14175
 2dxof=8
 2dyof=-8
 2dzoom=930
@@ -1675,64 +875,9 @@ members=yes
 param=slashdefence,3
 param=crushdefence,4
 param=rangedefence,2
+tradeable=no
 
-[obj_1581]
-name=Blamish snail slime
-desc=Yuck.
-cost=5
-model=model_2705_obj
-recol1s=61
-recol1d=16495
-2dyof=-2
-2dzoom=760
-2dyan=1920
-2dxan=124
-weight=25g
-members=yes
-
-[obj_1582]
-name=Blamish oil
-desc=Made from the finest snail slime.
-iop1=Drink
-cost=10
-model=model_2789_obj
-recol1s=42436
-recol1d=16495
-2dyof=-1
-2dzoom=550
-2dyan=1996
-2dxan=84
-weight=25g
-members=yes
-
-[obj_1583]
-name=Fire feather
-desc=Firebird feather.
-cost=2
-model=model_2476_obj
-recol1s=127
-recol1d=4032
-2dxof=4
-2dyof=10
-2dzoom=700
-2dyan=692
-2dxan=428
-weight=2g
-members=yes
-
-[obj_1584]
-name=Id papers
-desc=Apparently my name is Hartigen.
-model=model_2600_obj
-members=yes
-2dxof=1
-2dyof=7
-2dzoom=1040
-2dyan=120
-2dxan=380
-weight=10g
-
-[obj_1585]
+[oily_fishing_rod]
 name=Oily fishing rod
 desc=Useful for catching lava eels.
 cost=15
@@ -1744,422 +889,40 @@ model=model_2828_obj
 2dxan=328
 weight=3lb
 members=yes
-
-[obj_1586]
-name=Miscellaneous key
-desc=I wonder what this unlocks?
-model=model_2372_obj
-recol1s=8128
-recol1d=7087
-2dxof=-3
-2dyof=5
-2dzoom=700
-2dyan=20
-2dxan=328
-weight=10g
-members=yes
-tradeable=yes
-
-[obj_1588]
-name=Grips' keyring
-desc=Some keys on a keyring.
-members=yes
-model=model_2372_obj
-recol1s=8128
-recol1d=7087
-2dxof=-3
-2dyof=5
-2dzoom=700
-2dyan=20
-2dxan=328
-weight=25g
+tradeable=no
 
 [obj_1589]
+tradeable=no
 
 [dusty_key]
 name=Dusty key
 desc=I wonder what this unlocks?
 members=yes
 model=model_2372_obj
-recol1s=8128
-recol1d=7087
+recol1s=31393
+recol1d=22945
 2dxof=-3
 2dyof=5
 2dzoom=700
 2dyan=20
 2dxan=328
 weight=10g
+tradeable=no
 
 [jail_key]
 name=Jail key
 desc=Key to a cell.
 members=yes
 model=model_2372_obj
-recol1s=8128
-recol1d=7087
+recol1s=31393
+recol1d=22945
 2dxof=-3
 2dyof=5
 2dzoom=700
 2dyan=20
 2dxan=328
 weight=10g
-
-[obj_1796]
-name=Silver necklace
-desc=Annas' shiny silver coated necklace.
-members=yes
-model=model_2506_obj
-recol1s=9152
-recol1d=82
-2dxof=5
-2dyof=44
-2dzoom=600
-2dyan=160
-2dxan=304
-iop2=Wear
-wearpos=front
-manwear=model_281_obj_wear,0
-womanwear=model_445_obj_wear,0
-weight=10g
-
-[obj_1797]
-name=Silver necklace
-desc=Annas' shiny silver coated necklace coated with a thin layer of flour.
-members=yes
-model=model_2506_obj
-recol1s=9152
-recol1d=82
-2dxof=5
-2dyof=44
-2dzoom=600
-2dyan=160
-2dxan=304
-iop2=Wear
-wearpos=front
-manwear=model_281_obj_wear,0
-womanwear=model_445_obj_wear,0
-weight=10g
-
-[obj_1798]
-name=Silver cup
-desc=Bobs' shiny silver coated tea cup.
-members=yes
-model=model_2347_obj
-2dxof=-1
-2dyof=-2
-2dzoom=500
-2dyan=1980
-2dxan=156
-weight=70g
-
-[obj_1799]
-name=Silver cup
-desc=Bobs' shiny silver coated tea cup coated with a thin layer of flour.
-members=yes
-model=model_2347_obj
-recol1s=5173
-recol1d=82
-2dxof=-1
-2dyof=-2
-2dzoom=500
-2dyan=1980
-2dxan=156
-weight=70g
-
-[obj_1800]
-name=Silver bottle
-desc=Carols' shiny silver coated bottle.
-members=yes
-model=model_2836_obj
-recol1s=5012
-recol1d=82
-2dyof=-1
-2dzoom=1000
-2dyan=192
-2dxan=116
-weight=90g
-
-[obj_1801]
-name=Silver bottle
-desc=Carols' shiny silver coated bottle coated with a thin layer of flour.
-members=yes
-model=model_2836_obj
-recol1s=5012
-recol1d=82
-2dzoom=1030
-2dyan=1808
-2dxan=76
-weight=90g
-
-[obj_1802]
-name=Silver book
-desc=Davids' shiny silver coated book.
-members=yes
-model=model_2794_obj
-recol1s=5018
-recol1d=82
-2dzoom=840
-2dyan=152
-2dxan=256
-weight=8oz
-
-[obj_1803]
-name=Silver book
-desc=Davids' shiny silver coated book coated with a thin layer of flour.
-members=yes
-model=model_2794_obj
-recol1s=5018
-recol1d=82
-2dzoom=840
-2dyan=152
-2dxan=256
-weight=8oz
-
-[obj_1804]
-name=Silver needle
-desc=Elizabeths' shiny silver coated needle.
-members=yes
-model=model_2770_obj
-recol1s=74
-recol1d=82
-2dxof=2
-2dyof=4
-2dzoom=850
-2dyan=868
-2dxan=368
-weight=1g
-
-[obj_1805]
-name=Silver needle
-desc=Elizabeths' shiny silver coated needle coated with a thin layer of flour.
-members=yes
-model=model_2770_obj
-recol1s=74
-recol1d=82
-2dxof=2
-2dyof=4
-2dzoom=850
-2dyan=868
-2dxan=368
-weight=1g
-
-[obj_1806]
-name=Silver pot
-desc=Franks' shiny silver coated pot.
-members=yes
-model=model_2345_obj
-recol1s=4775
-recol1d=82
-2dxof=-1
-2dyof=2
-2dzoom=990
-2dyan=8
-2dxan=112
-weight=2lb
-
-[obj_1807]
-name=Silver pot
-desc=Franks' shiny silver coated pot coated with a thin layer of flour.
-members=yes
-model=model_2345_obj
-recol1s=4775
-recol1d=82
-2dxof=-1
-2dyof=2
-2dzoom=990
-2dyan=8
-2dxan=112
-weight=2lb
-
-[obj_1808]
-name=Criminals' thread
-desc=Some red thread found at the murder scene.
-members=yes
-model=model_2552_obj
-recol1s=7479
-recol1d=960
-2dxof=3
-2dyof=2
-2dzoom=530
-2dyan=1872
-2dxan=148
-weight=2g
-
-[obj_1809]
-name=Criminals' thread
-desc=Some green thread found at the murder scene.
-members=yes
-model=model_2552_obj
-recol1s=7479
-recol1d=22464
-2dxof=3
-2dyof=2
-2dzoom=530
-2dyan=1872
-2dxan=148
-weight=2g
-
-[obj_1810]
-name=Criminals' thread
-desc=Some blue thread found at the murder scene.
-members=yes
-model=model_2552_obj
-recol1s=7479
-recol1d=43968
-2dxof=3
-2dyof=2
-2dzoom=530
-2dyan=1872
-2dxan=148
-weight=2g
-
-[obj_1811]
-name=Flypaper
-desc=A piece of fly paper. It's sticky.
-model=model_2350_obj
-2dxof=2
-2dyof=28
-2dzoom=1380
-2dyan=84
-2dxan=320
-members=yes
-weight=10g
-
-[obj_1812]
-name=Pungent pot
-desc=A pot found at the murder scene, with a sickly odour.
-members=yes
-model=model_2345_obj
-recol1s=4775
-recol1d=1959
-2dxof=-1
-2dyof=2
-2dzoom=990
-2dyan=8
-2dxan=112
-weight=2lb
-
-[obj_1813]
-name=Criminals' dagger
-desc=A flimsy looking dagger found at the crime scene.
-members=yes
-model=model_2672_obj
-recol1s=11200
-recol1d=35344
-2dyof=-4
-2dzoom=760
-2dyan=1276
-2dxan=472
-weight=1lb
-
-[obj_1814]
-name=Criminals' dagger
-desc=A flimsy looking dagger found at the crime scene coated with a thin layer of flour.
-members=yes
-model=model_2672_obj
-recol1s=11200
-recol1d=35344
-2dyof=-4
-2dzoom=760
-2dyan=1276
-2dxan=472
-weight=1lb
-
-[obj_1815]
-name=Killers' print
-desc=The fingerprints of the murderer.
-2dxof=2
-2dyof=28
-2dzoom=1380
-2dyan=84
-2dxan=320
-members=yes
-model=model_2416_obj
-weight=10g
-
-[obj_1816]
-name=Annas' print
-desc=An imprint of Annas' fingerprint.
-members=yes
-model=model_2416_obj
-2dxof=2
-2dyof=28
-2dzoom=1380
-2dyan=84
-2dxan=320
-weight=10g
-
-[obj_1817]
-name=Bobs' print
-desc=An imprint of Bobs' fingerprint.
-members=yes
-model=model_2416_obj
-2dxof=2
-2dyof=28
-2dzoom=1380
-2dyan=84
-2dxan=320
-weight=10g
-
-[obj_1818]
-name=Carols' print
-desc=An imprint of Carols' fingerprint.
-members=yes
-model=model_2416_obj
-2dxof=2
-2dyof=28
-2dzoom=1380
-2dyan=84
-2dxan=320
-weight=10g
-
-[obj_1819]
-name=Davids' print
-desc=An imprint of Davids' fingerprint.
-members=yes
-model=model_2416_obj
-2dxof=2
-2dyof=28
-2dzoom=1380
-2dyan=84
-2dxan=320
-weight=10g
-
-[obj_1820]
-name=Elizabeths' print
-desc=An imprint of Elizabeths' fingerprint.
-members=yes
-model=model_2416_obj
-2dxof=2
-2dyof=28
-2dzoom=1380
-2dyan=84
-2dxan=320
-weight=10g
-
-[obj_1821]
-name=Franks' print
-desc=An imprint of Franks' fingerprint.
-members=yes
-model=model_2416_obj
-2dxof=2
-2dyof=28
-2dzoom=1380
-2dyan=84
-2dxan=320
-weight=10g
-
-[obj_1822]
-name=Unknown print
-desc=An unidentified fingerprint taken from the murder weapon.
-members=yes
-model=model_2416_obj
-2dxof=2
-2dyof=28
-2dzoom=1380
-2dyan=84
-2dxan=320
-weight=10g
+tradeable=no
 
 [water_skin4]
 name=Waterskin(4)
@@ -2174,7 +937,6 @@ model=model_2699_obj
 2dyan=156
 2dxan=52
 members=yes
-tradeable=yes
 
 [water_skin3]
 name=Waterskin(3)
@@ -2189,7 +951,6 @@ members=yes
 2dzoom=780
 2dyan=156
 2dxan=52
-tradeable=yes
 
 [water_skin2]
 name=Waterskin(2)
@@ -2204,7 +965,6 @@ members=yes
 2dzoom=780
 2dyan=156
 2dxan=52
-tradeable=yes
 
 [water_skin1]
 name=Waterskin(1)
@@ -2219,7 +979,6 @@ members=yes
 2dzoom=780
 2dyan=156
 2dxan=52
-tradeable=yes
 
 [water_skin0]
 name=Waterskin(0)
@@ -2233,15 +992,14 @@ model=model_2699_obj
 2dzoom=780
 2dyan=156
 2dxan=52
-tradeable=yes
 
 [desert_shirt]
 name=Desert shirt
 desc=A cool, light desert shirt.
 cost=40
 model=model_2786_obj
-recol1s=8741
-recol1d=127
+recol1s=14724
+recol1d=32767
 members=yes
 2dyof=7
 2dzoom=1370
@@ -2254,15 +1012,14 @@ womanwear=model_456_idk,0
 womanwear2=model_348_idk
 iop2=Wear
 weight=2lb
-tradeable=yes
 
 [desert_robe]
 name=Desert robe
 desc=A cool, light desert robe.
 cost=40
 model=model_2521_obj
-recol1s=25238
-recol1d=127
+recol1s=2340
+recol1d=32767
 members=yes
 2dyof=1
 2dzoom=1940
@@ -2272,17 +1029,16 @@ iop2=Wear
 weight=2lb
 manwear=model_265_obj_wear,0
 womanwear=model_428_idk,0
-tradeable=yes
 
 [desert_boots]
 name=Desert boots
 desc=Comfortable desert shoes.
 cost=20
 model=model_2837_obj
-recol1s=4626
-recol1d=127
-recol2s=10128
-recol2d=127
+recol1s=7298
+recol1d=32767
+recol2s=8416
+recol2d=32767
 2dxof=1
 2dyof=-6
 2dzoom=770
@@ -2295,242 +1051,6 @@ weight=8oz
 members=yes
 manwear=model_185_obj_wear,0
 womanwear=model_361_obj_wear,0
-tradeable=yes
-
-[obj_1839]
-name=Metal key
-desc=A metal key, it's very crudely constructed.
-cost=1
-members=yes
-weight=10g
-model=model_2372_obj
-recol1s=8128
-recol1d=6344
-2dxof=-3
-2dyof=5
-2dzoom=700
-2dyan=20
-2dxan=328
-members=yes
-
-[obj_1840]
-name=Cell door key
-desc=A metalic key, usually used by prison guards.
-cost=1
-weight=10g
-model=model_2372_obj
-recol1s=8128
-recol1d=7349
-2dxof=-3
-2dyof=5
-2dzoom=700
-2dyan=20
-2dxan=328
-members=yes
-
-[obj_1841]
-name=Barrel
-desc=An empty mining barrel.
-weight=22lb
-model=model_2546_obj
-cost=1
-2dyof=-5
-2dzoom=1820
-2dyan=76
-2dxan=136
-members=yes
-
-[obj_1842]
-name=Ana in a barrel
-desc=A mining barrel with Ana in it.
-cost=1
-model=model_2821_obj
-2dxof=4
-2dyof=-34
-2dzoom=2110
-2dyan=88
-2dxan=196
-members=yes
-iop1=Look
-weight=32kg
-
-[obj_1843]
-name=Wrought iron key
-desc=This key unlocks a very sturdy gate of some sort.
-cost=1
-weight=10g
-members=yes
-model=model_2372_obj
-recol1s=8128
-recol1d=7060
-2dxof=-3
-2dyof=5
-2dzoom=700
-2dyan=20
-2dxan=328
-
-[obj_1844]
-name=Slaves' shirt
-desc=A filthy, smelly, flea infested shirt.
-cost=40
-model=model_2786_obj
-recol1s=8741
-recol1d=8615
-2dyof=7
-2dzoom=1370
-2dxan=536
-wearpos=torso
-wearpos2=arms
-iop2=Wear
-weight=2lb
-manwear=model_292_idk,0
-manwear2=model_170_idk
-womanwear=model_456_idk,0
-womanwear2=model_348_idk
-members=yes
-
-[obj_1845]
-name=Slave robe
-desc=A filthy, smelly, flea infested robe.
-cost=40
-model=model_2521_obj
-recol1s=25238
-recol1d=8615
-weight=2lb
-2dyof=1
-2dzoom=1940
-2dxan=572
-iop2=Wear
-wearpos=legs
-members=yes
-manwear=model_265_obj_wear,0
-womanwear=model_428_idk,0
-
-[obj_1846]
-name=Slave boots
-desc=Comfortable desert shoes.
-cost=1
-model=model_2837_obj
-recol1s=4626
-recol1d=8615
-2dxof=1
-2dyof=-6
-2dzoom=770
-2dyan=160
-2dxan=152
-wearpos=feet
-iop2=Wear
-weight=24oz
-category=category_118
-members=yes
-manwear=model_185_obj_wear,0
-womanwear=model_361_obj_wear,0
-
-[obj_1847]
-name=Scrumpled paper
-desc=A piece of paper with barely legible writing - looks like a recipe!
-cost=10
-model=model_2746_obj
-recol1s=5351
-recol1d=43119
-2dxof=3
-2dyof=1
-2dzoom=1720
-2dyan=156
-2dxan=472
-members=yes
-iop1=Read
-weight=10g
-
-[shantay_disclaimer]
-name=Shantay disclaimer
-desc=Very important information.
-cost=1
-model=model_2746_obj
-recol1s=970
-recol1d=127
-members=yes
-2dxof=3
-2dyof=1
-2dzoom=1720
-2dyan=156
-2dxan=472
-iop1=Read
-weight=10g
-
-[obj_1849]
-name=Prototype dart
-desc=An experimental type of weapon.
-cost=70
-desc=A prototype throwing dart.
-stackable=yes
-members=yes
-weight=10g
-cost=2
-model=model_2379_obj
-recol1s=82
-recol1d=5652
-2dxof=8
-2dyof=11
-2dzoom=720
-2dyan=336
-2dxan=396
-
-[obj_1850]
-name=Technical plans
-desc=Plans of a technical nature.
-cost=1
-members=yes
-model=model_2809_obj
-2dxof=3
-2dyof=1
-2dzoom=1720
-2dyan=156
-2dxan=472
-iop1=Read
-weight=15g
-
-[obj_1851]
-name=Tenti pineapple
-desc=The most delicious of pineapples.
-cost=1
-category=category_120
-weight=2lb
-members=yes
-model=model_2736_obj
-members=yes
-2dxof=1
-2dzoom=1740
-2dyan=48
-2dxan=228
-
-[obj_1852]
-name=Bedobin key
-desc=A key to the chest in Captain Siad's room.
-cost=1
-weight=10g
-model=model_2372_obj
-recol1s=8128
-recol1d=6059
-members=yes
-2dxof=-3
-2dyof=5
-2dzoom=700
-2dyan=20
-2dxan=328
-
-[obj_1853]
-name=Prototype dart tip
-desc=A protoype dart tip - it looks deadly.
-cost=1
-weight=8g
-model=model_2518_obj
-2dxof=5
-2dzoom=720
-2dyan=308
-2dxan=344
-members=yes
-stackable=yes
 
 [shantay_pass]
 name=Shantay pass
@@ -2538,8 +1058,8 @@ desc=Allows you to pass through the Shantay pass into the Kharid Desert.
 cost=5
 weight=10g
 model=model_2560_obj
-recol1s=16714
-recol1d=32827
+recol1s=19150
+recol1d=13840
 2dxof=6
 2dyof=-2
 2dzoom=830
@@ -2547,23 +1067,23 @@ recol1d=32827
 2dxan=320
 members=yes
 stackable=yes
-tradeable=yes
 
-[obj_1855]
+[desertrescuerock]
 name=Rock
 desc=Looks like a plain rock, must have some ore in it?
 weight=500g
 model=model_2393_obj
-recol1s=5790
-recol1d=43038
+recol1s=13570
+recol1d=7400
 2dxof=8
 2dyof=-15
 2dzoom=1170
 2dyan=1904
 2dxan=120
 members=yes
+tradeable=no
 
-[obj_2372]
+[ogre_relic]
 name=Ogre relic
 desc=An old statue of an ogre warrior.
 members=yes
@@ -2572,8 +1092,9 @@ model=model_2698_obj
 2dyan=1668
 2dxan=104
 weight=3kg
+tradeable=no
 
-[obj_2373]
+[relic_part_1]
 name=Relic part 1
 desc=Part of an ogre relic.
 model=model_2585_obj
@@ -2584,8 +1105,9 @@ members=yes
 2dxan=128
 weight=1kg
 category=category_1399
+tradeable=no
 
-[obj_2374]
+[relic_part_2]
 name=Relic part 2
 desc=Part of an ogre relic.
 model=model_2587_obj
@@ -2594,8 +1116,9 @@ members=yes
 2dyan=1696
 weight=1kg
 category=category_1399
+tradeable=no
 
-[obj_2375]
+[relic_part_3]
 name=Relic part 3
 desc=Part of an ogre relic.
 model=model_2588_obj
@@ -2604,8 +1127,9 @@ members=yes
 2dyan=108
 weight=1kg
 category=category_1399
+tradeable=no
 
-[obj_2376]
+[skavid_map]
 name=Skavid map
 desc=It's a map.
 model=model_2383_obj
@@ -2616,8 +1140,9 @@ model=model_2383_obj
 2dxan=312
 weight=10g
 members=yes
+tradeable=no
 
-[obj_2377]
+[ogre_tooth]
 name=Ogre tooth
 desc=Very tooth like.
 model=model_2522_obj
@@ -2628,6 +1153,7 @@ model=model_2522_obj
 2dxan=292
 weight=10g
 members=yes
+tradeable=no
 
 [obj_2378]
 name=Toban key
@@ -2639,8 +1165,9 @@ model=model_2372_obj
 2dxan=328
 weight=10g
 members=yes
+tradeable=no
 
-[obj_2379]
+[rock_cake]
 name=Rock cake
 model=model_2817_obj
 2dyof=-4
@@ -2651,12 +1178,13 @@ weight=25g
 members=yes
 iop2=Eat
 category=category_734
+tradeable=no
 
 [obj_2380]
 name=Crystal
 model=model_2335_obj
-recol1s=18522
-recol1d=10167
+recol1s=22292
+recol1d=27361
 code9=yes
 2dxof=1
 2dyof=-29
@@ -2665,12 +1193,13 @@ code9=yes
 2dxan=216
 weight=2lb
 members=yes
+tradeable=no
 
 [obj_2381]
 name=Crystal
 model=model_2335_obj
-recol1s=18522
-recol1d=55250
+recol1s=22292
+recol1d=31070
 code9=yes
 2dxof=1
 2dyof=-29
@@ -2679,12 +1208,13 @@ code9=yes
 2dxan=216
 weight=2lb
 members=yes
+tradeable=no
 
 [obj_2382]
 name=Crystal
 model=model_2335_obj
-recol1s=18522
-recol1d=32433
+recol1s=22292
+recol1d=3764
 code9=yes
 2dxof=1
 2dyof=-29
@@ -2693,12 +1223,13 @@ code9=yes
 2dxan=216
 weight=2lb
 members=yes
+tradeable=no
 
 [obj_2383]
 name=Crystal
 model=model_2335_obj
-recol1s=22336
-recol1d=127
+recol1s=2978
+recol1d=32767
 code9=yes
 2dxof=1
 2dyof=-29
@@ -2707,6 +1238,7 @@ code9=yes
 2dxan=216
 weight=2lb
 members=yes
+tradeable=no
 
 [obj_2384]
 name=Finger nails
@@ -2718,6 +1250,7 @@ model=model_1787_obj
 2dxan=348
 weight=2g
 members=yes
+tradeable=no
 
 [obj_2385]
 name=Old robe
@@ -2728,6 +1261,7 @@ model=model_2786_obj
 2dxan=536
 weight=4lb
 members=yes
+tradeable=no
 
 [obj_2386]
 name=Unusual armour
@@ -2738,6 +1272,7 @@ model=model_2574_obj
 2dxan=608
 weight=8lb
 members=yes
+tradeable=no
 
 [obj_2387]
 name=Damaged dagger
@@ -2749,8 +1284,9 @@ model=model_2672_obj
 2dxan=472
 weight=1lb
 members=yes
+tradeable=no
 
-[obj_2388]
+[tattered_eye_patch]
 name=Tattered eye patch
 desc=Useless as an eyepatch.
 model=model_2417_obj
@@ -2759,47 +1295,9 @@ model=model_2417_obj
 2dxan=296
 weight=6g
 members=yes
+tradeable=no
 
-[obj_2389]
-model=model_2789_obj
-recol1s=61
-recol1d=19241
-2dyof=-1
-2dzoom=550
-2dyan=1996
-2dxan=84
-weight=15g
-name=Vial
-desc=An infusion of water and jangerberries.
-members=yes
-
-[obj_2390]
-model=model_2789_obj
-recol1s=61
-recol1d=22422
-name=Vial
-desc=A mixture of jangerberries and guam leaves in a vial.
-2dyof=-1
-2dzoom=550
-2dyan=1996
-2dxan=84
-weight=25g
-members=yes
-
-[obj_2391]
-name=Ground bat bones
-desc=Let's see it fly now!
-cost=20
-model=model_2742_obj
-2dyof=-1
-2dzoom=520
-2dyan=2008
-2dxan=136
-weight=100g
-members=yes
-tradeable=yes
-
-[obj_2398]
+[nightshade]
 name=Nightshade
 desc=Deadly!
 cost=30
@@ -2813,242 +1311,32 @@ iop2=Eat
 weight=15g
 members=yes
 category=category_1748
-
-[obj_2412]
-cost=100
-name=Cape of saradomin
-desc=A cape from the almighty god Saradomin.
-model=model_2603_obj
-recol1s=926
-recol1d=127
-recol2s=7700
-recol2d=43943
-recol3s=11200
-recol3d=10714
-recol4s=6032
-recol4d=127
-2dxof=3
-2dyof=6
-2dzoom=2140
-2dyan=948
-2dxan=400
-iop2=Wear
-wearpos=back
-manwear=model_323_obj_wear,0
-womanwear=model_481_obj_wear,0
-weight=1lb
-members=yes
-category=armour_godcape
-param=magicattack,10
-param=stabdefence,1
-param=slashdefence,1
-param=crushdefence,2
-param=magicdefence,10
-
-[obj_2413]
-cost=100
-name=Cape of guthix
-desc=A cape from the almighty god Guthix.
-model=model_2603_obj
-recol1s=926
-recol1d=22426
-recol2s=7700
-recol2d=22426
-recol3s=11200
-recol3d=33690
-recol4s=6032
-recol4d=33690
-2dxof=3
-2dyof=6
-2dzoom=2140
-2dyan=948
-2dxan=400
-iop2=Wear
-wearpos=back
-manwear=model_323_obj_wear,0
-womanwear=model_481_obj_wear,0
-weight=1lb
-members=yes
-category=armour_godcape
-param=magicattack,10
-param=stabdefence,1
-param=slashdefence,1
-param=crushdefence,2
-param=magicdefence,10
-
-[obj_2414]
-cost=100
-name=Cape of zamorak
-desc=A cape from the almighty god Zamorak.
-model=model_2603_obj
-recol1s=926
-recol1d=0
-recol2s=7700
-recol2d=0
-recol3s=11200
-recol3d=926
-recol4s=6032
-recol4d=926
-2dxof=3
-2dyof=6
-2dzoom=2140
-2dyan=948
-2dxan=400
-iop2=Wear
-wearpos=back
-manwear=model_323_obj_wear,0
-womanwear=model_481_obj_wear,0
-weight=1lb
-members=yes
-category=armour_godcape
-param=magicattack,10
-param=stabdefence,1
-param=slashdefence,1
-param=crushdefence,2
-param=magicdefence,10
-
-[saradominstaff]
-name=Staff of saradomin
-desc=It's a stick of the gods.
-cost=80000
-members=yes
-model=model_2790_obj
-2dyof=-18
-2dzoom=1710
-2dyan=892
-2dxan=200
-wearpos=righthand
-manwear=model_554_obj_wear,0
-womanwear=model_554_obj_wear,6
-category=weapon_staff
-iop2=Wield
-weight=5lb
-param=stabattack,-1
-param=slashattack,-1
-param=crushattack,6
-param=magicattack,6
-param=stabdefence,2
-param=slashdefence,3
-param=crushdefence,1
-param=magicdefence,6
-param=strengthbonus,2
-param=attackrate,5
-
-[guthixstaff]
-name=Staff of guthix
-desc=It's a stick of the gods.
-cost=80000
-members=yes
-model=model_2634_obj
-2dxof=-7
-2dzoom=1830
-2dyan=980
-2dxan=324
-wearpos=righthand
-manwear=model_527_obj_wear,0
-womanwear=model_527_obj_wear,6
-category=weapon_staff
-iop2=Wield
-weight=5lb
-param=stabattack,-1
-param=slashattack,-1
-param=crushattack,6
-param=magicattack,6
-param=stabdefence,2
-param=slashdefence,3
-param=crushdefence,1
-param=magicdefence,6
-param=strengthbonus,2
-param=attackrate,5
-
-[zamorakstaff]
-name=Staff of zamorak
-desc=It's a stick of the gods.
-cost=80000
-members=yes
-model=model_2749_obj
-2dxof=-12
-2dyof=50
-2dzoom=1480
-2dyan=916
-2dxan=240
-wearpos=righthand
-manwear=model_544_obj_wear,0
-womanwear=model_544_obj_wear,6
-category=weapon_staff
-iop2=Wield
-weight=5lb
-param=stabattack,-1
-param=slashattack,-1
-param=crushattack,6
-param=magicattack,6
-param=stabdefence,2
-param=slashdefence,3
-param=crushdefence,1
-param=magicdefence,6
-param=strengthbonus,2
-param=attackrate,5
+tradeable=no
 
 [obj_2420]
+tradeable=no
 
 [obj_2422]
+tradeable=no
 
 [obj_2425]
+tradeable=no
 
 [obj_2480]
-
-[obj_2511]
-name=Logs
-desc=A number of wooden logs.
-cost=4
-model=model_2800_obj
-weight=3lb
-2dxof=3
-2dyof=66
-2dzoom=670
-2dyan=120
-2dxan=280
-op4=Light
-weight=3lb
+tradeable=no
 
 [obj_2512]
+tradeable=no
 
 [obj_2513]
-
-[obj_2514]
-name=Raw shrimps
-desc=I should try cooking this.
-model=model_2590_obj
-recol1s=6080
-recol1d=3299
-recol2s=4032
-recol2d=3546
-2dzoom=950
-2dyan=552
-2dxan=272
-cost=5
-weight=120g
-tradeable=yes
-
-[obj_2516]
-name=Pot of flour
-desc=There is flour in this pot.
-model=model_2406_obj
-2dxof=-1
-2dyof=2
-2dzoom=990
-2dyan=8
-2dxan=112
-cost=10
-weight=3lb
-tradeable=yes
+tradeable=no
 
 [rotten_tomato]
 model=model_2632_obj
-recol1s=929
-recol1d=3742
-recol2s=22430
-recol2d=9647
+recol1s=15393
+recol1d=13506
+recol2s=480
+recol2d=16871
 2dyof=-4
 2dzoom=550
 2dyan=1900
@@ -3058,7 +1346,6 @@ desc=Pretty smelly.
 cost=1
 weight=80g
 members=yes
-tradeable=yes
 
 [toy_horsey_brown]
 cost=100
@@ -3074,17 +1361,16 @@ womanwear=model_3333_obj_wear,6
 2dxan=40
 weight=50g
 iop1=Play-with
-tradeable=yes
 
 [toy_horsey_white]
 cost=100
 name=Toy horsey
 desc=A white toy horse.
 model=model_3339_obj
-recol1s=5662
-recol1d=43100
-recol2s=7954
-recol2d=43084
+recol1s=12547
+recol1d=22200
+recol2s=8385
+recol2d=17972
 manwear=model_3333_obj_wear,0
 womanwear=model_3333_obj_wear,6
 2dxof=1
@@ -3094,17 +1380,16 @@ womanwear=model_3333_obj_wear,6
 2dxan=40
 weight=50g
 iop1=Play-with
-tradeable=yes
 
 [toy_horsey_black]
 cost=100
 name=Toy horsey
 desc=A black toy horse.
 model=model_3339_obj
-recol1s=5662
-recol1d=142
-recol2s=7954
-recol2d=142
+recol1s=12547
+recol1d=4195
+recol2s=8385
+recol2d=4195
 manwear=model_3333_obj_wear,0
 womanwear=model_3333_obj_wear,6
 2dxof=1
@@ -3114,17 +1399,16 @@ womanwear=model_3333_obj_wear,6
 2dxan=40
 weight=50g
 iop1=Play-with
-tradeable=yes
 
 [toy_horsey_grey]
 cost=100
 name=Toy horsey
 desc=A grey toy horse.
 model=model_3339_obj
-recol1s=5662
-recol1d=5161
-recol2s=7954
-recol2d=5276
+recol1s=12547
+recol1d=11593
+recol2s=8385
+recol2d=8422
 manwear=model_3333_obj_wear,0
 womanwear=model_3333_obj_wear,6
 2dxof=1
@@ -3134,7 +1418,6 @@ womanwear=model_3333_obj_wear,6
 2dxan=40
 weight=50g
 iop1=Play-with
-tradeable=yes
 
 [obj_2529]
 name=Orb of light
@@ -3142,146 +1425,5 @@ desc=A magical sphere that glimmers within.
 cost=1
 model=model_loc_771_0
 members=yes
-
-[obj_2530]
-name=Bones
-desc=Bones are for burying!
-model=model_2674_obj
-2dxof=2
-2dzoom=1410
-2dyan=368
-2dxan=400
-iop1=Bury
-weight=500g
-tradeable=yes
-
-[obj_2871]
-name=Ogre bellows
-desc=A large pair of ogre bellows.
-members=yes
-model=model_3440_obj
-2dyof=-4
-2dzoom=970
-2dyan=36
-2dxan=112
-weight=18oz
-
-[obj_2872]
-name=Ogre bellows (3)
-desc=A large pair of ogre bellows, it has three loads of swamp gas in it.
-members=yes
-model=model_3440_obj
-recol1s=6457
-recol1d=20007
-2dyof=-4
-2dzoom=970
-2dyan=36
-2dxan=112
-weight=18oz
-
-[obj_2873]
-name=Ogre bellows (2)
-desc=A large pair of ogre bellows, it has two loads of swamp gas in it.
-members=yes
-model=model_3440_obj
-recol1s=6457
-recol1d=16811
-2dyof=-4
-2dzoom=970
-2dyan=36
-2dxan=112
-weight=18oz
-
-[obj_2874]
-name=Ogre bellows (1)
-desc=A large pair of ogre bellows, it has one load of swamp gas in it.
-members=yes
-model=model_3440_obj
-recol1s=6457
-recol1d=12591
-2dyof=-4
-2dzoom=970
-2dyan=36
-2dxan=112
-weight=18oz
-
-[obj_2875]
-name=Bloated toad
-desc=An inflated toad.
-members=yes
-model=model_3447_obj
-2dxof=-2
-2dyof=-34
-2dzoom=1430
-2dyan=204
-2dxan=212
-weight=750g
-iop1=Drop
-iop4=Release All
-iop5=Release
-
-[obj_2876]
-name=Raw chompy
-desc=I need to cook this first.
-members=yes
-cost=5
-model=model_2498_obj
-recol1s=4773
-recol1d=10801
-2dxof=-3
-2dzoom=870
-2dyan=1748
-2dxan=88
-weight=10kg
-tradeable=yes
-
-[obj_2878]
-name=Cooked chompy
-desc=It might look delicious to an ogre.
-members=yes
-cost=10
-model=model_2498_obj
-recol1s=4773
-recol1d=8993
-2dxof=-3
-2dzoom=870
-2dyan=1748
-2dxan=88
-weight=10kg
-iop1=Eat
-category=category_5
-tradeable=yes
-
-[obj_2880]
-name=Ruined chompy
-desc=It's really burnt.
-members=yes
-model=model_2498_obj
-recol1s=4773
-recol1d=6798
-2dxof=-3
-2dzoom=870
-2dyan=1748
-2dxan=88
-weight=10kg
-tradeable=yes
-
-[obj_2882]
-name=Seasoned chompy
-desc=It has been deliciously seasoned to taste wonderful for ogres.
-members=yes
-cost=10
-model=model_2498_obj
-recol1s=4773
-recol1d=6053
-2dxof=-3
-2dzoom=870
-2dyan=1748
-2dxan=88
-weight=10kg
-
-[obj_2884]
-name=Chompy bird obj
-model=model_3445_obj
-tradeable=yes
-dummyitem=graphic_only
+respawnrate=50
+tradeable=no

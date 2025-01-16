@@ -4,7 +4,8 @@ sound_synth(locked, 0, 0);
 
 [oplocu,muddy_chest_closed]
 if (last_useitem ! muddy_key) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 anim(human_openchest, 0);
 sound_synth(chest_open, 0, 0);
@@ -23,3 +24,12 @@ inv_add(inv, chaosrune, 2);
 inv_add(inv, uncut_ruby, 1);
 mes("You find some treasure in the chest!");
 p_delay(0);
+
+[oploc1,loc_1766]
+p_teleport(0_47_60_8_9);
+
+[oploc1,loc_1767]
+p_teleport(0_47_160_8_9);
+
+[oploc1,loc_1768]
+p_teleport(0_47_60_62_16);

@@ -1,6 +1,4 @@
 [opheld1,cocktail_shaker]
-if_close;
-//p_stopaction;
 def_int $total_steps = ~get_cocktail_ingredient_step;
 if ($total_steps  < 1) {
     mes("The cocktail shaker is empty.");
@@ -37,45 +35,35 @@ while ($i < enum_getoutputcount(gnome_cocktail_ingredients)) {
 mes("<$message>.");
 
 [opheldu,cocktail_shaker] 
-if_close;
-//p_stopaction;
 switch_obj(last_useitem) {
     case cocktail_glass : @pour_cocktail_shaker;
     case default : @add_cocktail_ingredient(last_useitem);
 }
 
 [opheldu,cocktail_glass]
-if_close;
-//p_stopaction;
 switch_obj(last_useitem) {
     case cocktail_shaker : @pour_cocktail_shaker;
-    case default : @nothing_interesting_happens;
+    case default : ~displaymessage(^dm_default);
 }
 
 [opheldu,dwellberry]
-if_close;
-//p_stopaction;
 switch_obj(last_useitem) {
     case cocktail_shaker : @add_cocktail_ingredient(last_item);
     case half_baked_gnomebowl : @add_bowl_ingredient(last_item);
     case half_baked_batta : @add_cocktail_ingredient(last_item);
-    case default : @nothing_interesting_happens;
+    case default : ~displaymessage(^dm_default);
 }
 
 [opheldu,_alcoholic_drinks]
-if_close;
-//p_stopaction;
 switch_obj(last_useitem) {
     case cocktail_shaker : @add_cocktail_ingredient(last_item);
-    case default : @nothing_interesting_happens;
+    case default : ~displaymessage(^dm_default);
 }
 
 [opheldu,equa_leaves]
-if_close;
-//p_stopaction;
 switch_int(oc_param(last_useitem, gnome_cooking_type)) {
-    case ^gnome_cocktail: @finish_cocktail(last_useitem, last_item);
-    case ^gnome_bowl, ^gnome_batta, ^gnome_crunchies: @finish_gnome_food(last_useitem, last_item);
+    case ^gnome_cocktail : @finish_cocktail(last_useitem, last_item);
+    case ^gnome_bowl, ^gnome_batta, ^gnome_crunchies : @finish_gnome_food(last_useitem, last_item);
 }
 switch_obj(last_useitem) {
     case toad_legs : @opheldu_make_gnome_food(equa_toad_legs, "You add the equa leaves to the toad legs.");
@@ -84,11 +72,12 @@ switch_obj(last_useitem) {
     case half_baked_gnomebowl : @add_bowl_ingredient(last_item);
     case half_baked_batta : @add_cocktail_ingredient(last_item);
     case half_baked_crunchies : @add_crunchies_ingredient(last_item);
-    case default : @nothing_interesting_happens;
+    case raw_chompy : @quest_chompybird_add_ingredients_to_chompy_message;
+    case default : ~displaymessage(^dm_default);
 }
 
 [label,pour_cocktail_shaker]
-def_int $null_count = calc(~get_cocktail_ingredient_count(null) + ~get_cocktail_ingredient_count(obj_0));
+def_int $null_count = calc(~get_cocktail_ingredient_count(null) + ~get_cocktail_ingredient_count(dwarf_remains));
 // if very few ingredients then give odd cocktail
 if ($null_count = 7) {
     mes("There's nothing to pour from the cocktail shaker.");
@@ -167,7 +156,9 @@ switch_obj($item) {
     case lemon, orange, pineapple, lime, dwellberry : $message = "You squeeze the juice from the <$item_name>";
     case vodka, gin, brandy, whisky, bucket_milk : $message = "You pour the <$item_name>";
     case equa_leaves : $message = "You sprinkle the equa leaves";
-    case default : @nothing_interesting_happens;
+    case default :
+        ~displaymessage(^dm_default);
+        return;
 }
 def_int $step = ~get_cocktail_ingredient_step;
 switch_int($step) {
@@ -178,23 +169,25 @@ switch_int($step) {
     case 4 : %gnome_drink_ingredient5 = $item;
     case 5 : %gnome_drink_ingredient6 = $item;
     case 6 : %gnome_drink_ingredient7 = $item;
-    case default : 
+    case default :
         mes("The cocktail shaker is too full to fit anymore ingredients.");
         return;
 }
 inv_del(inv, $item, 1);
-inv_add(inv, oc_param($item, next_obj_stage), 1);
+if (oc_param($item, next_obj_stage) ! null) {
+    inv_add(inv, oc_param($item, next_obj_stage), 1);
+}
 mes("<$message> into your cocktail shaker...");
 
 
 [proc,get_cocktail_ingredient_step]()(int)
-if (%gnome_drink_ingredient1 = null | %gnome_drink_ingredient1 = obj_0) return(0);
-if (%gnome_drink_ingredient2 = null | %gnome_drink_ingredient2 = obj_0) return(1);
-if (%gnome_drink_ingredient3 = null | %gnome_drink_ingredient3 = obj_0) return(2);
-if (%gnome_drink_ingredient4 = null | %gnome_drink_ingredient4 = obj_0) return(3);
-if (%gnome_drink_ingredient5 = null | %gnome_drink_ingredient5 = obj_0) return(4);
-if (%gnome_drink_ingredient6 = null | %gnome_drink_ingredient6 = obj_0) return(5);
-if (%gnome_drink_ingredient7 = null | %gnome_drink_ingredient7 = obj_0) return(6);
+if (%gnome_drink_ingredient1 = null | %gnome_drink_ingredient1 = dwarf_remains) return(0);
+if (%gnome_drink_ingredient2 = null | %gnome_drink_ingredient2 = dwarf_remains) return(1);
+if (%gnome_drink_ingredient3 = null | %gnome_drink_ingredient3 = dwarf_remains) return(2);
+if (%gnome_drink_ingredient4 = null | %gnome_drink_ingredient4 = dwarf_remains) return(3);
+if (%gnome_drink_ingredient5 = null | %gnome_drink_ingredient5 = dwarf_remains) return(4);
+if (%gnome_drink_ingredient6 = null | %gnome_drink_ingredient6 = dwarf_remains) return(5);
+if (%gnome_drink_ingredient7 = null | %gnome_drink_ingredient7 = dwarf_remains) return(6);
 return(7);
 
 [proc,get_cocktail_ingredient_name](obj $ingredient)(string, int)
@@ -217,9 +210,9 @@ if ($count > 1) {
 switch_obj ($ingredient) {
     case lemon, orange, pineapple, lime, dwellberry, equa_leaves, bucket_milk :
         return("<tostring($count)> <lowercase($ingredient_name)>", $count);
-    case vodka, gin, brandy, whisky : 
+    case vodka, gin, brandy, whisky :
         return("<tostring($count)> <lowercase($ingredient_name_shot)>", $count);
-    case default : 
+    case default :
         return("", $count);
 }
 

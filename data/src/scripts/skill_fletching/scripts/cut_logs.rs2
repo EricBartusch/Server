@@ -3,18 +3,19 @@
 switch_obj(last_useitem) {
     case knife : @fletch_log(last_item);
     case tinderbox : @light_logs_inv(last_slot);
-    case default : @nothing_interesting_happens;
+    case default : ~displaymessage(^dm_default);
 }
 
 [label,fletch_log](obj $log)
-if ($log = achey_logs) {
-    @make_ogre_shafts;
+if (map_members = false) {
+    mes(^mes_members_fletching); // guess
+    return;
 }
-~require_members_fletching;
 db_find(fletch_bow_table:log, $log);
 def_dbrow $data = db_findnext;
 if ($data = null) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 def_namedobj $obj1 = arrow_shaft;
 def_int $shaft_count = db_getfield($data, fletch_bow_table:shafts, 0);
@@ -36,6 +37,10 @@ if ($shaft_count < 1) {
         $obj3, 175, "Long Bow."
     );
 }
+if ($product = null) {
+    ~displaymessage(^dm_default);
+    return;
+}
 def_int $level = 1;
 // default to shafts
 def_int $count = 1;
@@ -55,11 +60,11 @@ if ($product = $obj2) {
 }
 if (stat(fletching) < $level) {
     // osrs has a level 1 fail message for arrow shafts but i doubt 2004 used it
-    ~doubleobjbox($log, $product, "You need a Fletching level of at least <tostring($level)> to make <~add_article(lowercase(oc_name($product)))>.");
+    ~doubleobjbox($log, $product, "You need a Fletching level of at least <tostring($level)> to make <~add_article(lowercase(oc_name($product)))>.", 200);
     return;
 }
 // make one bow at a time
 inv_del(inv, $log, 1);
 mes($message);
-givexp(fletching, $fletching_experience);
+stat_advance(fletching, $fletching_experience);
 inv_add(inv, $product, $count);

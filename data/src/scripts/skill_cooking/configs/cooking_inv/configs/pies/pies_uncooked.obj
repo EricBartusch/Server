@@ -3,57 +3,51 @@
 name=Uncooked apple pie
 desc=This would be much tastier cooked.
 model=model_2767_obj
-recol1s=8670
-recol1d=5720
-recol2s=5006
-recol2d=4407
-recol3s=61
-recol3d=4416
+recol1s=30545
+recol1d=28368
+recol2s=7264
+recol2d=17834
+recol3s=15855
+recol3d=20971
 2dyof=-9
 2dzoom=950
 2dyan=104
 2dxan=192
 cost=16
 weight=500g
-tradeable=yes
-param=cooking_range_only,1
 
 //guess
 [uncooked_meat_pie]
 name=Uncooked meat pie
 desc=This would be much healthier cooked.
 model=model_2767_obj
-recol1s=8670
-recol1d=5720
-recol2s=5006
-recol2d=4407
-recol3s=61
-recol3d=4416
+recol1s=30545
+recol1d=28368
+recol2s=7264
+recol2d=17834
+recol3s=15855
+recol3d=20971
 2dyof=-9
 2dzoom=950
 2dyan=104
 2dxan=192
 cost=8
 weight=500g
-tradeable=yes
-param=cooking_range_only,1
 
 //guess
 [uncooked_redberry_pie]
 name=Uncooked berry pie
 desc=This would be much more appetising cooked.
 model=model_2767_obj
-recol1s=8670
-recol1d=5720
-recol2s=5006
-recol2d=4407
-recol3s=61
-recol3d=4416
+recol1s=30545
+recol1d=28368
+recol2s=7264
+recol2d=17834
+recol3s=15855
+recol3d=20971
 2dyof=-9
 2dzoom=950
 2dyan=104
 2dxan=192
 cost=6
 weight=500g
-tradeable=yes
-param=cooking_range_only,1

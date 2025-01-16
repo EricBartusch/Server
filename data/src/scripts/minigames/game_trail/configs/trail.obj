@@ -5,17 +5,18 @@ cost=2
 weight=10g
 members=yes
 model=model_2774_obj
-recol1s=5452
-recol1d=4531
-recol2s=5440
-recol2d=4647
-recol3s=5427
-recol3d=4890
+recol1s=24174
+recol1d=18823
+recol2s=21003
+recol2d=15652
+recol3s=17832
+recol3d=12481
 2dxof=-1
 2dyof=56
 2dzoom=990
 2dyan=1716
 2dxan=264
+tradeable=no
 
 [trail_watch]
 name=Watch
@@ -28,6 +29,7 @@ model=model_2525_obj
 2dzoom=690
 2dyan=2032
 2dxan=368
+tradeable=no
 
 [trail_sextant]
 name=Sextant
@@ -42,8 +44,9 @@ model=model_2628_obj
 2dyan=124
 2dxan=488
 iop1=Look through
+tradeable=no
 
-[obj_2714]
+[trail_casket_easy_map001]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -55,6 +58,8 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_easy
+tradeable=no
 
 [obj_2715]
 name=Casket
@@ -69,8 +74,9 @@ cost=50
 iop1=Open
 members=yes
 stackable=yes
+tradeable=no
 
-[obj_2717]
+[trail_casket_easy_map002]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -82,6 +88,8 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_easy
+tradeable=no
 
 [obj_2718]
 name=Casket
@@ -96,8 +104,9 @@ cost=50
 iop1=Open
 members=yes
 stackable=yes
+tradeable=no
 
-[obj_2720]
+[trail_casket_easy_map003]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -109,6 +118,8 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_easy
+tradeable=no
 
 [obj_2721]
 name=Casket
@@ -123,10 +134,9 @@ cost=50
 iop1=Open
 members=yes
 stackable=yes
+tradeable=no
 
-
-
-[obj_2724]
+[trail_casket_hard_sextant_exp001]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -138,10 +148,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-
-
-[obj_2726]
+[trail_casket_hard_sextant_exp002]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -153,8 +163,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2728]
+[trail_casket_hard_sextant_exp003]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -166,8 +178,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2736]
+[trail_casket_hard_sextant_exp007]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -179,8 +193,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2738]
+[trail_casket_hard_sextant_exp008]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -192,8 +208,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2740]
+[trail_casket_hard_sextant_exp009]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -205,8 +223,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2742]
+[trail_casket_hard_sextant_exp010]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -218,8 +238,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2744]
+[trail_casket_hard_sextant_exp011]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -231,8 +253,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2746]
+[trail_casket_hard_sextant_exp012]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -244,8 +268,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2748]
+[trail_casket_hard_sextant_exp013]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -257,6 +283,8 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
 [obj_2749]
 name=Sliding piece
@@ -268,6 +296,8 @@ model=model_3413_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,0
 
 [obj_2750]
 name=Sliding piece
@@ -279,6 +309,8 @@ model=model_3414_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,1
 
 [obj_2751]
 name=Sliding piece
@@ -290,6 +322,8 @@ model=model_3415_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,2
 
 [obj_2752]
 name=Sliding piece
@@ -301,6 +335,8 @@ model=model_3416_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,3
 
 [obj_2753]
 name=Sliding piece
@@ -312,6 +348,8 @@ model=model_3417_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,4
 
 [obj_2754]
 name=Sliding piece
@@ -323,6 +361,8 @@ model=model_3418_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,5
 
 [obj_2755]
 name=Sliding piece
@@ -334,6 +374,8 @@ model=model_3419_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,6
 
 [obj_2756]
 name=Sliding piece
@@ -345,6 +387,8 @@ model=model_3420_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,7
 
 [obj_2757]
 name=Sliding piece
@@ -356,6 +400,8 @@ model=model_3421_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,8
 
 [obj_2758]
 name=Sliding piece
@@ -367,6 +413,8 @@ model=model_3422_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,9
 
 [obj_2759]
 name=Sliding piece
@@ -378,6 +426,8 @@ model=model_3423_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,10
 
 [obj_2760]
 name=Sliding piece
@@ -389,6 +439,8 @@ model=model_3424_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,11
 
 [obj_2761]
 name=Sliding piece
@@ -400,6 +452,8 @@ model=model_3425_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,12
 
 [obj_2762]
 name=Sliding piece
@@ -411,6 +465,8 @@ model=model_3426_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,13
 
 [obj_2763]
 name=Sliding piece
@@ -422,6 +478,8 @@ model=model_3427_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,14
 
 [obj_2764]
 name=Sliding piece
@@ -433,6 +491,8 @@ model=model_3428_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,15
 
 [obj_2765]
 name=Sliding piece
@@ -444,6 +504,8 @@ model=model_3429_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,16
 
 [obj_2766]
 name=Sliding piece
@@ -455,6 +517,8 @@ model=model_3430_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,17
 
 [obj_2767]
 name=Sliding piece
@@ -466,6 +530,8 @@ model=model_3431_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,18
 
 [obj_2768]
 name=Sliding piece
@@ -477,6 +543,8 @@ model=model_3432_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,19
 
 [obj_2769]
 name=Sliding piece
@@ -488,6 +556,8 @@ model=model_3433_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,20
 
 [obj_2770]
 name=Sliding piece
@@ -499,6 +569,8 @@ model=model_3434_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,21
 
 [obj_2771]
 name=Sliding piece
@@ -510,6 +582,8 @@ model=model_3435_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,22
 
 [obj_2772]
 name=Sliding piece
@@ -521,8 +595,10 @@ model=model_3436_obj
 iop5=Move
 members=yes
 dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,23
 
-[obj_2775]
+[trail_casket_hard_riddle_exp002]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -534,8 +610,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2777]
+[trail_casket_hard_riddle_exp003]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -547,8 +625,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2779]
+[trail_casket_hard_riddle_exp004]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -560,8 +640,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2781]
+[trail_casket_hard_riddle_exp005]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -573,8 +655,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2784]
+[trail_casket_hard_riddle_exp007]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -586,8 +670,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2787]
+[trail_casket_hard_riddle_exp009]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -599,8 +685,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2789]
+[trail_casket_hard_riddle_exp010]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -612,8 +700,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2791]
+[trail_casket_hard_riddle_exp011]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -625,8 +715,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_hard
+tradeable=no
 
-[obj_2795]
+[trail_clue_hard_puzzle_exp014]
 name=Puzzle box
 desc=I need to solve this!
 cost=100
@@ -637,8 +729,10 @@ model=model_3372_obj
 2dyan=80
 2dxan=420
 iop1=Open
+category=trail_puzzle
+tradeable=no
 
-[obj_2798]
+[trail_clue_hard_puzzle_exp016]
 name=Puzzle box
 desc=I need to solve this!
 cost=100
@@ -649,8 +743,10 @@ model=model_3372_obj
 2dyan=80
 2dxan=420
 iop1=Open
+category=trail_puzzle
+tradeable=no
 
-[obj_2800]
+[trail_clue_hard_puzzle_exp017]
 name=Puzzle box
 desc=I need to solve this!
 cost=100
@@ -661,8 +757,10 @@ model=model_3372_obj
 2dyan=80
 2dxan=420
 iop1=Open
+category=trail_puzzle
+tradeable=no
 
-[obj_2802]
+[trail_casket_medium_sextant_exp001]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -674,8 +772,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2828]
+[trail_casket_medium_map001]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -687,8 +787,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2830]
+[trail_casket_medium_map002]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -700,8 +802,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2804]
+[trail_casket_medium_sextant_exp002]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -713,8 +817,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2806]
+[trail_casket_medium_sextant_exp003]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -726,8 +832,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2808]
+[trail_casket_medium_sextant_exp004]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -739,8 +847,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2810]
+[trail_casket_medium_sextant_exp005]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -752,8 +862,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2812]
+[trail_casket_medium_sextant_exp006]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -765,8 +877,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2814]
+[trail_casket_medium_sextant_exp007]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -778,8 +892,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2816]
+[trail_casket_medium_sextant_exp008]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -791,8 +907,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2818]
+[trail_casket_medium_sextant_exp009]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -804,8 +922,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2820]
+[trail_casket_medium_sextant_exp010]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -817,8 +937,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2822]
+[trail_casket_medium_sextant_exp011]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -830,8 +952,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2824]
+[trail_casket_medium_sextant_exp012]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -843,8 +967,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2826]
+[trail_casket_medium_sextant_exp013]
 name=Casket
 desc=I hope there's treasure in it.
 model=model_2450_obj
@@ -856,8 +982,10 @@ model=model_2450_obj
 cost=50
 iop1=Open
 members=yes
+category=trail_casket_medium
+tradeable=no
 
-[obj_2832]
+[trail_clue_medium_key_exp001]
 name=Key
 desc=A key to unlock a treasure chest.
 members=yes
@@ -868,8 +996,9 @@ model=model_2372_obj
 2dzoom=700
 2dyan=20
 2dxan=328
+tradeable=no
 
-[obj_2834]
+[trail_clue_medium_key_exp002]
 name=Key
 desc=A key to some drawers.
 members=yes
@@ -880,8 +1009,9 @@ model=model_2372_obj
 2dzoom=700
 2dyan=20
 2dxan=328
+tradeable=no
 
-[obj_2836]
+[trail_clue_medium_key_exp003]
 name=Key
 desc=A key to some drawers.
 members=yes
@@ -892,8 +1022,9 @@ model=model_2372_obj
 2dzoom=700
 2dyan=20
 2dxan=328
+tradeable=no
 
-[obj_2838]
+[trail_clue_medium_key_exp004]
 name=Key
 desc=A key to some drawers.
 members=yes
@@ -904,8 +1035,9 @@ model=model_2372_obj
 2dzoom=700
 2dyan=20
 2dxan=328
+tradeable=no
 
-[obj_2840]
+[trail_clue_medium_key_exp005]
 name=Key
 desc=A key to some drawers.
 members=yes
@@ -916,3 +1048,4 @@ model=model_2372_obj
 2dzoom=700
 2dyan=20
 2dxan=328
+tradeable=no

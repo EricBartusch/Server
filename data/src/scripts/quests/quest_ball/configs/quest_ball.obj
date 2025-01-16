@@ -1,4 +1,4 @@
-[obj_2407]
+[boy_ball]
 name=Ball
 desc=A childs' ball.
 cost=1
@@ -8,35 +8,40 @@ model=model_2755_obj
 2dxan=300
 weight=150g
 members=yes
+tradeable=no
 
-[obj_2408]
+[ball_diary]
 name=Diary
 desc=A daily journal.
 iop1=Read
 members=yes
 model=model_2794_obj
-recol1s=5018
-recol1d=334
+recol1s=13472
+recol1d=23056
 2dzoom=840
 2dyan=152
 2dxan=256
 weight=18oz
+respawnrate=30
+tradeable=no
 
-[obj_2409]
+[ball_doorkey]
 name=Door key
 desc=A key to the Witches' house front door.
 members=yes
 model=model_2372_obj
-recol1s=8128
-recol1d=7087
+recol1s=31393
+recol1d=22945
 2dxof=-3
 2dyof=5
 2dzoom=700
 2dyan=20
 2dxan=328
 weight=10g
+respawnrate=95
+tradeable=no
 
-[obj_2410]
+[magnet]
 name=Magnet
 desc=A very attractive magnet.
 cost=3
@@ -48,17 +53,19 @@ model=model_2798_obj
 2dxan=440
 weight=20g
 members=yes
+tradeable=no
 
-[obj_2411]
+[ball_shedkey]
 name=Key
 desc=A key to the Witches' shed.
 members=yes
 model=model_2372_obj
-recol1s=8128
-recol1d=66
+recol1s=31393
+recol1d=16912
 2dxof=-3
 2dyof=5
 2dzoom=700
 2dyan=20
 2dxan=328
 weight=10g
+tradeable=no

@@ -1,5 +1,5 @@
-[ai_queue3,npc_90](int $arg) @skeleton_unarmed;
-[ai_queue3,npc_91](int $arg) @skeleton_unarmed;
+[ai_queue3,skeleton1] @skeleton_unarmed;
+[ai_queue3,skeleton2] @skeleton_unarmed;
 
 [label,skeleton_unarmed]
 gosub(npc_death);
@@ -54,11 +54,11 @@ if ($random < 7) {
 } else if ($random < 109) {
     obj_add(npc_coord, grain, 1, ^lootdrop_duration);
 } else if ($random < 110) {
-    ~lootdrop(npc_coord, ~randomjewel, ^lootdrop_duration);
+    obj_add(npc_coord, ~randomjewel, ^lootdrop_duration);
 }
 
-[ai_queue3,npc_92](int $arg) @skeleton_armed;
-[ai_queue3,npc_93](int $arg) @skeleton_armed;
+[ai_queue3,skeleton3] @skeleton_armed;
+[ai_queue3,skeleton4] @skeleton_armed;
 
 [label,skeleton_armed]
 gosub(npc_death);
@@ -107,5 +107,5 @@ if ($random < 6) {
 } else if ($random < 118) {
     obj_add(npc_coord, bronze_bar, 1, ^lootdrop_duration);
 } else if ($random < 120) {
-    ~lootdrop(npc_coord, ~randomjewel, ^lootdrop_duration);
+    obj_add(npc_coord, ~randomjewel, ^lootdrop_duration);
 }

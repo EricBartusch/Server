@@ -9,9 +9,25 @@ while ($i < $size) {
     $i = add($i, 1);
 }
 
+[proc,.moveallinv](inv $src, inv $dest)
+def_int $size = .inv_size($src);
+def_int $i = 0;
+while ($i < $size) {
+    def_obj $obj = .inv_getobj($src, $i);
+    if ($obj ! null) {
+        .inv_moveitem($src, $dest, $obj, .inv_total($src, $obj));
+    }
+    $i = add($i, 1);
+}
+
+
 // ----
 
 [opplayer4,_]
+if (~in_duel_arena(coord) = true) {
+    mes("You can't trade in a duel arena."); // https://youtu.be/nUwvlFkcsqA?t=19
+    return; 
+}
 if (.busy = true) {
     mes("<.displayname> is busy at the moment.");
     return;
@@ -22,6 +38,9 @@ mes("Sending trade offer...");
 %tradepartner = .uid;
 
 if (.%tradepartner = uid) {
+    if (.p_finduid(.uid) = true) {
+        .p_stopaction;
+    }
     if_settext(trademain:status, "");
     if_settext(trademain:otherplayer, "Trading With: <.displayname>");
     inv_clear(tempinv);
@@ -36,8 +55,8 @@ if (.%tradepartner = uid) {
     .invother_transmit(uid, tempinv, trademain:otherinv);
     .inv_transmit(inv, tradeside:inv);
 
-    if_openmainmodalsideoverlay(trademain, tradeside);
-    .if_openmainmodalsideoverlay(trademain, tradeside);
+    if_openmain_side(trademain, tradeside);
+    .if_openmain_side(trademain, tradeside);
 
     %tradestatus = 0;
     .%tradestatus = 0;
@@ -58,45 +77,23 @@ if (.finduid(%tradepartner) = true) {
         .inv_stoptransmit(trademain:otherinv);
         .inv_stoptransmit(tradeside:inv);
 
-        // check if contents of tempinv fits in other player's inv
-        def_int $size = inv_size(tempinv);
-        def_int $slot = 0;
-        while ($slot < $size) {
-            def_obj $obj = inv_getobj(tempinv, $slot);
-            def_int $num = inv_getnum(tempinv, $slot);
+        ~inv_remove_leading_empty_slots(tempinv);
+        ~.inv_remove_leading_empty_slots(tempinv);
 
-            if ($obj ! null) {
-                if (.inv_itemspace(inv, $obj, $num, sub(inv_size(inv), $slot)) = false) {
-                    mes("Other player doesn't have enough inventory space for this trade.");
-                    .mes("You don't have enough inventory space for this trade.");
-
-                    if_close;
-                    .if_close;
-                    return;
-                }
-            }
-
-            $slot = add($slot, 1);
+        if (~enough_trade_space = false) {
+            mes("Other player doesn't have enough inventory space for this trade.");
+            .mes("You don't have enough inventory space for this trade.");
+            if_close;
+            .if_close;
+            return;
         }
 
-        // and in the reverse direction
-        $slot = 0;
-        while ($slot < $size) {
-            def_obj $obj = .inv_getobj(tempinv, $slot);
-            def_int $num = .inv_getnum(tempinv, $slot);
-
-            if ($obj ! null) {
-                if (inv_itemspace(inv, $obj, $num, sub(inv_size(inv), $slot)) = false) {
-                    mes("You don't have enough inventory space for this trade.");
-                    .mes("Other player doesn't have enough inventory space for this trade.");
-
-                    if_close;
-                    .if_close;
-                    return;
-                }
-            }
-
-            $slot = add($slot, 1);
+        if (~.enough_trade_space = false) {
+            mes("You don't have enough inventory space for this trade.");
+            .mes("Other player doesn't have enough inventory space for this trade.");
+            if_close;
+            .if_close;
+            return;
         }
 
         def_int $tempinvused = sub(inv_size(tempinv), inv_freespace(tempinv));
@@ -135,14 +132,71 @@ if (.finduid(%tradepartner) = true) {
             .inv_transmit(tempinv, tradeconfirm:inv2);
         }
 
-        if_openmainmodal(tradeconfirm);
-        .if_openmainmodal(tradeconfirm);
+        if_openmain(tradeconfirm);
+        .if_openmain(tradeconfirm);
+
+        if_settext(tradeconfirm:com_91, "Are you sure you want to make this trade?");
+        .if_settext(tradeconfirm:com_91, "Are you sure you want to make this trade?");
 
         %tradestatus = 2;
         .%tradestatus = 2;
     } else {
-        if_settext(trademain:status, "Waiting for other player");
+        if_settext(trademain:status, "Waiting for other player..."); // https://youtu.be/uSO-ilQk5XY?list=PLn23LiLYLb1bQ7Hwp77KoNBjKvpZQTfJT&t=817
+        .if_settext(trademain:status,"Other player has accepted."); // https://storage.googleapis.com/tannerdino/images/06Dec14-16.jpg
     }
+}
+
+[proc,enough_trade_space]()(boolean)
+// check if contents of tempinv fits in other player's inv
+def_int $size = inv_size(tempinv);
+def_int $slot = 0;
+while ($slot < $size) {
+    def_obj $obj = inv_getobj(tempinv, $slot);
+    def_int $num = inv_getnum(tempinv, $slot);
+
+    if ($obj ! null) {
+        if (.inv_itemspace(inv, $obj, $num, sub(.inv_size(inv), $slot)) = false) {
+            return(false);
+        }
+    }
+
+    $slot = add($slot, 1);
+}
+return(true);
+
+[proc,.enough_trade_space]()(boolean)
+def_int $size = .inv_size(tempinv);
+def_int $slot = 0;
+while ($slot < $size) {
+    def_obj $obj = .inv_getobj(tempinv, $slot);
+    def_int $num = .inv_getnum(tempinv, $slot);
+
+    if ($obj ! null) {
+        if (inv_itemspace(inv, $obj, $num, sub(inv_size(inv), $slot)) = false) {
+            return(false);
+        }
+    }
+
+    $slot = add($slot, 1);
+}
+return(true);
+
+[proc,inv_remove_leading_empty_slots](inv $inv)
+def_int $slot = 0;
+while ($slot < inv_size($inv)) {
+    if (inv_getobj($inv, $slot) ! null) {
+        inv_movefromslot($inv, $inv, $slot);
+    }
+    $slot = add($slot, 1);
+}
+
+[proc,.inv_remove_leading_empty_slots](inv $inv)
+def_int $slot = 0;
+while ($slot < .inv_size($inv)) {
+    if (.inv_getobj($inv, $slot) ! null) {
+        .inv_movefromslot($inv, $inv, $slot);
+    }
+    $slot = add($slot, 1);
 }
 
 [if_close,trademain]
@@ -155,6 +209,9 @@ inv_stoptransmit(tradeside:inv);
 if (.finduid(%tradepartner) = true) {
     .%tradepartner = null;
     .if_close;
+    if (%tradestatus ! 1 & .%tradestatus ! 1) {
+        .mes("Other player declined trade."); // osrs
+    }
 }
 
 %tradepartner = null;
@@ -175,6 +232,9 @@ if (.finduid(%tradepartner) = true) {
 
         if_close;
         .if_close;
+    } else {
+        .if_settext(tradeconfirm:com_91, "Other player has accepted."); // osrs
+        if_settext(tradeconfirm:com_91, "Waiting for other player."); // https://youtu.be/uSO-ilQk5XY?list=PLn23LiLYLb1bQ7Hwp77KoNBjKvpZQTfJT&t=819
     }
 }
 
@@ -184,16 +244,13 @@ inv_stoptransmit(tradeconfirm:inv2);
 inv_stoptransmit(tradeconfirm:otherinv1);
 inv_stoptransmit(tradeconfirm:otherinv2);
 
-if (%tradestatus ! 3) {
-    ~moveallinv(tempinv, inv);
-
-    if (.finduid(%tradepartner) = true) {
-        .%tradepartner = null;
-        .if_close;
-    }
-
-    %tradepartner = null;
+~moveallinv(tempinv, inv);
+if (.finduid(%tradepartner) = true) {
+    .%tradepartner = null;
+    .if_close;
+    .mes("Other player declined trade."); // osrs
 }
+%tradepartner = null;
 
 // ----
 

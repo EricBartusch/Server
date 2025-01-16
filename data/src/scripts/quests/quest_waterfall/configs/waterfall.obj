@@ -3,14 +3,15 @@ cost=2
 name=Book on baxtorian
 desc=A book on elven history in north runescape.
 model=model_2794_obj
-recol1s=5018
-recol1d=14226
+recol1s=13472
+recol1d=7456
 2dzoom=840
 2dyan=152
 2dxan=256
 members=yes
 iop1=Read
 weight=18oz
+tradeable=no
 
 [golrie_key]
 name=A key
@@ -23,6 +24,7 @@ model=model_2372_obj
 2dxan=328
 weight=10g
 members=yes
+tradeable=no
 
 [glarials_pebble]
 name=Glarials pebble
@@ -33,13 +35,14 @@ model=model_2701_obj
 2dxan=236
 weight=10g
 members=yes
+tradeable=no
 
 [glarials_amulet]
 name=Glarials amulet
 desc=A bright green gem set in a necklace.
 model=model_2515_obj
-recol1s=11200
-recol1d=22464
+recol1s=31649
+recol1d=992
 2dxof=1
 2dyof=16
 2dzoom=620
@@ -51,6 +54,7 @@ manwear=model_283_obj_wear,0
 womanwear=model_447_obj_wear,0
 weight=10g
 members=yes
+tradeable=no
 
 [glarials_urn_full]
 name=Glarials urn
@@ -62,6 +66,7 @@ model=model_2704_obj
 2dxan=68
 weight=5oz
 members=yes
+tradeable=no
 
 [glarials_urn_empty]
 name=Glarials urn
@@ -73,6 +78,7 @@ model=model_2704_obj
 2dxan=68
 weight=3oz
 members=yes
+tradeable=no
 
 [waterfall_key]
 name=A key
@@ -85,14 +91,15 @@ model=model_2372_obj
 2dxan=328
 weight=10g
 members=yes
+tradeable=no
 
 [mithril_seeds]
 name=Mithril seeds
 desc=Magical seeds in a mithril case.
 cost=200
 model=model_2381_obj
-recol1s=43288
-recol1d=22433
+recol1s=4232
+recol1d=512
 2dxof=7
 2dyof=39
 2dzoom=920
@@ -102,4 +109,3 @@ members=yes
 stackable=yes
 iop1=Plant
 weight=1oz
-tradeable=yes

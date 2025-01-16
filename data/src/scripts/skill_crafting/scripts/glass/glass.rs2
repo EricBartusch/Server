@@ -1,22 +1,29 @@
 [oplocu,sand_pit]
 if (last_useitem = bucket_empty) @sand_fill;
-@nothing_interesting_happens;
+~displaymessage(^dm_default);
 
 [opheldu,glassblowing_pipe]
 if (last_useitem = molten_glass) @craft_glass_interface;
 
 [opheldu,molten_glass]
 if (last_useitem = glassblowing_pipe) @craft_glass_interface;
+if (last_useitem = lens_mould) @craft_telescope_disc;
 
 [label,sand_fill]
-~require_members_feature;
+if (map_members = false) {
+    mes(^mes_members_feature);
+    return;
+}
 anim(human_fillbucket_sandpit, 0);
 inv_del(inv, bucket_empty, 1);
 inv_add(inv, bucket_sand, 1);
 mes("You fill the bucket with sand.");
 
 [label,smelt_glass]
-~require_members_feature;
+if (map_members = false) {
+    mes(^mes_members_feature);
+    return;
+}
 // just a guess for now. level failure:
 if (stat(crafting) < 1) {
     ~mesbox("You need at least 1 Crafting to make Glass.");
@@ -43,16 +50,23 @@ sound_synth(furnace,0,0);
 // success message
 mes("You heat the sand and soda ash in the furnace to make glass.");
 // give xp
-givexp(crafting, 200);
+stat_advance(crafting, 200);
 
 
 [label,craft_glass_interface]
-~require_members_feature;
+if (map_members = false) {
+    mes(^mes_members_feature);
+    return;
+}
 def_namedobj $item = ~multiobj3 ("What would you like to make?", 
     beer_glass, 0, 5, 200, "Beer Glass", 0, 0,
     vial_empty, 2, 10, 180, "Vial", 0, 0,
     stafforb, 2, -10, 200, "Orb", 0, 0
 );
+if ($item = null) {
+    ~displaymessage(^dm_default);
+    return;
+}
 @crafting_glass($item);
 
 
@@ -74,4 +88,4 @@ anim(human_glassblowing,0);
 // display game message
 mes("You make <$name>.");
 // give xp
-givexp(crafting, struct_param($struct, productexp));
+stat_advance(crafting, struct_param($struct, productexp));

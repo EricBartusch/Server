@@ -21,9 +21,9 @@ if ($is_outside = true & ((inv_getobj(worn, ^wearpos_hat) ! bronze_med_helm) | (
 [oploc1,blackknight_door_to_grill]
 def_boolean $is_outside = ~check_axis(coord, loc_coord, loc_angle);
 if ($is_outside = false) {
-    def_boolean $has_spoken = false;
-    $has_spoken = ~set_black_knight_aggro(1_47_54_17_55, $has_spoken);
-    ~set_black_knight_aggro(1_47_54_15_55, $has_spoken);
+    // black knights guarding the ladder down to the grill will aggress the player
+    ~set_black_knight_aggro(1_47_54_17_55);
+    ~set_black_knight_aggro(1_47_54_15_55);
 }
 ~open_and_close_door(loc_param(next_loc_stage), $is_outside, false);
 
@@ -36,27 +36,26 @@ while (npc_findnext = true) {
 }
 
 [label,blackknight_entrance_fortress_guard]
-~chatnpc(angry, "Hey, you can't come in here!|This is a high security military installation.");
+~chatnpc("<p,angry>Hey, you can't come in here!|This is a high security military installation.");
 def_int $option = ~p_choice3("Yes, but I work here!", 1, "Oh sorry.", 2, "So who does it belong to?", 3);
 if ($option = 1) {
-    ~chatplayer(angry, "Yes, but I work here!");
-    ~chatnpc(angry, "Well this the guards entrance. I might be new here but I can tell you're not a guard.|You're not even wearing proper guards uniform!");
+    ~chatplayer("<p,angry>Yes, but I work here!");
+    ~chatnpc("<p,angry>Well this the guards entrance. I might be new here but I can tell you're not a guard.|You're not even wearing proper guards uniform!");
     def_int $beg_or_more_info = ~p_choice2("Pleaassee let me in!", 1, "So what is this uniform?", 2);
 
     if ($beg_or_more_info = 1) {
-        ~chatplayer(sad, "Pleaassee let me in!");
-        ~chatnpc(angry, "Go away, you're getting annoying.");
+        ~chatplayer("<p,sad>Pleaassee let me in!");
+        ~chatnpc("<p,angry>Go away, you're getting annoying.");
     } else if ($beg_or_more_info = 2) {
-        ~chatplayer(neutral, "So what is this uniform?");
-        ~chatnpc(confused, "Well you can see me wearing it.|It's iron chain mail and a medium bronze helmet.");
+        ~chatplayer("<p,neutral>So what is this uniform?");
+        ~chatnpc("<p,confused>Well you can see me wearing it.|It's iron chain mail and a medium bronze helmet.");
     }
 } else if ($option = 2) {
-   ~chatplayer(neutral, "Oh sorry.");
-   ~chatnpc(angry, "Don't let it happen again.");
-   // TODO: Set all black knights in the banquet hall to attack player and yell "Die intruder!"
+   ~chatplayer("<p,neutral>Oh sorry.");
+   ~chatnpc("<p,angry>Don't let it happen again.");
 } else if ($option = 3) {
-    ~chatplayer(neutral, "So who does it belong to?");
-    ~chatnpc(angry, "This fortress belongs to the order of Black Knights known as the Kinshra.");
+    ~chatplayer("<p,neutral>So who does it belong to?");
+    ~chatnpc("<p,angry>This fortress belongs to the order of Black Knights known as the Kinshra.");
 }
 
 [oploc1,blackknight_banquet_hall_door]
@@ -82,18 +81,17 @@ if ($is_inside = false) {
 }
 
 [label,blackknight_banquet_hall_fortress_guard](boolean $is_inside)
-~chatnpc(neutral, "I wouldn't go in there if I woz you.|Those Black Knights are in an important meeting;|They said they'd kill anyone who went in there!");
+~chatnpc("<p,neutral>I wouldn't go in there if I woz you.|Those Black Knights are in an important meeting;|They said they'd kill anyone who went in there!");
 def_int $option = ~p_choice2("Ok I won't.", 1, "I don't care. I'm going in anyway.", 2);
 if ($option = 1) {
-    ~chatplayer(neutral, "Ok I won't.");
+    ~chatplayer("<p,neutral>Ok I won't.");
 } else {
-   ~chatplayer(neutral, "I don't care. I'm going in anyway.");
+   ~chatplayer("<p,neutral>I don't care. I'm going in anyway.");
    ~open_and_close_door(loc_param(next_loc_stage), $is_inside, false);
-   // TODO: Set all black knights in the banquet hall to attack player and yell "Die intruder!"
-   def_boolean $has_spoken = false;
-   $has_spoken =  ~set_black_knight_aggro(0_47_54_13_59, $has_spoken);
-   ~set_black_knight_aggro(0_47_54_21_59, $has_spoken);
-   ~set_black_knight_aggro(0_47_54_22_55, $has_spoken);
+   // black knights in the banquet hall will aggress the player
+   ~set_black_knight_aggro(0_47_54_13_59);
+   ~set_black_knight_aggro(0_47_54_21_59);
+   ~set_black_knight_aggro(0_47_54_22_55);
 }
 [oploc1,blackknight_potion_room_door]
 mes("It's locked.");
@@ -104,7 +102,7 @@ switch_obj (last_useitem)
 {
     case cabbage : @black_knights_fortress_correct_cabbage;
     case cabbage_draynor : @black_knights_fortress_incorrect_cabbage;
-    case default : @nothing_interesting_happens;
+    case default : ~displaymessage(^dm_default);
 };
 
 [label,black_knights_fortress_correct_cabbage]
@@ -118,10 +116,13 @@ if (%blackknight_progress = 2) {
     p_delay(2);
     mes("You hear the witch groan in dismay.");
     p_delay(2);
-    ~chatplayer(quiz, "Right I think that's successfully sabotaged the secret weapon.");
+    // initially we did not update quest stage unless the player clicked here to
+    // continue on the chatplayer, but a few people got tripped up by that
+    // now we are updating quest stage first so it cannot be interrupted
     ~update_blackknight_progress;
+    ~chatplayer("<p,quiz>Right I think that's successfully sabotaged the secret weapon.");
 } else {
-    ~chatplayer(confused, "Why would I want to do that?");
+    ~chatplayer("<p,confused>Why would I want to do that?");
 }
 
 [label,black_knights_fortress_incorrect_cabbage]
@@ -133,38 +134,34 @@ if (%blackknight_progress = 2) {
     mes("Not helping her.");
     p_delay(2);
 } else {
-    ~chatplayer(confused, "Why would I want to do that?");
+    ~chatplayer("<p,confused>Why would I want to do that?");
 }
 
 // Listening at grate
 [oploc1,blackknight_grate]
 if (%blackknight_progress = 1) {
-    ~chatnpc_specific("Black Knight", black_knight_knight, quiz, "So, how's the secret weapon coming along?");
-    ~chatnpc_specific("Witch", black_knight_witch, happy, "The invincibility potion is almost ready...");
-    ~chatnpc_specific("Witch", black_knight_witch, happy, "It's taken me five years but it's almost ready.");
-    ~chatnpc_specific("Witch", black_knight_witch, neutral, "Greldo the Goblin here|is just going to fetch the last ingredient for me.");
-    ~chatnpc_specific("Witch", black_knight_witch, neutral, "It's a specially grown cabbage.|Grown by my cousin Helda who lives in Draynor Manor.");
-    ~chatnpc_specific("Witch", black_knight_witch, neutral, "The soil there is slightly magical.|And it gives the cabbages slight magic properties.");
-    ~chatnpc_specific("Witch", black_knight_witch, shock, "Not to mention the trees!");
-    ~chatnpc_specific("Witch", black_knight_witch, neutral, "Now remember Greldo only a Draynor Manor cabbage will do. Don't get lazy and bring any old cabbage.|That would entirely wreck the potion.");
-    ~chatnpc_specific("Greldo", greldo, "default", "Yes mithreth.");
+    ~chatnpc_specific("Black Knight", black_knight_knight, "<p,quiz>So, how's the secret weapon coming along?");
+    ~chatnpc_specific("Witch", black_knight_witch, "<p,happy>The invincibility potion is almost ready...");
+    ~chatnpc_specific("Witch", black_knight_witch, "<p,happy>It's taken me five years but it's almost ready.");
+    ~chatnpc_specific("Witch", black_knight_witch, "<p,neutral>Greldo the Goblin here|is just going to fetch the last ingredient for me.");
+    ~chatnpc_specific("Witch", black_knight_witch, "<p,neutral>It's a specially grown cabbage.|Grown by my cousin Helda who lives in Draynor Manor.");
+    ~chatnpc_specific("Witch", black_knight_witch, "<p,neutral>The soil there is slightly magical.|And it gives the cabbages slight magic properties.");
+    ~chatnpc_specific("Witch", black_knight_witch, "<p,shock>Not to mention the trees!");
+    ~chatnpc_specific("Witch", black_knight_witch, "<p,neutral>Now remember Greldo only a Draynor Manor| cabbage will do! Don't get lazy| and bring any old cabbage, THAT| would ENTIRELY wreck the potion!"); // https://web.archive.org/web/*/http://zybez.com/img/qimg/blackknight/6_grill.jpg
+    ~chatnpc_specific("Greldo", greldo, "<p,goblinchat>Yes mithreth."); // neutral in osrs
     ~update_blackknight_progress;
 } else {
     mes("I can't hear much right now.");
 }
 
-[proc,set_black_knight_aggro](coord $coord, boolean $has_spoken)(boolean)
+[proc,set_black_knight_aggro](coord $coord)
 npc_findallzone($coord);
 while (npc_findnext = true) {
-    if (npc_type = npc_179) {
-        if ($has_spoken = false) {
-            npc_say("Die intruder!");
-            $has_spoken = true;
-        }
+    if (npc_type = black_knight_aggre) {
+        npc_say("Die intruder!");
         npc_setmode(opplayer2);
     }
 }
-return($has_spoken);
 
 [proc,update_blackknight_progress]
 %blackknight_progress = calc(%blackknight_progress + 1);
@@ -174,4 +171,5 @@ return($has_spoken);
 %blackknight_progress = ^blackknight_complete;
 inv_add(inv, coins, 2500);
 mes("Sir Amik hands you 2500 coins.");
+session_log(^log_adventure, "Quest complete: Black Knight's Fortress");
 ~send_quest_complete(questlist:fortress, coins, 250, ^blackknight_questpoints, "You have completed the\\nBlack Knights' Fortress Quest!");

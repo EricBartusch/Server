@@ -10,7 +10,6 @@ model=model_2531_obj
 2dxan=164
 weight=300g
 category=category_130
-tradeable=yes
 param=next_obj_stage,obj_1893
 
 [obj_1893]
@@ -19,17 +18,16 @@ name=2/3 cake
 desc=Someone has eaten a big chunk of this cake.
 cost=30
 model=model_2535_obj
-recol1s=6036
-recol1d=8427
-recol2s=8094
-recol2d=7085
+recol1s=10400
+recol1d=30615
+recol2s=15680
+recol2d=21921
 2dyof=-7
 2dzoom=690
 2dyan=1840
 2dxan=180
 weight=200g
 category=category_130
-tradeable=yes
 param=next_obj_stage,obj_1895
 
 [obj_1895]
@@ -38,10 +36,10 @@ name=Slice of cake
 desc=I'd rather have a whole cake.
 cost=10
 model=model_2524_obj
-recol1s=6036
-recol1d=8427
-recol2s=8094
-recol2d=7085
+recol1s=10400
+recol1d=30615
+recol2s=15680
+recol2d=21921
 2dxof=5
 2dyof=-10
 2dzoom=600
@@ -49,7 +47,6 @@ recol2d=7085
 2dxan=160
 weight=100g
 category=category_130
-tradeable=yes
 
 [chocolate_cake]
 iop1=Eat
@@ -57,19 +54,18 @@ name=Chocolate cake
 desc=This looks very tasty.
 cost=70
 model=model_2531_obj
-recol1s=127
-recol1d=7060
-recol2s=8094
-recol2d=5008
-recol3s=937
-recol3d=7060
+recol1s=32767
+recol1d=10432
+recol2s=15680
+recol2d=8288
+recol3s=19489
+recol3d=10432
 2dyof=-8
 2dzoom=670
 2dyan=120
 2dxan=164
 weight=300g
 category=category_130
-tradeable=yes
 param=next_obj_stage,obj_1899
 
 [obj_1899]
@@ -77,12 +73,12 @@ iop1=Eat
 name=2/3 chocolate cake
 desc=Someone has eaten a big chunk of this cake.
 model=model_2535_obj
-recol1s=127
-recol1d=7060
-recol2s=8094
-recol2d=5008
-recol3s=937
-recol3d=7060
+recol1s=32767
+recol1d=10432
+recol2s=15680
+recol2d=8288
+recol3s=19489
+recol3d=10432
 2dyof=-7
 2dzoom=690
 2dyan=1840
@@ -90,7 +86,6 @@ recol3d=7060
 cost=50
 weight=200g
 category=category_130
-tradeable=yes
 param=next_obj_stage,chocolate_slice
 
 [chocolate_slice]
@@ -98,12 +93,12 @@ iop1=Eat
 name=Chocolate slice
 desc=I'd rather have a whole cake.
 model=model_2524_obj
-recol1s=127
-recol1d=7060
-recol2s=8094
-recol2d=5008
-recol3s=937
-recol3d=7060
+recol1s=32767
+recol1d=10432
+recol2s=15680
+recol2d=8288
+recol3s=19489
+recol3d=10432
 2dxof=5
 2dyof=-10
 2dzoom=600
@@ -112,24 +107,22 @@ recol3d=7060
 cost=30
 weight=100g
 category=category_130
-tradeable=yes
 
 //guess
 [burnt_cake]
 name=Burnt cake
 desc=Argh what a mess!
 model=model_2531_obj
-recol1s=6036
-recol1d=8
-recol2s=8094
-recol2d=28
+recol1s=10400
+recol1d=2114
+recol2s=15680
+recol2d=7399
 2dyof=-8
 2dzoom=670
 2dyan=120
 2dxan=164
 cost=1
 weight=150g
-tradeable=yes
 
 [pot_of_flour]
 name=Pot of flour
@@ -142,15 +135,14 @@ model=model_2406_obj
 2dxan=112
 cost=10
 weight=3lb
-tradeable=yes
 
 [bucket_milk]
 name=Bucket of milk
 desc=It's a bucket of milk.
 cost=6
 model=model_2504_obj
-recol1s=39834
-recol1d=127
+recol1s=173
+recol1d=32767
 2dyof=-18
 2dzoom=1020
 2dyan=1688
@@ -169,7 +161,7 @@ model=model_2437_obj
 2dyan=68
 2dxan=144
 weight=20g
-tradeable=yes
+respawnrate=25
 
 [chocolate_bar]
 iop1=Eat
@@ -184,7 +176,6 @@ weight=150g
 category=category_59
 name=Chocolate bar
 desc=Mmmmmmm chocolate.
-tradeable=yes
 param=grindable_ingredient_refined,chocolate_dust
 param=grindable_ingredient_message,You grind the chocolate to dust.
 param=cocktail_message,You crumble the chocolate into the drink.
@@ -199,7 +190,6 @@ model=model_2756_obj
 2dyan=116
 2dxan=220
 weight=6oz
-tradeable=yes
 
 [cake_tin]
 name=Cake tin
@@ -210,4 +200,3 @@ model=model_2596_obj
 2dxan=172
 cost=10
 weight=100g
-tradeable=yes

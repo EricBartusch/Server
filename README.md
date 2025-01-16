@@ -1,84 +1,49 @@
-# 2004scape Server
+<div align="center">
+<h1>Lost City - May 18, 2004</h1>
+</div>
 
-[Website](https://2004scape.org) | [Discord](https://discord.gg/hN3tHUmZEN) | [Rune-Server](https://www.rune-server.ee/runescape-development/rs2-server/projects/701698-lost-city-225-emulation.html)
-
-**disclaimer: All server code has been written from scratch for this project, Jagex has never had any source code leaks.**
-
-**status: in-development, not ready for players**. Contributors are welcome to help out.
-
----
-
-This project aims to replicate an authentic RuneScape experience from May 2004. It should be considered an emulator first and foremost, as replicating behaviors by emulating the underlying systems is the biggest focus. The config system and scripting system is as close to authentic as we understand it, and is continually refined as we learn more info.
-
----
-
-*To Jagex*: This project comes out of love for the game. As MMOs age, their previous versions are lost to history. An experience becomes ephemeral and time-limited. We're aware that you have no backups for this era and so we're putting in the effort to recreate what we can.  
-It won't ever profit off your trademarks. Without this project, this version of the game only lives in our memories. Screenshots and videos are scarce, and the original data is lost to time. This is no easy task.
-
-*To players*: So happy to have you interested! RuneScape 2 launched on March 29, 2004. We have no copies of that revision, but we do have some client caches from May 2004. This project emulates *May 18, 2004*, which was live until June 1 of that year. It has Treasure Trails and Big Chompy Bird Hunting. The next revision after this added Elemental Workshop I.
-
-## Environment Dependencies
-
-- [NodeJS 20+](https://nodejs.org/) (current LTS) or [18](https://nodejs.org/download/release/v18.18.2/) (last LTS)
-- [Java 17+](https://adoptium.net/)
-
-Java is required for JagCompress.jar (a small 1:1 compression utility) and RuneScriptCompiler.jar (the content language compiler).
-
-You can download JagCompress and RuneScriptCompiler from the [#dev-resources](https://discord.com/channels/953326730632904844/1125601647574396978) Discord channel. Place the jar files in the root directory of the project.  
-
-[JagCompress is also available on GitHub](https://github.com/2004scape/JagCompress/releases). RuneScriptCompiler is not yet open-source, sorry for any inconvenience.
+> [!NOTE]
+> Learn about our history and ethos on our forum: https://lostcity.rs/t/faq-what-is-lost-city/16
 
 ## Getting Started
 
-1. Clone the repo
-2. Install [environment dependencies](#environment-dependencies)
-3. Run `npm ci` to install code dependencies
-4. Copy the file `.env.example` to `.env`
-5. Run `npm run client:pack` to create the client cache. This may take a few minutes the first time
-6. Run `npm run server:build` to build all of the server files (packs cache, generates symbols, compiles scripts)
-7. Run `npm start` to start the server
+> [!IMPORTANT]
+> If you run into issues please see our [common issues](#common-issues).
 
-## Development Workflow
+> [!TIP]
+> Windows users: We have a script called `quickstart.bat` that will launch the server for you, which combines steps 3 and 4 below.
 
-You can run `npm run dev` to start the server. This will watch for changes to the source, config, or script files and automatically rebuild them.
+1. Download and extract this repo somewhere on your computer
+2. Install our [Dependencies](#environment-dependencies)
+3. Open the folder you downloaded in a command prompt
+4. Run `npm start`
 
-Whenever you make a change to a config or script file while the server is running you can hotload loaded data by running `::reload` in-game.
+Once it tells you the world has started, open up [http://localhost](http://localhost) in your browser and play!
 
-### Running tests
+> [!TIP]
+> Advanced users: You can customize your setup by copying the `.env.example` file to `.env`. This is not necessary to connect and develop.
 
-We use `jest` for unit tests.
+## Dependencies
 
-- You can run the tests with `npm test`.
-- If you're using VS Code, there are two launch options you can use. Both of these options will run in debug mode so you can set breakpoints.
-    - `Debug Jest: All tests` will run all tests in series.
-    - `Debug Jest: Current test file` will run the tests in the currently open test file.
+- [NodeJS 22](https://nodejs.org/)
+- [Java 17](https://adoptium.net/) - later LTS versions are also fine.
 
-Test files should be colocated with the source files, i.e. `src/foo.ts` should have a test file `src/foo.test.ts`.
+> [!TIP]
+> If you're using VS Code (recommended), [we have an extension to install on the marketplace.](https://marketplace.visualstudio.com/items?itemName=2004scape.runescriptlanguage)
 
-Configuration for the tests can be found in `jest.config.ts`.
+## Workflow
 
-### Running linter
+Content developers should run `npm start`. The server will watch for changes to scripts and configs, then automatically repack everything.
 
-We use `eslint` for linting this project.
+Engine developers should run `npm run dev`. This does what `npm start` does above, but also completely restarts the server when engine code has changed.
 
-- You can run the linter with `npm run lint`.
-- To run the eslint auto-fixer, you can use `npm run lint -- --fix`.
+## Common Issues
 
-It's recommended to install a suitable plugin/extension for your IDE, to show you lint results inline.
+* `bad option: --import`  
+You are using an older version of Node. Reinstall and re-run.
 
-**Please aim to avoid warnings!** They are rules that we eventually want to switch to errors.
+* `'"java"' is not recognized as an internal or external command`  
+You do not have Java installed.
 
-Configuration for the linter can be found in `.eslintrc.cjs`.
-
-## Credits
-
-Thanks to all the current contributors, every PR you submit gets us closer and closer to feature completeness.
-
-Thanks to these indirect or external contributors
-- Kris: for all your help theorycrafting and testing, and to his sources as well for teaching him
-- Walied: for your work on understanding the client assets (worked on understanding cache formats)
-- Dane: for your work on understanding the client (worked on client refactors)
-- TheSuddenSilent: for your help gathering period-accurate data through hours and hours of your time (does not use git)
-
-If anyone is not listed here, whether that's intentional to remain anonymous or an oversight, thank you for your help.  
-This type of project has been a long time coming and I hope to see the trend continue.
+* `has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 52.0`  
+You are using Java 8 or Java 11. If you have multiple java versions, you are now an "advanced user," go ahead and set `JAVA_PATH=path-to-java.exe` in your .env file.

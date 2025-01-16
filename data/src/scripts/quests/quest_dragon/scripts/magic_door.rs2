@@ -34,8 +34,7 @@ mes("You open the chest.");
 anim(human_openchest, 0);
 sound_synth(chest_open, 0, 0);
 p_delay(0);
-loc_del(300);
-loc_add(loc_coord, dragon_slayer_magic_chest_opened, loc_angle, loc_shape, 300);
+loc_change(dragon_slayer_magic_chest_opened, 300);
 
 [oploc2,dragon_slayer_magic_chest_opened]
 p_arrivedelay;
@@ -43,8 +42,7 @@ mes("You close the chest.");
 anim(human_closechest, 0);
 sound_synth(chest_close, 0, 0);
 p_delay(0);
-loc_del(300);
-loc_add(loc_coord, dragon_slayer_magic_chest_closed, loc_angle, loc_shape, 300);
+loc_change(dragon_slayer_magic_chest_closed, 300);
 
 [oploc1,dragon_slayer_magic_chest_opened]
 if (~quest_dragon_getting_map_parts = false | ~obj_gettotal(crandor_map_part3) > 0 | ~obj_gettotal(crandor_map) > 0) {
@@ -52,10 +50,9 @@ if (~quest_dragon_getting_map_parts = false | ~obj_gettotal(crandor_map_part3) >
 } else {
     // objbox looks soooo bad for our version, no way they used it
     // edit: confirmed it uses mesbox! https://youtu.be/tmPf68hogzw?t=471
-    // ~objbox(crandor_map_part3, "You find a map piece in the chest.");
+    // ~objbox(crandor_map_part3, "You find a map piece in the chest.", 250, 0, divide(^objbox_height, 2));
     ~mesbox("You find a map piece in the chest.");
     inv_add(inv, crandor_map_part3, 1);
 }
 // auto closes, yes. https://youtu.be/tmPf68hogzw?t=471
-loc_del(300);
-loc_add(loc_coord, dragon_slayer_magic_chest_closed, loc_angle, loc_shape, 300);
+loc_change(dragon_slayer_magic_chest_closed, 300);

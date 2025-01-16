@@ -10,6 +10,10 @@ default=human_unarmedpunch
 type=seq
 default=human_death
 
+[spawn_anim]
+type=seq
+default=null
+
 [attack_sound]
 type=synth
 default=unarmed_punch
@@ -30,6 +34,6 @@ default=bones
 type=boolean
 default=no
 
-[deathanim_delay]
+[retreat]
 type=int
-default=2
+default=null

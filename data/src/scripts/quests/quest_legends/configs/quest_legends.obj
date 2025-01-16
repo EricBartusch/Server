@@ -3,10 +3,10 @@ name=Radimus notes
 desc=Notes given to you by Radimus Erkle, it includes a partially completed map.
 members=yes
 model=model_2600_obj
-recol1s=10351
-recol1d=40171
-recol2s=7070
-recol2d=933
+recol1s=29594
+recol1d=22303
+recol2s=15648
+recol2d=17441
 2dxof=1
 2dyof=7
 2dzoom=1040
@@ -15,16 +15,17 @@ recol2d=933
 iop1=Read
 iop2=Complete
 weight=20g
+tradeable=no
 
 [obj_715]
 name=Radimus notes
 desc=Notes given to you by Radimus Erkle, it includes a partially completed map.
 members=yes
 model=model_2600_obj
-recol1s=10351
-recol1d=40171
-recol2s=7070
-recol2d=22433
+recol1s=29594
+recol1d=22303
+recol2s=15648
+recol2d=512
 2dxof=1
 2dyof=7
 2dzoom=1040
@@ -32,8 +33,9 @@ recol2d=22433
 2dxan=380
 iop1=Read
 weight=20g
+tradeable=no
 
-[obj_716]
+[bullroarer]
 name=Bull roarer
 desc=It makes a loud but interesting sound when swung in the air.
 model=model_2741_obj
@@ -43,6 +45,7 @@ members=yes
 2dxan=176
 iop1=Swing
 weight=20g
+tradeable=no
 
 [obj_717]
 name=Scrawled note
@@ -50,17 +53,17 @@ desc=A scrawled note with spidery writing on it.
 members=yes
 model=model_2838_obj
 recol1s=0
-recol1d=926
-recol2s=898
-recol2d=926
-recol3s=898
-recol3d=8530
-recol4s=898
-recol4d=8530
-recol5s=904
-recol5d=8530
-recol6s=5351
-recol6d=8530
+recol1d=15360
+recol2s=1024
+recol2d=15360
+recol3s=1024
+recol3d=24273
+recol4s=1024
+recol4d=24273
+recol5s=4096
+recol5d=24273
+recol6s=29494
+recol6d=24273
 manwear=model_532_obj_wear,0
 womanwear=model_532_obj_wear,6
 2dzoom=940
@@ -68,6 +71,7 @@ womanwear=model_532_obj_wear,6
 2dxan=248
 iop1=Read
 weight=20g
+tradeable=no
 
 [obj_718]
 name=A scribbled note
@@ -75,17 +79,17 @@ desc=A scrawled note with spidery writing on it.
 members=yes
 model=model_2838_obj
 recol1s=0
-recol1d=8414
-recol2s=898
-recol2d=960
-recol3s=898
-recol3d=8414
-recol4s=898
-recol4d=960
-recol5s=904
-recol5d=8414
-recol6s=5351
-recol6d=8414
+recol1d=27444
+recol2s=1024
+recol2d=30753
+recol3s=1024
+recol3d=27444
+recol4s=1024
+recol4d=30753
+recol5s=4096
+recol5d=27444
+recol6s=29494
+recol6d=27444
 manwear=model_532_obj_wear,0
 womanwear=model_532_obj_wear,6
 2dzoom=940
@@ -93,6 +97,7 @@ womanwear=model_532_obj_wear,6
 2dxan=248
 iop1=Read
 weight=20g
+tradeable=no
 
 [obj_719]
 name=Scrumpled note
@@ -100,17 +105,17 @@ desc=A scrawled note with spidery writing on it.
 members=yes
 model=model_2838_obj
 recol1s=0
-recol1d=36781
-recol2s=898
-recol2d=18652
-recol3s=898
-recol3d=36781
-recol4s=898
-recol4d=18652
-recol5s=904
-recol5d=36781
-recol6s=5351
-recol6d=18652
+recol1d=470
+recol2s=1024
+recol2d=22355
+recol3s=1024
+recol3d=470
+recol4s=1024
+recol4d=22355
+recol5s=4096
+recol5d=470
+recol6s=29494
+recol6d=22355
 manwear=model_532_obj_wear,0
 womanwear=model_532_obj_wear,6
 2dzoom=940
@@ -118,6 +123,7 @@ womanwear=model_532_obj_wear,6
 2dxan=248
 iop1=Read
 weight=20g
+tradeable=no
 
 [obj_720]
 name=Sketch
@@ -125,10 +131,10 @@ desc=A rough sketch of a bowl shaped vessel given to you by Gujuo.
 cost=10
 members=yes
 model=model_2600_obj
-recol1s=10351
-recol1d=40171
-recol2s=7070
-recol2d=933
+recol1s=29594
+recol1d=22303
+recol2s=15648
+recol2d=17441
 2dxof=1
 2dyof=7
 2dzoom=1040
@@ -136,6 +142,7 @@ recol2d=933
 2dxan=380
 iop1=Look
 weight=20g
+tradeable=no
 
 [obj_721]
 name=Gold bowl
@@ -143,14 +150,15 @@ desc=A specially made bowl constructed out of pure gold.
 cost=700
 members=yes
 model=model_2807_obj
-recol1s=7075
-recol1d=9166
-recol2s=7081
-recol2d=9166
+recol1s=16705
+recol1d=31528
+recol2s=19841
+recol2d=31528
 2dzoom=910
 2dyan=1856
 2dxan=204
 weight=800g
+tradeable=no
 
 [obj_722]
 name=Blessed gold bowl
@@ -158,14 +166,15 @@ desc=A specially made bowl constructed out of pure gold and blessed.
 cost=700
 members=yes
 model=model_2807_obj
-recol1s=7075
-recol1d=9166
-recol2s=7081
-recol2d=9166
+recol1s=16705
+recol1d=31528
+recol2s=19841
+recol2d=31528
 2dzoom=910
 2dyan=1856
 2dxan=204
 weight=800g
+tradeable=no
 
 [obj_723]
 name=Golden bowl
@@ -173,13 +182,14 @@ desc=A specially made golden bowl with water.
 cost=700
 members=yes
 model=model_2367_obj
-recol1s=7081
-recol1d=9166
+recol1s=19841
+recol1d=31528
 2dzoom=910
 2dyan=1856
 2dxan=204
 iop1=Empty
 weight=1kg
+tradeable=no
 
 [obj_724]
 name=Golden bowl
@@ -187,13 +197,14 @@ desc=A specially made bowl constructed out of pure gold. It has pure water in it
 cost=700
 members=yes
 model=model_2367_obj
-recol1s=7081
-recol1d=9166
+recol1s=19841
+recol1d=31528
 2dzoom=910
 2dyan=1856
 2dxan=204
 iop1=Empty
 weight=1kg
+tradeable=no
 
 [obj_725]
 name=Golden bowl
@@ -201,13 +212,14 @@ desc=A blessed golden bowl. It has water in it.
 cost=700
 members=yes
 model=model_2367_obj
-recol1s=7081
-recol1d=9166
+recol1s=19841
+recol1d=31528
 2dzoom=910
 2dyan=1856
 2dxan=204
 iop1=Empty
 weight=1kg
+tradeable=no
 
 [obj_726]
 name=Golden bowl
@@ -215,13 +227,14 @@ desc=A blessed golden bowl. It has pure sacred water in it.
 cost=700
 members=yes
 model=model_2367_obj
-recol1s=7081
-recol1d=9166
+recol1s=19841
+recol1d=31528
 2dzoom=910
 2dyan=1856
 2dxan=204
 iop1=Empty
 weight=1kg
+tradeable=no
 
 [obj_727]
 cost=2
@@ -237,37 +250,37 @@ womanwear=model_515_obj_wear,0
 2dyan=940
 2dxan=212
 weight=12g
-tradeable=yes
 
 [obj_729]
 name=Shamans tome
 desc=It looks like the Shamans personal notes...
 model=model_2633_obj
-recol1s=5018
-recol1d=14226
-recol2s=10351
-recol2d=14247
+recol1s=13472
+recol1d=7456
+recol2s=29594
+recol2d=13889
 2dzoom=840
 2dyan=152
 2dxan=256
 members=yes
 iop1=Read
 weight=18oz
+tradeable=no
 
 [obj_730]
 name=Book of binding
 desc=An ancient tome on Demonology.
 model=model_2509_obj
-recol1s=5018
-recol1d=43544
-recol2s=41
-recol2d=41191
-recol3s=61
-recol3d=41191
-recol4s=11177
-recol4d=41191
-recol5s=10351
-recol5d=33744
+recol1s=13472
+recol1d=3177
+recol2s=10570
+recol2d=20159
+recol3s=15855
+recol3d=20159
+recol4s=20033
+recol4d=20159
+recol5s=29594
+recol5d=9151
 2dyof=5
 2dzoom=1340
 2dyan=1940
@@ -275,6 +288,7 @@ recol5d=33744
 members=yes
 iop1=Read
 weight=18oz
+tradeable=no
 
 [obj_731]
 name=Enchanted vial
@@ -288,13 +302,14 @@ members=yes
 manwear=model_561_obj_wear,0
 womanwear=model_561_obj_wear,6
 weight=10g
+tradeable=no
 
-[obj_732]
+[holy_water]
 name=Holy water
 desc=A vial of holy water, good against certain demons.
 model=model_1736_obj
-recol1s=61
-recol1d=43959
+recol1s=15855
+recol1d=27
 members=yes
 stackable=yes
 2dyof=-2
@@ -311,9 +326,12 @@ param=rangeattack,6
 param=rangebonus,12
 param=levelrequire,1
 param=attackrange,4
-param=rangeattack_anim,human_throw
+param=rangeattack_anim,human_holy_water_throw
 param=defend_anim,human_unarmedblock
+param=proj_launch,holy_water_launch
+param=proj_travel,holy_water_travel
 param=rangeattack_sound,thrown
+tradeable=no
 
 [obj_733]
 name=Smashed glass
@@ -327,14 +345,13 @@ model=model_2676_obj
 2dyan=32
 2dxan=412
 weight=2g
-tradeable=yes
 
 [obj_735]
 name=Yommi tree seeds
 desc=These need to be germinated before they can be used.
 model=model_2381_obj
-recol1s=43288
-recol1d=22433
+recol1s=4232
+recol1d=512
 2dxof=7
 2dyof=39
 2dzoom=920
@@ -344,13 +361,14 @@ members=yes
 stackable=yes
 op1=Look
 weight=1g
+tradeable=no
 
 [obj_736]
 name=Yommi tree seeds
 desc=These are germinated and ready to be planted in fertile soil.
 model=model_2381_obj
-recol1s=43288
-recol1d=17344
+recol1s=4232
+recol1d=14273
 2dxof=7
 2dyof=39
 2dzoom=920
@@ -360,39 +378,42 @@ members=yes
 stackable=yes
 op1=Look
 weight=1g
+tradeable=no
 
 [obj_737]
 name=Snakeweed mixture
 desc=It's a mixture of Snakeweed and water, I need another ingredient to finish this potion.
 model=model_2789_obj
-recol1s=61
-recol1d=17344
+recol1s=15855
+recol1d=14273
 2dyof=-1
 2dzoom=550
 2dyan=1996
 2dxan=84
 weight=25g
 members=yes
+tradeable=no
 
 [obj_738]
 name=Ardrigal mixture
 desc=It's a mixture of Ardrigal and water, I need another ingredient to finish this potion.
 model=model_2789_obj
-recol1s=61
-recol1d=8615
+recol1s=15855
+recol1d=14725
 members=yes
 2dyof=-1
 2dzoom=550
 2dyan=1996
 2dxan=84
 weight=25g
+tradeable=no
 
 [obj_739]
 name=Bravery potion
 desc=A bravery potion which Gujuo gave you the details for, let's hope it works.
 model=model_2789_obj
-recol1s=61
-recol1d=5018
+recol1s=15855
+recol1d=13472
 members=yes
 2dyof=-1
 2dzoom=550
@@ -400,6 +421,7 @@ members=yes
 2dxan=84
 iop1=Drink
 weight=25g
+tradeable=no
 
 [obj_740]
 name=Blue hat
@@ -421,6 +443,7 @@ womanhead=model_102_obj_wear
 weight=1lb
 param=magicattack,3
 param=magicdefence,3
+tradeable=no
 
 [obj_741]
 name=Chunk of crystal
@@ -431,6 +454,7 @@ members=yes
 2dyof=1
 2dzoom=660
 weight=50g
+tradeable=no
 
 [obj_742]
 name=Hunk of crystal
@@ -441,6 +465,7 @@ members=yes
 2dyof=1
 2dzoom=660
 weight=50g
+tradeable=no
 
 [obj_743]
 name=Lump of crystal
@@ -452,6 +477,7 @@ members=yes
 2dzoom=510
 2dyan=60
 weight=50g
+tradeable=no
 
 [obj_744]
 name=Heart crystal
@@ -463,6 +489,7 @@ members=yes
 2dzoom=660
 weight=150g
 iop1=Look-at
+tradeable=no
 
 [obj_745]
 name=Heart crystal
@@ -474,6 +501,7 @@ members=yes
 2dzoom=660
 weight=150g
 iop1=Look-at
+tradeable=no
 
 [obj_746]
 model=model_2614_obj
@@ -498,9 +526,10 @@ param=magicdefence,1
 param=strengthbonus,7
 param=stabattack_anim,human_sword_stab
 param=slashattack_anim,human_sword_slash
-param=defend_anim,human_sword_defend
+param=defend_anim,human_sword_defend2
 param=stab_sound,stabsword_stab
 param=slash_sound,stabsword_slash
+tradeable=no
 
 [obj_747]
 model=model_2733_obj
@@ -524,9 +553,10 @@ param=magicattack,1
 param=magicdefence,1
 param=stabattack_anim,human_sword_stab
 param=slashattack_anim,human_sword_slash
-param=defend_anim,human_sword_defend
+param=defend_anim,human_sword_defend2
 param=stab_sound,stabsword_stab
 param=slash_sound,stabsword_slash
+tradeable=no
 
 [obj_748]
 name=Holy force
@@ -539,6 +569,7 @@ members=yes
 2dxan=272
 iop1=Cast Spell
 weight=20g
+tradeable=no
 
 [obj_749]
 name=Yommi totem
@@ -551,19 +582,20 @@ model=model_loc_870_8
 2dyan=132
 2dzan=1780
 weight=3kg
+tradeable=no
 
 [obj_750]
 name=Gilded totem
 desc=A gilded totem pole from the Kharazi tribe.
 model=model_loc_870_8
-recol1s=6315
-recol1d=62992
-recol2s=8596
-recol2d=10178
-recol3s=127
-recol3d=670
-recol4s=10126
-recol4d=10178
+recol1s=13672
+recol1d=6211
+recol2s=7363
+recol2d=31554
+recol3s=32767
+recol3d=13378
+recol4s=7360
+recol4d=31554
 2dxof=-84
 2dyof=-51
 2dzoom=4070
@@ -571,3 +603,4 @@ recol4d=10178
 2dzan=1780
 weight=3kg
 members=yes
+tradeable=no

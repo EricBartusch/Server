@@ -1,25 +1,28 @@
 [proc,stat_name](stat $stat)(string)
 return(enum(stat, string, stat_names, $stat));
 
+[proc,stat_members](stat $stat)(int)
+return(enum(stat, int, stat_members, $stat));
+
 [proc,npc_stat_name](npc_stat $stat)(string)
 switch_npc_stat($stat) {
-    case attack: return("Attack");
-    case strength: return("Strength");
-    case ranged: return("Ranged");
-    case magic: return("Magic");
-    case defence: return("Defence");
-    case hitpoints: return("Hitpoints");
-    case default: return("Stat");
+    case attack : return("Attack");
+    case strength : return("Strength");
+    case ranged : return("Ranged");
+    case magic : return("Magic");
+    case defence : return("Defence");
+    case hitpoints : return("Hitpoints");
+    case default : return("Stat");
 }
 
 [proc,convert_stat_to_npc_stat](stat $stat)(npc_stat)
 switch_stat($stat) {
-    case attack: return(attack);
-    case strength: return(strength);
-    case ranged: return(ranged);
-    case magic: return(magic);
-    case defence: return(defence);
-    case hitpoints: return(hitpoints);
+    case attack : return(attack);
+    case strength : return(strength);
+    case ranged : return(ranged);
+    case magic : return(magic);
+    case defence : return(defence);
+    case hitpoints : return(hitpoints);
 }
 error("Invalid stat: <~stat_name($stat)>");
 
@@ -86,3 +89,60 @@ if (calc($level - $debuff) < $min_level) {
 
 // subtract the debuff, with no percent
 stat_sub($stat, $debuff, 0);
+
+// stat_heal but instead of scaling based off stat, it scales off of stat_base
+[proc,stat_healbase](stat $stat, int $constant, int $percent)
+def_int $heal = add(scale($percent, 100, stat_base($stat)), $constant);
+stat_heal($stat, $heal, 0);
+
+[proc,stat_reset](stat $stat)
+def_int $d = sub(stat($stat), stat_base($stat));
+
+if ($d > 0) {
+    stat_sub($stat, abs($d), 0);
+} else if ($d < 0) {
+    stat_add($stat, abs($d), 0);
+}
+
+[proc,stat_reset_all]
+def_int $i = 1;
+while ($i <= enum_getoutputcount(stats)) {
+    ~stat_reset(enum(int, stat, stats, $i));
+    $i = calc($i + 1);
+}
+
+[proc,.stat_reset](stat $stat)
+def_int $d = sub(.stat($stat), .stat_base($stat));
+
+if ($d > 0) {
+    .stat_sub($stat, abs($d), 0);
+} else if ($d < 0) {
+    .stat_add($stat, abs($d), 0);
+}
+
+[proc,.stat_reset_all]
+def_int $i = 1;
+while ($i <= enum_getoutputcount(stats)) {
+    ~.stat_reset(enum(int, stat, stats, $i));
+    $i = calc($i + 1);
+}
+
+[proc,stat_reset_boosts]
+def_int $i = 1;
+while ($i <= enum_getoutputcount(stats)) {
+    def_stat $stat = enum(int, stat, stats, $i);
+    if (stat($stat) > stat_base($stat)) {
+        ~stat_reset($stat);
+    }
+    $i = calc($i + 1);
+}
+
+[proc,.stat_reset_boosts]
+def_int $i = 1;
+while ($i <= enum_getoutputcount(stats)) {
+    def_stat $stat = enum(int, stat, stats, $i);
+    if (.stat($stat) > .stat_base($stat)) {
+        ~.stat_reset($stat);
+    }
+    $i = calc($i + 1);
+}

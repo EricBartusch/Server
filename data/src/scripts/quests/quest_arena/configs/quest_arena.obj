@@ -1,13 +1,13 @@
-[obj_74]
+[khazard_helmet]
 members=yes
 name=Khazard helmet
 desc=A helmet, as worn by the minions of General Khazard.
 cost=10
 model=model_2833_obj
-recol1s=61
-recol1d=20
-recol2s=25238
-recol2d=3974
+recol1s=15855
+recol1d=5285
+recol2s=2340
+recol2d=3104
 2dxof=1
 2dyof=-4
 2dzoom=640
@@ -25,17 +25,18 @@ category=armour_helmet
 param=stabdefence,4
 param=slashdefence,5
 param=crushdefence,3
+tradeable=no
 
-[obj_75]
+[khazard_armour]
 members=yes
 name=Khazard armour
 desc=Armour, as worn by the minions of General Khazard.
 cost=12
 model=model_2605_obj
-recol1s=61
-recol1d=20
-recol2s=25238
-recol2d=3974
+recol1s=15855
+recol1d=5285
+recol2s=2340
+recol2d=3104
 2dyof=14
 2dzoom=1290
 2dxan=424
@@ -51,8 +52,9 @@ category=armour_body
 param=stabdefence,9
 param=slashdefence,11
 param=crushdefence,10
+tradeable=no
 
-[obj_76]
+[khazard_cell_keys]
 members=yes
 name=Khazard cell keys
 desc=These keys open the cells at the Khazard fight arena.
@@ -64,17 +66,19 @@ model=model_2424_obj
 2dxan=508
 weight=10g
 param=no_alchemy,1
+tradeable=no
 
-[obj_77]
+[khali_brew]
 members=yes
 cost=5
 name=Khali brew
 desc=A bottle of Khazard's worst brew.
 model=model_2660_obj
-recol1s=1942
-recol1d=22424
+recol1s=11328
+recol1d=384
 2dyof=-1
 2dzoom=970
 2dyan=1888
 2dxan=104
 weight=4oz
+tradeable=no

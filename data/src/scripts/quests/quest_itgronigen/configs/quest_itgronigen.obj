@@ -8,8 +8,9 @@ members=yes
 2dzoom=840
 2dyan=152
 2dxan=256
+tradeable=no
 
-[obj_601]
+[keep_key]
 name=Keep key
 desc=A small key for a jail door.
 model=model_2372_obj
@@ -20,8 +21,9 @@ model=model_2372_obj
 2dxan=328
 weight=10g
 members=yes
+tradeable=no
 
-[obj_602]
+[lens_mould]
 name=Lens mould
 desc=An unusual clay mould in the shape of a disc.
 model=model_2773_obj
@@ -31,8 +33,9 @@ model=model_2773_obj
 2dxan=196
 weight=1kg
 members=yes
+tradeable=no
 
-[obj_603]
+[lens]
 name=Lens
 desc=A perfectly circular disc of glass.
 model=model_2545_obj
@@ -43,3 +46,4 @@ weight=3g
 2dyan=84
 2dxan=388
 members=yes
+tradeable=no

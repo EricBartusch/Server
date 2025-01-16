@@ -1,4 +1,4 @@
-[obj_751]
+[gnomeball]
 name=Gnomeball
 desc=A ball from the game Gnomeball
 model=model_2644_obj
@@ -11,4 +11,3 @@ wearpos=righthand
 manwear=model_528_obj_wear,0
 womanwear=model_528_obj_wear,6
 members=yes
-tradeable=yes

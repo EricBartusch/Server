@@ -2,31 +2,38 @@
 [opheldu,arrow_shaft]
 switch_obj(last_useitem) {
     case feather : @make_headless_arrows;
-    case default : @nothing_interesting_happens;
+    case default : ~displaymessage(^dm_default);
 }
 
 // arrows
 [opheldu,_category_968]
 switch_obj(last_useitem) {
     case headless_arrow : @make_arrows(last_item);
-    case default : @nothing_interesting_happens;
+    case default : ~displaymessage(^dm_default);
 }
 
 [opheldu,headless_arrow]
 switch_obj(last_useitem) {
-    case default : 
+    case default :
         if (oc_category(last_useitem) = category_968) {
             @make_arrows(last_useitem);
         } else {
-            @nothing_interesting_happens;
+            ~displaymessage(^dm_default);
         }
 }
 
 [label,make_headless_arrows]
-~require_members_fletching;
+if (map_members = false) {
+    mes(^mes_members_fletching); // guess
+    return;
+}
 def_int $feather_count = min(inv_total(inv, feather), 15);
 def_int $shaft_count = min(inv_total(inv, arrow_shaft), 15);
 def_int $arrow_count = min($feather_count, $shaft_count);
+if(inv_itemspace(inv, headless_arrow, $arrow_count, inv_size(inv)) = false & (inv_total(inv, feather) > 15 | inv_total(inv, arrow_shaft) > 15)) {
+    mes("You do not have enough inventory space for the headless arrows."); // OSRS
+    return;
+}
 // delete supplies
 inv_del(inv, feather, $arrow_count);
 inv_del(inv, arrow_shaft, $arrow_count);
@@ -36,13 +43,20 @@ if ($arrow_count > 1) {
 } else {
     mes("You attach a feather to an arrow shaft.");
 }
-givexp(fletching, multiply($arrow_count, 10));
+stat_advance(fletching, multiply($arrow_count, 10));
 inv_add(inv, headless_arrow, $arrow_count);
 
 
 [label,make_arrows](obj $arrow_tips)
-~require_members_fletching;
+if (map_members = false) {
+    mes(^mes_members_fletching); // guess
+    return;
+}
 def_dbrow $data = ~get_fletching_data($arrow_tips);
+if ($data = null) {
+    ~displaymessage(^dm_default);
+    return;
+}
 def_namedobj $product;
 def_int $max_count;
 $product, $max_count = db_getfield($data, fletching_table:product, 0);
@@ -60,10 +74,13 @@ def_int $arrows_count = min($tip_count, $headless_count);
 // delete supplies
 inv_del(inv, $arrow_tips, $arrows_count);
 inv_del(inv, headless_arrow, $arrows_count);
+def_string $metal = db_getfield($data, fletching_table:metal, 0);
 if ($arrows_count > 1) {
-    mes("You attach <lowercase(oc_name($arrow_tips))> to <tostring($arrows_count)> headless arrows.");
+    // https://youtu.be/iWPhF6tUUSs?t=285
+    mes("You attach <$metal> heads to some of your arrows.");
+    mes("You attach arrow heads to <tostring($arrows_count)> arrow shafts.");
 } else {
-    mes("You attach <~add_article(~singularise(lowercase(oc_name($arrow_tips))))> to a headless arrow.");
+    mes("You attach <~add_article($metal)> head to your arrow."); // guess
 }
-givexp(fletching, multiply($arrows_count, db_getfield($data, fletching_table:experience, 0)));
+stat_advance(fletching, multiply($arrows_count, db_getfield($data, fletching_table:experience, 0)));
 inv_add(inv, $product, $arrows_count);

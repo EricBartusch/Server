@@ -2,7 +2,8 @@
 def_obj $item = last_useitem;
 
 if ($item ! knife & oc_param($item, slashattack_anim) = human_unarmedpunch) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 } else {
     @cut_kharidian_cactus($item);
 } 
@@ -42,19 +43,19 @@ if (stat_random(stat(woodcutting), 30, 252) = true) {
         while ($count < inv_size(inv)) {
 
             switch_obj (inv_getobj(inv, $count)) {
-                case water_skin0:
+                case water_skin0 :
                 inv_setslot(inv, $count, water_skin1, 1);
                 $count = 100;
 
-                case water_skin1:
+                case water_skin1 :
                 inv_setslot(inv, $count, water_skin2, 1);
                 $count = 100;
 
-                case water_skin2:
+                case water_skin2 :
                 inv_setslot(inv, $count, water_skin3, 1);
                 $count = 100;
 
-                case water_skin3:
+                case water_skin3 :
                 inv_setslot(inv, $count, water_skin4, 1);
                 $count = 100;
             }
@@ -63,10 +64,10 @@ if (stat_random(stat(woodcutting), 30, 252) = true) {
     } else {
         mes("You have no empty waterskins to put the water in.");
     }
-    givexp(woodcutting, 100);
+    stat_advance(woodcutting, 100);
 } else {
     mes("You fail to cut the cactus correctly and it gives no water this time.");
-    givexp(woodcutting, 4);
+    stat_advance(woodcutting, 4);
 }
 
 loc_change(loc_param(next_loc_stage), 100);

@@ -7,6 +7,7 @@ model=model_2681_obj
 2dyan=1232
 2dxan=392
 weight=2oz
+tradeable=no
 
 [fish_food]
 name=Fish food
@@ -40,6 +41,7 @@ model=model_2815_obj
 2dyan=1904
 2dxan=112
 weight=30g
+tradeable=no
 
 [key_haunted]
 name=Key
@@ -51,6 +53,7 @@ model=model_2372_obj
 2dyan=20
 2dxan=328
 weight=10g
+tradeable=no
 
 [rubber_tube]
 cost=3
@@ -62,6 +65,7 @@ model=model_2463_obj
 2dyan=76
 2dxan=312
 weight=1oz
+tradeable=no
 
 [oil_can]
 name=Oil can
@@ -74,3 +78,4 @@ model=model_2466_obj
 2dyan=1480
 2dxan=180
 weight=1oz
+tradeable=no

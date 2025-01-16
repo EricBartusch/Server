@@ -10,6 +10,7 @@ members=yes
 2dyan=108
 2dxan=188
 weight=3kg
+tradeable=no
 
 [address_label]
 name=Address label
@@ -23,6 +24,7 @@ members=yes
 2dyan=1116
 2dxan=244
 weight=10g
+tradeable=no
 
 [guide_book]
 name=Guide book
@@ -30,9 +32,10 @@ desc='A Tourists Guide To Ardougne'.
 iop1=Read
 members=yes
 model=model_2794_obj
-recol1s=5018
-recol1d=24
+recol1s=13472
+recol1d=6342
 2dzoom=840
 2dyan=152
 2dxan=256
 weight=16lb
+tradeable=no

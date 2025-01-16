@@ -1,14 +1,14 @@
 [bailey]
 vislevel=hide
-walkanims=human_walk_f,human_walk_b,human_walk_l,human_walk_r
+walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
 name=Bailey
 desc=He smells of fish...
-recol1s=25238
-recol1d=5805
-recol2s=8741
-recol2d=7855
+recol1s=2340
+recol1d=18788
+recol2s=14724
+recol2d=19908
 model1=model_230_idk
 model2=model_250_idk
 model3=model_292_idk
@@ -21,7 +21,7 @@ model9=model_323_obj_wear
 head1=model_63_idk_head
 head2=model_82_idk_head
 head3=model_73_npc_head
-wanderrange=2
+moverestrict=indoors
 
 [kennith]
 vislevel=hide
@@ -30,27 +30,28 @@ readyanim=midget_ready
 op1=Talk-to
 name=Kennith
 desc=He looks very scared.
-recol1s=22426
-recol1d=5805
-recol2s=11162
-recol2d=4626
+recol1s=416
+recol1d=18788
+recol2s=13728
+recol2d=7298
 model1=model_2897_npc
 model2=model_2918_npc
 model3=model_2909_npc
 head1=model_53_idk_head
 wanderrange=1
+param=death_anim,midget_death
 
 [holgart_island]
 vislevel=hide
-walkanims=human_walk_f,human_walk_b,human_walk_l,human_walk_r
+walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_staffready
 op1=Talk-to
 name=Holgart
 desc=A very good sailor.
-recol1s=25238
-recol1d=5805
-recol2s=8741
-recol2d=7855
+recol1s=2340
+recol1d=18788
+recol2s=14724
+recol2d=19908
 model1=model_221_npc
 model2=model_250_idk
 model3=model_299_npc
@@ -66,15 +67,15 @@ wanderrange=2
 
 [holgart_platform]
 vislevel=hide
-walkanims=human_walk_f,human_walk_b,human_walk_l,human_walk_r
+walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_staffready
 op1=Talk-to
 name=Holgart
 desc=A very good sailor.
-recol1s=25238
-recol1d=5805
-recol2s=8741
-recol2d=7855
+recol1s=2340
+recol1d=18788
+recol2s=14724
+recol2d=19908
 model1=model_221_npc
 model2=model_250_idk
 model3=model_299_npc
@@ -89,15 +90,15 @@ head2=model_82_idk_head
 
 [kent]
 vislevel=hide
-walkanims=human_walk_f,human_walk_b,human_walk_l,human_walk_r
+walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_staffready
 op1=Talk-to
 name=Kent
 desc=He looks very tired and hungry.
-recol1s=25238
-recol1d=5805
-recol2s=8741
-recol2d=7855
+recol1s=2340
+recol1d=18788
+recol2s=14724
+recol2d=19908
 model1=model_215_idk
 model2=model_249_idk
 model3=model_310_idk
@@ -111,17 +112,17 @@ head1=model_53_idk_head
 head2=model_81_idk_head
 wanderrange=2
 
-[npc_702]
+[fisherman_platform1]
 vislevel=hide
-walkanims=human_walk_f,human_walk_b,human_walk_l,human_walk_r
+walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
 name=Fisherman
 desc=He smells of salty fish.
-recol1s=25238
-recol1d=10654
-recol2s=8741
-recol2d=10508
+recol1s=2340
+recol1d=11620
+recol2s=14724
+recol2d=4226
 model1=model_208_npc
 model2=model_250_idk
 model3=model_292_idk
@@ -134,17 +135,17 @@ head1=model_48_npc_head
 head2=model_82_idk_head
 category=fisherman_platform
 
-[npc_703]
+[fisherman_platform2]
 vislevel=hide
-walkanims=human_walk_f,human_walk_b,human_walk_l,human_walk_r
+walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
 name=Fisherman
 desc=He smells of salty fish.
-recol1s=25238
-recol1d=6602
-recol2s=8741
-recol2d=7855
+recol1s=2340
+recol1d=24173
+recol2s=14724
+recol2d=19908
 model1=model_208_npc
 model2=model_250_idk
 model3=model_292_idk
@@ -157,17 +158,17 @@ head1=model_48_npc_head
 head2=model_82_idk_head
 category=fisherman_platform
 
-[npc_704]
+[fisherman_platform3]
 vislevel=hide
-walkanims=human_walk_f,human_walk_b,human_walk_l,human_walk_r
+walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
 name=Fisherman
 desc=He smells of salty fish.
-recol1s=25238
-recol1d=5805
-recol2s=8741
-recol2d=7855
+recol1s=2340
+recol1d=18788
+recol2s=14724
+recol2d=19908
 model1=model_230_idk
 model2=model_250_idk
 model3=model_292_idk
@@ -180,16 +181,16 @@ head1=model_63_idk_head
 head2=model_82_idk_head
 category=fisherman_platform
 
-[npc_705]
+[fisherman_platform4]
 vislevel=hide
 name=Fisherman
 desc=Something fishy about him...
-walkanims=human_walk_f,human_walk_b,human_walk_l,human_walk_r
+walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
-recol1s=25238
-recol1d=5805
-recol2s=8741
-recol2d=7855
+recol1s=2340
+recol1d=18788
+recol2s=14724
+recol2d=19908
 model1=model_230_idk
 model2=model_250_idk
 model3=model_292_idk
@@ -200,3 +201,13 @@ model7=model_181_idk
 model8=model_241_npc
 model9=model_323_obj_wear
 category=fisherman_platform
+
+[sea_slug]
+vislevel=hide
+name=Sea slug
+desc=A rather nasty looking crustacean.
+walkanim=seaslug_walk
+readyanim=seaslug_ready
+op1=Take
+model1=model_560_npc
+wanderrange=1

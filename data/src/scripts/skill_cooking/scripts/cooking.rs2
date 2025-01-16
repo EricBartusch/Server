@@ -1,6 +1,8 @@
 [oplocu,_cooking_oven] @attempt_cook_item(last_useitem);
 [oplocu,_cooking_fire]
-if (%tutorial_progress < ^tutorial_complete) {
+if(oc_param(last_useitem, unlit_arrow) = ^true) { // might not work on every fire?
+    @light_firearrow(last_useitem);
+} else if (%tutorial_progress < ^tutorial_complete) {
     @tut_attempt_cook_item(last_useitem);
 } else {
     @attempt_cook_item(last_useitem);
@@ -16,24 +18,32 @@ if ($data = null) {
     ~mesbox("You can't cook that.");
     return;
 }
-def_namedobj $cooked_item = db_getfield($data,cooking_generic:cooked,0);
-if (oc_param($uncooked_item, cooking_range_only) = ^true & lc_category(loc_type) ! cooking_oven) {
-    ~mesbox("You need a proper oven to cook that.");
+if (string_length(db_getfield($data, cooking_generic:cantcookmessage_range, 0)) > 0 & lc_category(loc_type) = cooking_oven) {
+    ~mesbox(db_getfield($data, cooking_generic:cantcookmessage_range, 0));
     return;
 }
-if ($uncooked_item = raw_oomlie) {
-    ~mesbox("The meat is far too delicate to cook like this. Perhaps you should wrap it up to protect it from the heat.");
+if (string_length(db_getfield($data, cooking_generic:cantcookmessage_fire, 0)) > 0 & lc_category(loc_type) = cooking_fire) {
+    ~mesbox(db_getfield($data, cooking_generic:cantcookmessage_fire, 0));
     return;
 }
 // check if mems obj
+def_namedobj $cooked_item = db_getfield($data,cooking_generic:cooked,0);
 if (oc_members($cooked_item) = true | oc_members($uncooked_item) = true) {
     // complete guess btw, i have no idea what sorta message they'd use here. Perhaps theres early osrs footage of this but ive not found any.
-    ~require_members_make_item;
+    if (map_members = false) {
+        mes("You can only make that on a members' server.");
+        return;
+    }
 }
 // check if player has high enough level
 def_int $levelrequired = db_getfield($data,cooking_generic:levelrequired,0);
 if (stat(cooking) < $levelrequired) {
     ~mesbox("You need a Cooking level of <tostring($levelrequired)> to cook <lowercase(oc_name($cooked_item))>.");
+    return;
+}
+// macro event
+if (afk_event = ^true) {
+    ~macro_event_general_spawn(~macro_event_set_random);
     return;
 }
 // def variables
@@ -78,7 +88,7 @@ if ($cooking_source = cooking_oven) {
     $cookmessage = db_getfield($data,cooking_generic:cookmessage_fire,0);
     $anim = human_firecooking;
     if (string_length($cookmessage) < 1 & compare($cookmessage, "0") ! 0) {
-        $cookmessage = "You put the <lowercase(oc_name($cooked_item))> on the fire.";
+        $cookmessage = "You cook the <lowercase(oc_name($cooked_item))> on the fire..."; // imgur.com/ESssj2u
     }
 }
 // cooking gauntlets prioritize over cook o matic it seems
@@ -125,7 +135,7 @@ if ($passes_roll = true) {
     if (compare($succesmessage, "0") ! 0) {
         mes($succesmessage);
     }
-    givexp(cooking, $experience);
+    stat_advance(cooking, $experience);
     // these dont give additional items
     if ($cooked_item = half_baked_batta | $cooked_item = half_baked_gnomebowl | $cooked_item = half_baked_crunchies) {
         return;

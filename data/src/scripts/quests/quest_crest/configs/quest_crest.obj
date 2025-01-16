@@ -1,10 +1,10 @@
-[obj_773]
+[perfect_ring]
 name='perfect' ring
 desc=A perfect ruby ring.
 cost=2025
 model=model_2677_obj
-recol1s=127
-recol1d=960
+recol1s=32767
+recol1d=30753
 2dxof=3
 2dyof=-35
 2dzoom=830
@@ -15,14 +15,15 @@ iop2=Wear
 wearpos=ring
 weight=7g
 members=yes
+tradeable=no
 
-[obj_774]
+[perfect_necklace]
 cost=2175
 name='perfect' necklace
 desc=A perfect ruby necklace.
 model=model_2506_obj
-recol1s=41
-recol1d=960
+recol1s=10570
+recol1d=30753
 2dxof=5
 2dyof=44
 2dzoom=600
@@ -34,6 +35,7 @@ manwear=model_281_obj_wear,0
 womanwear=model_445_obj_wear,0
 weight=10g
 members=yes
+tradeable=no
 
 [gauntlets_of_cooking]
 category=category_16
@@ -41,10 +43,10 @@ name=Cooking gauntlets
 desc=These gauntlets empower with a greater ability to cook fish.
 members=yes
 model=model_2649_obj
-recol1s=10004
-recol1d=123
-recol2s=5532
-recol2d=10299
+recol1s=9473
+recol1d=31710
+recol2s=10468
+recol2d=15854
 2dxof=8
 2dyof=-8
 2dzoom=930
@@ -62,6 +64,7 @@ param=stabdefence,8
 param=slashdefence,9
 param=crushdefence,7
 param=strengthbonus,2
+tradeable=no
 
 [gauntlets_of_goldsmithing]
 category=category_16
@@ -69,8 +72,8 @@ name=Goldsmith gauntlet
 desc=These gauntlets empower the bearer whilst making gold.
 members=yes
 model=model_2649_obj
-recol1s=10004
-recol1d=8666
+recol1s=9473
+recol1d=30543
 2dxof=8
 2dyof=-8
 2dzoom=930
@@ -88,15 +91,16 @@ param=stabdefence,8
 param=slashdefence,9
 param=crushdefence,7
 param=strengthbonus,2
+tradeable=no
 
-[obj_777]
+[gauntlets_of_chaos]
 category=category_16
 name=Chaos gauntlets
 desc=These gauntlets empower spell casters.
 members=yes
 model=model_2649_obj
-recol1s=10004
-recol1d=1825
+recol1s=9473
+recol1d=14466
 2dxof=8
 2dyof=-8
 2dzoom=930
@@ -114,15 +118,16 @@ param=stabdefence,8
 param=slashdefence,9
 param=crushdefence,7
 param=strengthbonus,2
+tradeable=no
 
-[obj_778]
+[steel_gauntlets]
 category=category_16
 name=Steel gauntlets
 desc=My reward for assisting the Fitzharmon family.
 members=yes
 model=model_2649_obj
-recol1s=10004
-recol1d=43072
+recol1s=9473
+recol1d=14801
 2dxof=8
 2dyof=-8
 2dzoom=930
@@ -140,8 +145,9 @@ param=stabdefence,8
 param=slashdefence,9
 param=crushdefence,7
 param=strengthbonus,2
+tradeable=no
 
-[obj_779]
+[crest_part_1]
 model=model_2688_obj
 name=Crest part
 desc=A fragment of the Fitzharmon family crest.
@@ -150,8 +156,9 @@ members=yes
 2dyan=148
 2dxan=356
 weight=4lb
+tradeable=no
 
-[obj_780]
+[crest_part_2]
 model=model_2691_obj
 name=Crest part
 desc=A fragment of the Fitzharmon family crest.
@@ -160,8 +167,12 @@ members=yes
 2dyan=148
 2dxan=356
 weight=3lb
+tradeable=no
 
-[obj_781]
+// This piece is visually identical to part 2.
+// 20 July 2004 - The model for Johnathon's part was corrected; previously it used the same model as Caleb's part.
+// https://oldschool.runescape.wiki/w/Crest_part#Changes
+[crest_part_3]
 model=model_2691_obj
 name=Crest part
 desc=A fragment of the Fitzharmon family crest.
@@ -170,8 +181,9 @@ members=yes
 2dyan=148
 2dxan=356
 weight=3lb
+tradeable=no
 
-[obj_782]
+[family_crest]
 model=model_2369_obj
 name=Family crest
 desc=The Fitzharmon family crest.
@@ -180,3 +192,4 @@ members=yes
 2dyan=148
 2dxan=356
 weight=10lb
+tradeable=no

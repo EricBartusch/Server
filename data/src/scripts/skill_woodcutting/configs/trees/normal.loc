@@ -9,6 +9,7 @@ op1=Chop down
 op3=hidden
 category=tree
 param=next_loc_stage,loc_1342
+param=ent,macro_event_ent_tree1
 
 [loc_1277]
 name=Tree
@@ -19,10 +20,11 @@ length=2
 mapscene=0
 op1=Chop down
 op3=hidden
-recol1s=3470
-recol1d=5029
+recol1s=5218
+recol1d=17633
 category=tree
 param=next_loc_stage,loc_1343
+param=ent,macro_event_ent_tree1
 
 [loc_1278]
 name=Tree
@@ -35,6 +37,7 @@ op1=Chop down
 op3=hidden
 category=tree
 param=next_loc_stage,loc_1342
+param=ent,macro_event_ent_tree1
 
 [loc_1279]
 name=Tree
@@ -50,6 +53,7 @@ op1=Chop down
 op3=hidden
 category=tree
 param=next_loc_stage,loc_1345
+param=ent,macro_event_ent_tree1
 
 [loc_1280]
 name=Tree
@@ -60,10 +64,11 @@ length=2
 mapscene=1
 op1=Chop down
 op3=hidden
-recol1s=3470
-recol1d=5029
+recol1s=5218
+recol1d=17633
 category=tree
 param=next_loc_stage,loc_1343
+param=ent,macro_event_ent_tree1
 
 [loc_1282]
 name=Dead tree
@@ -76,6 +81,7 @@ op1=Chop down
 op3=hidden
 category=tree
 param=next_loc_stage,loc_1348
+param=ent,macro_event_ent_dead_tree1
 
 [loc_1283]
 name=Dead tree
@@ -88,6 +94,7 @@ op1=Chop down
 op3=hidden
 category=tree
 param=next_loc_stage,loc_1347
+param=ent,macro_event_ent_dead_tree1
 
 // unused?
 [loc_1284]
@@ -104,6 +111,7 @@ op1=Chop down
 op3=hidden
 category=tree
 param=next_loc_stage,loc_1345
+param=ent,macro_event_ent_dead_tree1
 
 [loc_1285]
 name=Dead tree
@@ -114,10 +122,11 @@ length=2
 mapscene=6
 op1=Chop down
 op3=hidden
-recol1s=5388
-recol1d=6814
+recol1s=4194
+recol1d=13602
 category=tree
 param=next_loc_stage,loc_1349
+param=ent,macro_event_ent_dead_tree1
 
 // not sure about this one
 [loc_1286]
@@ -129,6 +138,7 @@ op1=Chop down
 op3=hidden
 category=tree
 param=next_loc_stage,loc_1351
+param=ent,macro_event_ent_dead_tree2
 
 // just a normal 1x1 dead tree?
 [loc_1289]
@@ -138,12 +148,13 @@ model=model_loc_1286
 mapscene=6
 op1=Chop down
 op3=hidden
-recol1s=7054
-recol1d=5388
-recol2s=6028
-recol2d=5388
+recol1s=7296
+recol1d=4194
+recol2s=6240
+recol2d=4194
 category=tree
 param=next_loc_stage,loc_1353
+param=ent,macro_event_ent_dead_tree2
 
 //unused giant dead tree
 [loc_1290]
@@ -157,6 +168,7 @@ op1=Chop down
 op3=hidden
 category=tree
 param=next_loc_stage,loc_1354
+param=ent,macro_event_ent_dead_tree1
 
 //snowy dead tree
 [loc_1291]
@@ -166,10 +178,11 @@ model=model_loc_1286
 mapscene=6
 op1=Chop down
 op3=hidden
-recol1s=7054
-recol1d=5235
+recol1s=7296
+recol1d=30619
 category=tree
 param=next_loc_stage,loc_1353
+param=ent,macro_event_ent_dead_tree2
 
 [loc_1315]
 name=Evergreen
@@ -182,6 +195,7 @@ op3=hidden
 mapscene=0
 category=tree
 param=next_loc_stage,loc_1342
+param=ent,macro_event_ent_tree1
 
 [loc_1316]
 name=Evergreen
@@ -194,6 +208,7 @@ op3=hidden
 mapscene=0
 category=tree
 param=next_loc_stage,oak_tree_stump
+param=ent,macro_event_ent_tree2
 
 [loc_1318]
 name=Evergreen
@@ -206,6 +221,7 @@ op3=hidden
 mapscene=1
 category=tree
 param=next_loc_stage,oak_tree_stump
+param=ent,macro_event_ent_tree2
 
 [loc_1319]
 name=Evergreen
@@ -218,6 +234,7 @@ op3=hidden
 mapscene=1
 category=tree
 param=next_loc_stage,oak_tree_stump
+param=ent,macro_event_ent_tree2
 
 [loc_1330]
 name=Tree
@@ -230,6 +247,7 @@ op1=Chop down
 op3=hidden
 category=tree
 param=next_loc_stage,oak_tree_stump
+param=ent,macro_event_ent_tree2
 
 [loc_1331]
 name=Tree
@@ -242,6 +260,7 @@ op1=Chop down
 op3=hidden
 category=tree
 param=next_loc_stage,oak_tree_stump
+param=ent,macro_event_ent_tree2
 
 [loc_1332]
 name=Tree
@@ -254,6 +273,7 @@ op1=Chop down
 op3=hidden
 category=tree
 param=next_loc_stage,oak_tree_stump
+param=ent,macro_event_ent_tree2
 
 [loc_1365]
 name=Dead tree
@@ -262,12 +282,13 @@ model=model_loc_1286
 mapscene=6
 op1=Chop down
 op3=hidden
-recol1s=7054
-recol1d=21646
-recol2s=6028
-recol2d=21646
+recol1s=7296
+recol1d=3203
+recol2s=6240
+recol2d=3203
 category=tree
 param=next_loc_stage,loc_1352
+param=ent,macro_event_ent_dead_tree2
 
 [loc_1383]
 name=Dead tree
@@ -278,6 +299,7 @@ op1=Chop down
 op3=hidden
 category=tree
 param=next_loc_stage,loc_1358
+param=ent,macro_event_ent_dead_tree2
 
 [loc_1384]
 name=Dead tree
@@ -288,3 +310,4 @@ op1=Chop down
 op3=hidden
 category=tree
 param=next_loc_stage,loc_1359
+param=ent,macro_event_ent_dead_tree2

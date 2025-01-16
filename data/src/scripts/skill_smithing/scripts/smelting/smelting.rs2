@@ -1,14 +1,18 @@
 [oplocu,_smithing_furnace]
 switch_obj (last_useitem)
 {
-    case gold_bar : @craft_gold_interface;
+    case gold_bar, perfect_gold_bar : @craft_gold_interface;
     case silver_bar : @craft_silver;
+    case steel_bar : @smelt_cannonballs;
     case bucket_sand, soda_ash : @smelt_glass;
-    case default : 
+    case obj_1481, obj_1482, obj_1483, obj_1484 :
+        if(loc_type = furnace_legends) @destroy_orboflight(last_useitem);
+        ~displaymessage(^dm_default);
+    case default :
         if (oc_category(last_useitem) = category_91) {
             @smelt_ore(last_useitem);
         }
-        @nothing_interesting_happens;
+        ~displaymessage(^dm_default);
 };
 
 //--- this is the code that uses p_delays instead of weakqueues
@@ -22,7 +26,8 @@ if (($last = iron_ore & inv_total(inv, coal) >= 2 & stat(smithing) >= 30) | $las
 }
 // for some reason jagex has blankrune and clay in the ores category
 if ($bar = null) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 def_struct $struct = oc_param($bar, smelting_struct); 
 // If smithing level isnt high enough, dislpay level fail message
@@ -39,6 +44,11 @@ if ($primary_total < struct_param($struct, bar_count)) {
 }
 if ($secondary_total < struct_param($struct, ingredient_secondary_count)) {
     ~mesbox(struct_param($struct, processfailure));
+    return;
+}
+// macro event
+if (afk_event = ^true) {
+    ~macro_event_general_spawn(~macro_event_set_random);
     return;
 }
 anim(human_furnace, 0);
@@ -66,25 +76,21 @@ if ($bar = iron_bar) {
     }
 }
 
-givexp(smithing, struct_param($struct, productexp));
+// If player is wearing gold smith gauntlets, 2.5x xp. The multiplier was 1.5x in RSC,
+// earliest mention of 2.5x (56.2) xp is in aug 2004: https://web.archive.org/web/20040820223401/http://runevillage.net/ThePub/viewtopic.php?p=1257194&amp
+// No mentioned updates to Family Crest or the gauntlets in that period. 
+// Was likely changed when ported to rs2.
+def_int $xp = struct_param($struct, productexp);
+if ($bar = gold_bar & inv_total(worn, gauntlets_of_goldsmithing) > 0) {
+    $xp = scale(5, 2, $xp); // 2.5x
+}
+
+stat_advance(smithing, $xp);
 
 // add bar
 inv_add(inv, $bar, 1);
 // display product message
 mes(struct_param($struct, productmessage));
-//----------------------------
-
-//--- ring of forging
-[proc,lose_charge_ring_of_forging]
-// + 1 charge used
-%ring_of_forging = calc(%ring_of_forging + 1);
-// once the charges used counter reaches 140, reset back to 0
-if (%ring_of_forging >= 140) {
-    %ring_of_forging = 0;
-    // not purple text https://i.imgur.com/vTRIzDR.png
-    mes("Your Ring of Forging has melted.");
-    inv_del(worn, ring_of_forging, 1);
-}
 //----------------------------
 
 //************* WEAKQUEUES DIDNT EXIST UNTIL SEPT 2004 *************
@@ -97,7 +103,8 @@ if (%ring_of_forging >= 140) {
 // // mes(oc_name($bar));
 // // for some reason jagex has blankrune and clay in the ores category
 // if ($bar = null) {
-//     @nothing_interesting_happens;
+//     ~displaymessage(^dm_default);
+//     return;
 // }
 // def_struct $struct = oc_param($bar, smelting_struct); 
 // // If smithing level isnt high enough, dislpay level fail message
@@ -165,6 +172,6 @@ if (%ring_of_forging >= 140) {
 // // add product
 // inv_add(inv, $product, 1);
 // // add exp
-// givexp(smithing, $xp);
+// stat_advance(smithing, $xp);
 // //----------------------------
 //************* WEAKQUEUES DIDNT EXIST UNTIL SEPT 2004 *************

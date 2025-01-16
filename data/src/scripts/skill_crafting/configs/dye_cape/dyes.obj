@@ -3,15 +3,14 @@ name=Red dye
 desc=A little bottle of red dye.
 cost=5
 model=model_2705_obj
-recol1s=61
-recol1d=960
+recol1s=15855
+recol1d=30753
 2dyof=-2
 2dzoom=760
 2dyan=1920
 2dxan=124
 weight=20g
 category=category_82
-tradeable=yes
 param=crafting_capes_struct,red_dye
 
 [yellow_dye]
@@ -19,15 +18,14 @@ name=Yellow dye
 desc=A little bottle of yellow dye.
 cost=5
 model=model_2705_obj
-recol1s=61
-recol1d=11200
+recol1s=15855
+recol1d=31649
 2dyof=-2
 2dzoom=760
 2dyan=1920
 2dxan=124
 weight=20g
 category=category_82
-tradeable=yes
 param=crafting_capes_struct,yellow_dye
 
 [blue_dye]
@@ -35,15 +33,14 @@ name=Blue dye
 desc=A little bottle of blue dye.
 cost=5
 model=model_2705_obj
-recol1s=61
-recol1d=43968
+recol1s=15855
+recol1d=31
 2dyof=-2
 2dzoom=760
 2dyan=1920
 2dxan=124
 weight=20g
 category=category_82
-tradeable=yes
 param=crafting_capes_struct,blue_dye
 
 [orange_dye]
@@ -51,15 +48,14 @@ name=Orange dye
 desc=A little bottle of orange dye.
 cost=5
 model=model_2705_obj
-recol1s=61
-recol1d=6073
+recol1s=15855
+recol1d=28097
 2dyof=-2
 2dzoom=760
 2dyan=1920
 2dxan=124
 weight=20g
 category=category_82
-tradeable=yes
 param=crafting_capes_struct,orange_dye
 
 [green_dye]
@@ -67,15 +63,14 @@ name=Green dye
 desc=A little bottle of green dye.
 cost=5
 model=model_2705_obj
-recol1s=61
-recol1d=22449
+recol1s=15855
+recol1d=768
 2dyof=-2
 2dzoom=760
 2dyan=1920
 2dxan=124
 weight=20g
 category=category_82
-tradeable=yes
 param=crafting_capes_struct,green_dye
 
 [purple_dye]
@@ -83,13 +78,12 @@ name=Purple dye
 desc=A little bottle of purple dye.
 cost=5
 model=model_2705_obj
-recol1s=61
-recol1d=51136
+recol1s=15855
+recol1d=19487
 2dyof=-2
 2dzoom=760
 2dyan=1920
 2dxan=124
 weight=20g
 category=category_82
-tradeable=yes
 param=crafting_capes_struct,purple_dye

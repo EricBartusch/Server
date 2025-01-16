@@ -95,7 +95,7 @@ data=consumable,chocolate_cake
 data=consumable,obj_1899
 data=consumable,chocolate_slice
 data=consumable,apple_pie
-data=consumable,obj_2335
+data=consumable,half_an_apple_pie
 data=consumable,obj_2291
 data=consumable,plain_pizza
 data=consumable,herring
@@ -149,7 +149,7 @@ data=consumable,vegetable_batta
 data=consumable,pineapple_pizza
 data=consumable,obj_2303
 data=consumable,tuna
-data=consumable,obj_2878
+data=consumable,cooked_chompy
 data=stat_restore,hitpoints,10,0
 data=consume_sound,eat
 
@@ -185,7 +185,7 @@ data=consume_sound,eat
 [heal_14]
 table=consume_table
 data=consumable,pumpkin
-data=consumable,obj_1961
+data=consumable,easter_egg
 data=consumable,lava_eel
 data=consumable,cooked_wrapped_oomlie
 data=consumable,swordfish

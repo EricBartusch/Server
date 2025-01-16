@@ -75,6 +75,9 @@ if ((inv_totalcat(inv, armour_hands) > 0 | inv_totalcat(worn, armour_hands) > 0)
     | (inv_totalcat(inv, trail_clue_easy) > 0)
     | (inv_totalcat(inv, trail_clue_medium) > 0)
     | (inv_totalcat(inv, trail_clue_hard) > 0)
+    | (inv_totalcat(inv, trail_casket_easy) > 0)
+    | (inv_totalcat(inv, trail_casket_medium) > 0)
+    | (inv_totalcat(inv, trail_casket_hard) > 0)
     | (inv_totalcat(inv, cannon_parts) > 0)) {
     return(false);
 }
@@ -82,9 +85,10 @@ return(true);
 
 [oplocu,loc_1992]
 if (last_useitem ! glarials_pebble) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
-// TODO: Check inv_totalcat for each category we need
+// todo: Check inv_totalcat for each category we need
 // Can't bring in jewelry, armour, runes, arrows, bows, or any type of logs?
 mes("You place the pebble in the gravestone's small indent.");
 mes("It fits perfectly.");
@@ -97,7 +101,7 @@ if (~waterfall_can_enter_glarials_tomb() = false) {
     mes("The stone slab slides back revealing a ladder down.");
     p_delay(2);
     p_teleport(0_39_153_58_52);
-    %waterfall_progress = ^waterfall_entered_glarial_tomb;
+    if(%waterfall_progress = ^waterfall_opened_book_on_baxtorian) %waterfall_progress = ^waterfall_entered_glarial_tomb;
     mes("You climb down to an undergound passage.");
 }
 
@@ -133,11 +137,12 @@ if (inv_total(inv, glarials_amulet) > 0) { // no bank or worn check
 // waterfall_raft
 [oploc1,loc_1987]
 switch_int (%waterfall_progress) {
-    case ^waterfall_not_started: ~mesbox("You're not sure if the raft is safe to use.|Best to leave it alone.");
-    case default: 
+    case ^waterfall_not_started : ~mesbox("You're not sure if the raft is safe to use.|Best to leave it alone.");
+    case default :
+        // https://youtu.be/HQEpeWAUMbI?t=113
         mes("You board the small raft");
         p_delay(2);
-        mes("and you push off down stream");
+        mes("and you push off down stream.");
         p_delay(2);
         p_teleport(0_39_54_16_25);
         mes("The raft is pulled down stream by strong currents.");
@@ -149,15 +154,15 @@ switch_int (%waterfall_progress) {
             npc_findallzone(movecoord(coord, -1, 0, 0));
             while (npc_findnext = true) {
                 if (npc_type = hudon) {
-                    ~chatplayer(neutral, "Hello son, are you okay? You need help?");
-                    ~chatnpc(neutral, "It looks like you need the help.");
-                    ~chatplayer(neutral, "Your mum sent me to find you.");
-                    ~chatnpc(neutral, "Don't play nice with me,|I know you're looking for the treasure.");
-                    ~chatplayer(neutral, "Where is this treasure you talk of?");
-                    ~chatnpc(neutral, "Just because I'm small doesn't mean I'm dumb! If I told you, you would take it all for yourself.");
-                    ~chatplayer(neutral, "Maybe I could help.");
+                    ~chatplayer("<p,neutral>Hello son, are you okay? You need help?");
+                    ~chatnpc("<p,neutral>It looks like you need the help.");
+                    ~chatplayer("<p,neutral>Your mum sent me to find you.");
+                    ~chatnpc("<p,neutral>Don't play nice with me,|I know you're looking for the treasure.");
+                    ~chatplayer("<p,neutral>Where is this treasure you talk of?");
+                    ~chatnpc("<p,neutral>Just because I'm small doesn't mean I'm dumb! If I told you, you would take it all for yourself.");
+                    ~chatplayer("<p,neutral>Maybe I could help.");
                     %waterfall_progress = ^waterfall_spoken_to_hudon;
-                    ~chatnpc(neutral, "I'm fine alone.");
+                    ~chatnpc("<p,neutral>I'm fine alone.");
                     mes("Hudon is refusing to leave the waterfall");
                     return;
                 }
@@ -173,17 +178,14 @@ if(coordz(coord) <= coordz(loc_coord)) {
     return;
 }
 mes("It looks like a long distance, but you swim out into the water.");
-bas_walk_f(human_swim);
-bas_readyanim(human_swim);
-buildappearance(worn);
+~set_walkbas(human_swim);
 p_walk(movecoord(loc_coord, 0, 0, 8));
 p_delay(0);
 p_teleport(movecoord(loc_coord, 0, 0, 7));
 spotanim_map(watersplash, coord, 0, 0);
 p_delay(0);
 ~agility_force_move(0, human_swim, movecoord(loc_coord, 0, 0, 4));
-bas_readyanim(human_drowning);
-buildappearance(worn);
+~set_walkbas(human_drowning);
 mes("The current is too strong, you feel yourself being pulled under");
 p_delay(3);
 ~update_bas;
@@ -193,20 +195,20 @@ p_teleport(^waterfall_fail_coord);
 // Rope on Rock
 [aplocu,loc_1996]
 if(last_useitem ! rope) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 if(coordz(coord) <= coordz(loc_coord)) {
     mes("You don't see that being any help.");
     return;
 }
 def_coord $rock_coord = loc_coord;
-~forcewalk(movecoord($rock_coord, 0, 0, 8)); // respects movespeed setting (will delay player)
-p_delay(0);
+~forcewalk2(movecoord($rock_coord, 0, 0, 8)); 
+p_arrivedelay;
 anim(seq_774, 0);
 spotanim_map(spotanim_67, movecoord($rock_coord, 0, 0, 6), 0, 20);
 p_delay(1);
-loc_del(7);
-loc_add($rock_coord, loc_1997, loc_angle, loc_shape, 7);
+loc_change(loc_1997, 7);
 def_int $i = 1;
 while($i < 8) {
     loc_add(movecoord($rock_coord, 0, 0, $i), loc_1998, loc_angle, loc_shape, calc(8 - $i));
@@ -229,7 +231,8 @@ mes("You are washed up by the river side.");
 
 [oplocu,loc_2020]
 if(last_useitem ! rope) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 mes("You tie the rope to the tree");
 p_delay(1);
@@ -239,7 +242,7 @@ p_teleport(0_39_54_15_7);
 [oploc1,loc_2010] // basing this off RS3, seems like RS3 mechanics for this havn't changed
 mes("The door begins to open.");
 p_delay(2);
-if(inv_total(worn, glarials_amulet) > 0) {
+if(inv_total(worn, glarials_amulet) > 0 | inv_total(inv, glarials_amulet) > 0) {
     mes("You walk through the door.");
     if(%waterfall_progress = ^waterfall_entered_glarial_tomb) {
         %waterfall_progress = ^waterfall_entered_waterfall;
@@ -266,7 +269,8 @@ p_teleport(0_39_54_15_7);
 [oploc1,loc_2022]
 mes("You climb in the barrel and start rocking.");
 p_delay(1);
-mes("The barrel falls off the ledge.");
+// https://www.youtube.com/watch?v=D0aQvB7KG-U&t=36s
+mes("The barrel falls of the ledge.");
 p_delay(1);
 p_teleport(^waterfall_fail_coord);
 
@@ -275,8 +279,8 @@ p_teleport(^waterfall_fail_coord);
 mes("You search the books...");
 p_delay(2);
 switch_int (%waterfall_progress) {
-    case ^waterfall_not_started, ^waterfall_started: mes("You find nothing of interest.");
-    case default:
+    case ^waterfall_not_started, ^waterfall_started : mes("You find nothing of interest.");
+    case default :
         if (inv_total(inv, book_on_baxtorian) > 0) { // no bank check
             mes("but find nothing of interest.");
         } else {
@@ -291,8 +295,8 @@ switch_int (%waterfall_progress) {
 mes("You search the crate");
 p_delay(2);
 switch_int (%waterfall_progress) {
-    case ^waterfall_not_started, ^waterfall_started, ^waterfall_spoken_to_hudon: mes("You find nothing of interest.");
-    case default:
+    case ^waterfall_not_started, ^waterfall_started, ^waterfall_spoken_to_hudon : mes("You find nothing of interest.");
+    case default :
         if (inv_total(inv, golrie_key) > 0) { // no bank check
             mes("but find nothing");
         } else {
@@ -328,7 +332,7 @@ if($is_outside = false) {
 if (last_useitem = golrie_key) {
     @waterfall_golrie_door;
 }
-@nothing_interesting_happens;
+~displaymessage(^dm_default);
 
 [label,waterfall_golrie_door]
 def_boolean $is_outside = ~check_axis(coord, loc_coord, loc_angle);
@@ -382,7 +386,7 @@ if(last_useitem = waterfall_key) {
     }
     return;
 }
-@nothing_interesting_happens;
+~displaymessage(^dm_default);
 
 [oplocu,loc_2006]
 def_obj $useitem = last_useitem;
@@ -395,6 +399,7 @@ if($useitem = glarials_amulet & %waterfall_progress = ^waterfall_entered_puzzle_
         mes("You hear a loud rumble from beneath...");
         p_delay(2);
         mes("The ground raises up before you!");
+        inv_del(inv, glarials_amulet, 1);
         p_teleport(0_40_154_43_58);
         // sound_synth -> rumbling
         %waterfall_progress = ^waterfall_placed_amulet;
@@ -410,7 +415,7 @@ if($useitem = glarials_amulet & %waterfall_progress = ^waterfall_entered_puzzle_
     ~damage_self(20); // OSRS wiki
     return;
 }
-@nothing_interesting_happens;
+~displaymessage(^dm_default);
 
 //https://www.youtube.com/watch?v=b8aojMS0VDI&t=480s, https://www.youtube.com/watch?v=qfmXXQ68pis&t=344s
 [oploc1,loc_2014]
@@ -421,14 +426,12 @@ if(%waterfall_progress = ^waterfall_complete) {
 mes("You hear the gushing of water.");
 p_delay(2);
 mes("Water floods into the cavern.");
-bas_readyanim(human_drowning);
-buildappearance(worn);
+~set_walkbas(human_drowning);
 p_teleport(0_39_154_43_58);
 p_delay(0);
 ~agility_force_move(0, human_drowning, movecoord(coord, 0, 0, -2));
 ~agility_force_move(0, human_drowning, movecoord(coord, 1, 0, -1));
-bas_readyanim(seq_528);
-buildappearance(worn);
+~set_walkbas(seq_528);
 p_delay(9);
 ~update_bas;
 mes("You are washed downstream but feel lucky to be alive.");
@@ -458,12 +461,14 @@ if(last_useitem = glarials_urn_full) {
     mes("two diamonds and two gold bars.");
     return;
 }
-@nothing_interesting_happens;
+~displaymessage(^dm_default);
 
 [queue,waterfall_quest_complete]
 %waterfall_progress = ^waterfall_complete;
 inv_add(inv, diamond, 2);
+inv_add(inv, gold_bar, 2);
 inv_add(inv, mithril_seeds, 40);
-givexp(attack, 137500);
-givexp(strength, 137500);
-~send_quest_complete(questlist:waterfall, diamond, 250, 1, "You have completed the Waterfall Quest!");
+stat_advance(attack, 137500);
+stat_advance(strength, 137500);
+session_log(^log_adventure, "Quest complete: Waterfall");
+~send_quest_complete(questlist:waterfall, diamond, 250, ^waterfall_questpoints, "You have completed the Waterfall Quest!");

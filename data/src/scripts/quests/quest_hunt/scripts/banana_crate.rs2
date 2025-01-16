@@ -2,7 +2,8 @@
 if (%crate_bananas = 0 & %crate_rum = 0) {
     mes("The crate is completely empty.");
 } else if (%crate_bananas = 0 & %crate_rum = 1) {
-    mes("There is some rum in here, although with no bananas to cover it. It is a little obvious.");
+    mes("There is some rum in here, although with no bananas to cover it.");
+    mes("It is a little obvious.");
 } else {
     if (%crate_bananas = 10) {
         mes("The crate is full of bananas.");
@@ -18,10 +19,11 @@ if (%crate_bananas = 0 & %crate_rum = 0) {
 
 [oplocu,banana_crate]
 if (last_useitem ! banana & last_useitem ! karamja_rum) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 
-if (%plantation_employed = 0) {
+if (testbit(%hunt_store_employed, ^plantation) = false) {
     mes("Why would I want to do that?");
     return;
 }

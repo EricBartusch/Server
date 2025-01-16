@@ -14,7 +14,7 @@ mes("The door is securely locked.");
  if (last_useitem = maze_key) {
     ~open_and_close_door(loc_1535, ~check_axis_locactive(coord), false);
 } else {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
 }
 
 [oploc1,melzar_maze_exit_door]
@@ -60,11 +60,11 @@ mes("The ladder is broken, I can't climb it."); // osrs
     inv_del(inv, $key, 1);
     ~open_and_close_door(loc_1535, ~check_axis_locactive(coord), false);
 } else {
-    @nothing_interesting_happens; // osrs
+    ~displaymessage(^dm_default); // osrs
 }
 
 // rat
-[ai_queue3,melzar_maze_giant_rat](int $arg)
+[ai_queue3,melzar_maze_giant_rat]
 gosub(npc_death);
 if (npc_findhero = false) {
     return;
@@ -76,7 +76,7 @@ obj_add(npc_coord, maze_key_red, 1, ^lootdrop_duration);
 
 
 // ghost
-[ai_queue3,melzar_maze_ghost](int $arg)
+[ai_queue3,melzar_maze_ghost]
 gosub(npc_death);
 if (npc_findhero = false) {
     return;
@@ -86,7 +86,7 @@ obj_add(npc_coord, maze_key_orange, 1, ^lootdrop_duration);
 
 
 // skeleton
-[ai_queue3,melzar_maze_skeleton](int $arg)
+[ai_queue3,melzar_maze_skeleton]
 gosub(npc_death);
 if (npc_findhero = false) {
     return;
@@ -98,7 +98,7 @@ obj_add(npc_coord, maze_key_yellow, 1, ^lootdrop_duration);
 
 
 // zombie
-[ai_queue3,melzar_maze_zombie](int $arg)
+[ai_queue3,melzar_maze_zombie]
 gosub(npc_death);
 if (npc_findhero = false) {
     return;
@@ -110,7 +110,7 @@ obj_add(npc_coord, maze_key_blue, 1, ^lootdrop_duration);
 
 
 // melzar
-[ai_queue3,melzar](int $arg)
+[ai_queue3,melzar]
 gosub(npc_death);
 if (npc_findhero = false) {
     return;
@@ -122,7 +122,7 @@ obj_add(npc_coord, maze_key_magenta, 1, ^lootdrop_duration);
 
 
 // lesser demon
-[ai_queue3,melzar_maze_lesser_demon](int $arg)
+[ai_queue3,melzar_maze_lesser_demon]
 gosub(npc_death);
 if (npc_findhero = false) {
     return;
@@ -140,8 +140,7 @@ mes("You open the chest.");
 anim(human_openchest, 0);
 sound_synth(chest_open, 0, 0);
 p_delay(0);
-loc_del(300);
-loc_add(loc_coord, melzar_maze_chest_opened, loc_angle, loc_shape, 300);
+loc_change(melzar_maze_chest_opened, 300);
 
 
 [oploc2,melzar_maze_chest_opened]
@@ -150,8 +149,7 @@ mes("You close the chest.");
 anim(human_closechest, 0);
 sound_synth(chest_close, 0, 0);
 p_delay(0);
-loc_del(300);
-loc_add(loc_coord, melzar_maze_chest_closed, loc_angle, loc_shape, 300);
+loc_change(melzar_maze_chest_closed, 300);
 
 [oploc1,melzar_maze_chest_opened]
 if (~quest_dragon_getting_map_parts = false | ~obj_gettotal(crandor_map_part1) > 0 | ~obj_gettotal(crandor_map) > 0) {
@@ -159,9 +157,8 @@ if (~quest_dragon_getting_map_parts = false | ~obj_gettotal(crandor_map_part1) >
 } else {
     // objbox looks soooo bad for our version, no way they used it
     // edit: confirmed it uses mesbox! https://youtu.be/tmPf68hogzw?t=471
-    // ~objbox(crandor_map_part1, "You find a map piece in the chest.");
+    // ~objbox(crandor_map_part1, "You find a map piece in the chest.", 250, 0, divide(^objbox_height, 2));
     ~mesbox("You find a map piece in the chest.");
     inv_add(inv, crandor_map_part1, 1);
 }
-loc_del(300);
-loc_add(loc_coord, melzar_maze_chest_closed, loc_angle, loc_shape, 300);
+loc_change(melzar_maze_chest_closed, 300);

@@ -9,7 +9,10 @@ if (p_finduid(uid) = true) {
 [debugproc,foodbank]
 if_close;
 if (p_finduid(uid) = true) {
-    ~require_members_feature;
+    if (map_members = false) {
+        mes(^mes_members_feature);
+        return;
+    }
     def_int $choice = ~p_choice2_header("Yes.", 1, "No.", 2, "This clears your bank. Continue?");
     if ($choice = 2) {
         return;
@@ -17,13 +20,13 @@ if (p_finduid(uid) = true) {
 
     inv_clear(bank);
 
-    inv_add(bank, obj_2878, 100);
+    inv_add(bank, cooked_chompy, 100);
     inv_add(bank, ugthanki_meat, 100);
     inv_add(bank, cooked_chicken, 100);
     inv_add(bank, cooked_meat, 100);
-    inv_add(bank, obj_464, 100);
+    inv_add(bank, strange_fruit, 100);
     inv_add(bank, pumpkin, 100);
-    inv_add(bank, obj_1961, 100);
+    inv_add(bank, easter_egg, 100);
     inv_add(bank, banana, 100);
     inv_add(bank, cabbage, 100);
     inv_add(bank, cabbage_draynor, 100);
@@ -115,7 +118,7 @@ if (p_finduid(uid) = true) {
     inv_add(bank, meat_pie, 100);
     inv_add(bank, obj_2331, 100);
     inv_add(bank, obj_2333, 100);
-    inv_add(bank, obj_2335, 100);
+    inv_add(bank, half_an_apple_pie, 100);
     inv_add(bank, obj_2291, 100);
     inv_add(bank, meat_pizza, 100);
     inv_add(bank, obj_2295, 100);
@@ -149,7 +152,7 @@ if (p_finduid(uid) = true) {
     inv_add(bank, sea_turtle, 100);
     inv_add(bank, edible_seaweed, 100);
     inv_add(bank, jangerberries, 100);
-    inv_add(bank, obj_1582, 100);
+    inv_add(bank, blamish_oil, 100);
     inv_add(bank, obj_712, 100);
     inv_add(bank, obj_739, 100);
     inv_add(bank, asgarnian_ale, 100);
@@ -204,7 +207,7 @@ if (p_finduid(uid) = true) {
     inv_add(bank, odd_cocktail4, 100);
     inv_add(bank, jug_of_bad_wine, 100);
     inv_add(bank, jug_wine, 100);
-    inv_add(bank, obj_1989, 100);
+    inv_add(bank, half_full_wine_jug, 100);
     inv_add(bank, 4dose1strength, 100);
     inv_add(bank, 3dose1strength, 100);
     inv_add(bank, 2dose1strength, 100);
@@ -256,7 +259,7 @@ if (p_finduid(uid) = true) {
     inv_add(bank, 4doserangerspotion, 100);
     inv_add(bank, 4doseantipoison, 100);
     inv_add(bank, 4dose1antidragon, 100);
-    inv_add(bank, obj_197, 100);
+    inv_add(bank, poison_chalice, 100);
 } else {
     @please_finish;
 }

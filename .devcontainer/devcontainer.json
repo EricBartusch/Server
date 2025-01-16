@@ -13,9 +13,18 @@
 	  		]
 	  	}
 	},
+<<<<<<< HEAD
 	"remoteUser": "vscode",
 	"postStartCommand": "bash -c 'chmod +x setup.sh && ./setup.sh'",
 	"mounts": [
 		"source=${localWorkspaceFolder}/../RuneScriptCompiler.jar,target=RuneScriptCompiler.jar,type=bind"
 	]
 }
+=======
+	"containerEnv": {
+		"SHELL": "/bin/bash"
+	},
+	"remoteUser": "vscode",
+	"postStartCommand": "bash -c 'chmod +x setup.sh && ./setup.sh'"
+}
+>>>>>>> 4515da47bce3f2e7871afc3da37cd94696b6f1e4

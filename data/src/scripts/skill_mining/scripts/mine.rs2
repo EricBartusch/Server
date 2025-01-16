@@ -1,5 +1,3 @@
-// TODO: Random Events handling
-
 // normal rocks
 [oploc1,_mining_rock_normal] @mining_firstswing(get_ore_normal);
 [oploc3,_mining_rock_normal] @mining_continue(get_ore_normal);
@@ -13,32 +11,38 @@
 [oploc3,loc_2491] @mining_continue(get_ore_essence);
 
 // gem rocks
-[oploc1,gem_rock_1] @mining_firstswing(get_ore_gem_rock);
-[oploc3,gem_rock_1] @mining_continue(get_ore_gem_rock);
+[oploc1,gemrock] @mining_firstswing(get_ore_gem_rock);
+[oploc3,gemrock] @mining_continue(get_ore_gem_rock);
 
 [label,mining_firstswing](label $get_ore)
 def_int $is_empty = loc_param(mining_rock_empty);
 if ($is_empty = ^true) {
     anim(null, 0);
-    mes("There is currently no ore available in this rock.");
+    mes("There is no ore currently available in this rock.");
     sound_synth(prospect, 0, 0);
     return;
 }
 db_find(mining_table:rock, loc_type);
 def_dbrow $data = db_findnext;
 if ($data = null) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 if (inv_freespace(inv) < 1) {
     anim(null, 0);
-    ~mesbox("Your inventory is too full to hold anymore <db_getfield($data, mining_table:ore_name, 0)>.");
+    ~mesbox("Your inventory is too full to hold any more <db_getfield($data, mining_table:ore_name, 0)>.");
     return;
 }
-def_int $levelreq = db_getfield($data, mining_table:rock_level, 0);;
+def_int $levelreq = db_getfield($data, mining_table:rock_level, 0);
 if (stat(mining) < $levelreq) {
     anim(null, 0);
     ~mesbox("You need a mining level of <tostring($levelreq)> to mine this rock.");
     return;
+}
+// Macro events
+if (afk_event = ^true & loc_category ! mining_rock_macro_gas) {
+    if (loc_param(macro_gas) = null) jump(macro_randomminingrune);
+    jump(macro_randommining);
 }
 def_obj $pickaxe = ~pickaxe_checker;
 if ($pickaxe = null) {
@@ -67,11 +71,12 @@ if (%action_delay < map_clock) {
 db_find(mining_table:rock, loc_type);
 def_dbrow $data = db_findnext;
 if ($data = null) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 if (inv_freespace(inv) < 1) {
     anim(null, 0);
-    ~mesbox("Your inventory is too full to hold anymore <db_getfield($data, mining_table:ore_name, 0)>.");
+    ~mesbox("Your inventory is too full to hold any more <db_getfield($data, mining_table:ore_name, 0)>.");
     return;
 }
 def_int $levelreq = db_getfield($data, mining_table:rock_level, 0);
@@ -99,17 +104,18 @@ if (%skill_anim < calc(map_clock + 1)) {
 if (%action_delay < map_clock) {
     %action_delay = calc(map_clock + $mining_rate);
 } else if (%action_delay = map_clock) {
+    %skill_sound = null;
     jump($get_ore);
 }
 ~mining_sound;
 p_oploc(3);
 
-
 [label,get_ore_normal]
 db_find(mining_table:rock, loc_type);
 def_dbrow $data = db_findnext;
 if ($data = null) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 // roll for gem
 def_int $chance = 256;
@@ -130,13 +136,18 @@ if (random($chance) = ^true) {
     p_delay(0);
     // deplete
     def_int $respawn = ~scale_by_playercount(db_getfield($data, mining_table:rock_respawnrate, 0));
-    loc_del($respawn);
-    loc_add(loc_coord, loc_param(next_loc_stage_mining), loc_angle, loc_shape, $respawn);
+    loc_change(loc_param(next_loc_stage_mining), $respawn);
     // stop mining, give ore and xp. Sudden says its sound_230
     sound_synth(sound_230, 0, 0);
     anim(null, 0);
-    inv_add(inv, db_getfield($data, mining_table:rock_output, 0), 1);
-    givexp(mining, db_getfield($data, mining_table:rock_exp, 0));
+    // The 'perfect' gold rocks in Family Crest are the same ID as regular gold rocks, so check to 
+    // give out the right ore if we're in that location. Only gold rocks are in this room.
+    def_namedobj $output = db_getfield($data, mining_table:rock_output, 0);
+    if(inzone(^crest_perfect_mine_lower_bound, ^crest_perfect_mine_upper_bound, coord) = true) {
+        $output = perfect_gold_ore;
+    }
+    inv_add(inv, $output, 1);
+    stat_advance(mining, db_getfield($data, mining_table:rock_exp, 0));
     mes("You manage to mine some <db_getfield($data, mining_table:ore_name, 0)>.");
     return;
 }
@@ -149,7 +160,8 @@ p_oploc(3);
 db_find(mining_table:rock, loc_type);
 def_dbrow $data = db_findnext;
 if ($data = null) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 // roll for gem
 def_int $chance = 256;
@@ -168,13 +180,12 @@ if (random($chance) = ^true) {
 } else if (stat_random(stat(mining), db_getfield($data, mining_table:rock_successchance, 0)) = true) {
     // deplete
     def_int $respawn = ~scale_by_playercount(db_getfield($data, mining_table:rock_respawnrate, 0));
-    loc_del($respawn);
-    loc_add(loc_coord, loc_param(next_loc_stage_mining), loc_angle, loc_shape, $respawn);
+    loc_change(loc_param(next_loc_stage_mining), $respawn);
     // stop mining, give ore and xp. Sudden says its sound_230
     sound_synth(sound_230, 0, 0);
     anim(null, 0);
     inv_add(inv, db_getfield($data, mining_table:rock_output, 0), 1);
-    givexp(mining, db_getfield($data, mining_table:rock_exp, 0));
+    stat_advance(mining, db_getfield($data, mining_table:rock_exp, 0));
     mes("You manage to mine some <db_getfield($data, mining_table:ore_name, 0)>.");
     return;
 }
@@ -186,10 +197,11 @@ p_oploc(3);
 db_find(mining_table:rock, loc_type);
 def_dbrow $data = db_findnext;
 if ($data = null) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 inv_add(inv, db_getfield($data, mining_table:rock_output, 0), 1);
-givexp(mining, db_getfield($data, mining_table:rock_exp, 0));
+stat_advance(mining, db_getfield($data, mining_table:rock_exp, 0));
 mes("You manage to mine an unbound rune stone.");
 ~mining_sound;
 p_oploc(3);
@@ -199,7 +211,8 @@ p_oploc(3);
 db_find(mining_table:rock, loc_type);
 def_dbrow $data = db_findnext;
 if ($data = null) {
-    @nothing_interesting_happens;
+    ~displaymessage(^dm_default);
+    return;
 }
 def_int $low;
 def_int $high;
@@ -214,8 +227,7 @@ if (stat_random(stat(mining), $low, $high) = true) {
     p_delay(0);
     // deplete
     def_int $respawn = ~scale_by_playercount(db_getfield($data, mining_table:rock_respawnrate, 0));
-    loc_del($respawn);
-    loc_add(loc_coord, loc_param(next_loc_stage_mining), loc_angle, loc_shape, $respawn);
+    loc_change(loc_param(next_loc_stage_mining), $respawn);
     // stop mining, give ore and xp.
     sound_synth(found_gem, 0, 0);
     anim(null, 0);
@@ -223,7 +235,7 @@ if (stat_random(stat(mining), $low, $high) = true) {
     def_int $count;
     $gem, $count = ~roll_on_drop_table(gem_rock_table);
     inv_add(inv, $gem, 1);
-    givexp(mining, db_getfield($data, mining_table:rock_exp, 0));
+    stat_advance(mining, db_getfield($data, mining_table:rock_exp, 0));
 
     db_find(gem_cutting_table:uncut_gem, $gem);
     $data = db_findnext;
@@ -232,7 +244,6 @@ if (stat_random(stat(mining), $low, $high) = true) {
 }
 ~mining_sound;
 p_oploc(3);
-
 
 [proc,mining_gem_table]()(namedobj)
 def_int $rand = random(128);

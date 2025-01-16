@@ -1,7 +1,8 @@
 //https://oldschool.runescape.wiki/w/Goblin#drops
-[ai_queue3,npc_100](int $arg) @goblin_drop_table; //lvl 2
-[ai_queue3,npc_101](int $arg) @goblin_drop_table; //lvl 5
-[ai_queue3,npc_102](int $arg) @goblin_drop_table; //lvl 13
+[ai_queue3,goblin_unarmed1] @goblin_drop_table; //lvl 2
+[ai_queue3,goblin_armed] @goblin_drop_table; //lvl 5
+[ai_queue3,goblin_unarmed2] @goblin_drop_table; //lvl 13
+[ai_queue3,goblin_guard] @goblin_drop_table; // guard in observatory dungeon
 
 [label,goblin_drop_table]
 
@@ -17,11 +18,13 @@ obj_add(npc_coord, npc_param(death_drop), 1, ^lootdrop_duration);
 
 def_int $dropint = random(128);
 
-// todo: may need to redo this table, and/or add bronze_javelin (check old fan sites)
+// may need to redo this table, and/or add bronze_javelin (check old fan sites)
+// That appears to only be fore the goblin_armed_red and _green
+// https://oldschool.runescape.wiki/w/Goblin_(Goblin_Village)
 if ($dropint < 1) {
     obj_add(npc_coord, coins, 1, ^lootdrop_duration);
 } else if ($dropint < 2) {
-    obj_add(npc_coord, obj_1009, 1, ^lootdrop_duration);
+    obj_add(npc_coord, brass_necklace, 1, ^lootdrop_duration);
 } else if ($dropint < 3) {
     obj_add(npc_coord, air_talisman, 1, ^lootdrop_duration);
 } else if ($dropint < 5) {
@@ -50,15 +53,13 @@ if ($dropint < 1) {
     obj_add(npc_coord, goblin_mail, 1, ^lootdrop_duration);
 } else if ($dropint < 45) {
     obj_add(npc_coord, waterrune, 6, ^lootdrop_duration);
-} else if ($dropint < 60) {
-    obj_add(npc_coord, hammer, 1, ^lootdrop_duration);
-} else if ($dropint < 88) {
+} else if ($dropint < 63) {
     obj_add(npc_coord, coins, 5, ^lootdrop_duration);
 }
 
 
-[ai_queue3,npc_298](int $arg) @goblin_village_drop_table; // Green
-[ai_queue3,npc_299](int $arg) @goblin_village_drop_table; // Red
+[ai_queue3,goblin_armed_green] @goblin_village_drop_table; // Green
+[ai_queue3,goblin_armed_red] @goblin_village_drop_table; // Red
 
 [label,goblin_village_drop_table]
 gosub(npc_death);
@@ -81,8 +82,8 @@ if ($dropint < 3) {
     if (map_members = true) {
         obj_add(npc_coord, bronze_spear, 1, ^lootdrop_duration);
     } else {
-        // guessing it gets replaced
-        obj_add(npc_coord, hammer, 1, ^lootdrop_duration);
+        // it gets replaced by coins according to OSRS
+        obj_add(npc_coord, coins, 10, ^lootdrop_duration);
     }
 } else if ($dropint < 16) {
     obj_add(npc_coord, bronze_arrow, 7, ^lootdrop_duration);

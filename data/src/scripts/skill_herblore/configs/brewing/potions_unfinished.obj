@@ -5,8 +5,8 @@ name=Unfinished potion
 desc=I need another ingredient to finish this Guam potion.
 cost=3
 model=model_2789_obj
-recol1s=61
-recol1d=32980
+recol1s=15855
+recol1d=19191
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -14,7 +14,6 @@ recol1d=32980
 weight=2oz
 category=category_69
 members=yes
-tradeable=yes
 // guessed name
 
 [unf_marrentill_potion]
@@ -22,8 +21,8 @@ name=Unfinished potion
 desc=I need another ingredient to finish this Marentill potion.
 cost=5
 model=model_2789_obj
-recol1s=61
-recol1d=54484
+recol1s=15855
+recol1d=23158
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -31,7 +30,6 @@ recol1d=54484
 weight=2oz
 category=category_69
 members=yes
-tradeable=yes
 // guessed name
 
 [unf_tarromin_potion]
@@ -39,8 +37,8 @@ name=Unfinished potion
 desc=I need another ingredient to finish this Tarromin potion.
 cost=11
 model=model_2789_obj
-recol1s=61
-recol1d=10452
+recol1s=15855
+recol1d=23251
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -48,7 +46,6 @@ recol1d=10452
 weight=2oz
 category=category_69
 members=yes
-tradeable=yes
 // guessed name
 
 [unf_harralander_potion]
@@ -56,8 +53,8 @@ name=Unfinished potion
 desc=I need another ingredient to finish this Harralander potion.
 cost=20
 model=model_2789_obj
-recol1s=61
-recol1d=212
+recol1s=15855
+recol1d=23155
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -65,7 +62,6 @@ recol1d=212
 weight=2oz
 category=category_69
 members=yes
-tradeable=yes
 // guessed name
 
 [unf_ranarr_potion]
@@ -73,8 +69,8 @@ name=Unfinished potion
 desc=I need another ingredient to finish this Ranarr potion.
 cost=25
 model=model_2789_obj
-recol1s=61
-recol1d=21716
+recol1s=15855
+recol1d=19186
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -82,7 +78,6 @@ recol1d=21716
 weight=2oz
 category=category_69
 members=yes
-tradeable=yes
 // guessed name
 
 [unf_irit_potion]
@@ -90,8 +85,8 @@ name=Unfinished potion
 desc=I need another ingredient to finish this Irit potion.
 cost=40
 model=model_2789_obj
-recol1s=61
-recol1d=43105
+recol1s=15855
+recol1d=21147
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -99,7 +94,6 @@ recol1d=43105
 weight=2oz
 category=category_69
 members=yes
-tradeable=yes
 // guessed name
 
 [unf_avantoe_potion]
@@ -107,8 +101,8 @@ name=Unfinished potion
 desc=I need another ingredient to finish this Avantoe potion.
 cost=48
 model=model_2789_obj
-recol1s=61
-recol1d=78
+recol1s=15855
+recol1d=20083
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -116,7 +110,6 @@ recol1d=78
 weight=2oz
 category=category_69
 members=yes
-tradeable=yes
 // guessed name
 
 [unf_kwuarm_potion]
@@ -124,8 +117,8 @@ name=Unfinished potion
 desc=I need another ingredient to finish this Kwuarm potion.
 cost=54
 model=model_2789_obj
-recol1s=61
-recol1d=90
+recol1s=15855
+recol1d=23254
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -133,7 +126,6 @@ recol1d=90
 weight=2oz
 category=category_69
 members=yes
-tradeable=yes
 // guessed name
 
 [unf_cadantine_potion]
@@ -141,8 +133,8 @@ name=Unfinished potion
 desc=I need another ingredient to finish this Cadantine potion.
 cost=65
 model=model_2789_obj
-recol1s=61
-recol1d=4316
+recol1s=15855
+recol1d=26324
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -150,7 +142,6 @@ recol1d=4316
 weight=2oz
 category=category_69
 members=yes
-tradeable=yes
 // guessed name
 
 [unf_dwarf_weed_potion]
@@ -158,8 +149,8 @@ name=Unfinished potion
 desc=I need another ingredient to finish this Dwarf Weed potion.
 cost=70
 model=model_2789_obj
-recol1s=61
-recol1d=39132
+recol1s=15855
+recol1d=20186
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -167,7 +158,6 @@ recol1d=39132
 weight=2oz
 category=category_69
 members=yes
-tradeable=yes
 // guessed name
 
 [unf_torstol_potion]
@@ -175,8 +165,8 @@ name=Unfinished potion
 desc=I need another ingredient to finish this Torstol potion.
 cost=25
 model=model_2789_obj
-recol1s=61
-recol1d=4321
+recol1s=15855
+recol1d=29427
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -184,7 +174,6 @@ recol1d=4321
 weight=2oz
 category=category_69
 members=yes
-tradeable=yes
 // guessed name
 
 [unf_lantadyme_potion]
@@ -192,8 +181,8 @@ name=Unfinished potion
 desc=I need another ingredient to finish this Lantadyme potion.
 cost=68
 model=model_2789_obj
-recol1s=61
-recol1d=4316
+recol1s=15855
+recol1d=26324
 2dyof=-1
 2dzoom=550
 2dyan=1996
@@ -201,4 +190,3 @@ recol1d=4316
 weight=2oz
 category=category_69
 members=yes
-tradeable=yes

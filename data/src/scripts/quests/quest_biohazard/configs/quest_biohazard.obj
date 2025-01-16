@@ -1,4 +1,5 @@
-[obj_415]
+// official name, item uses in quest don't have the misspelling either: https://web.archive.org/web/20060111205550im_/http://www.runeweb.net/fireball/Biohazard%20Images/biohazard12.PNG
+[Ethenea]
 cost=10
 model=model_2747_obj
 members=yes
@@ -10,12 +11,13 @@ desc=An expensive colourless liquid.
 2dxan=84
 weight=30g
 param=no_alchemy,1
+tradeable=no
 
-[obj_416]
+[liquid_honey]
 cost=0
 model=model_2789_obj
-recol1s=61
-recol1d=8111
+recol1s=15855
+recol1d=23009
 members=yes
 name=Liquid honey
 desc=This isn't worth much.
@@ -25,12 +27,13 @@ desc=This isn't worth much.
 2dxan=84
 weight=30g
 param=no_alchemy,1
+tradeable=no
 
-[obj_417]
+[sulphuric_broline]
 cost=1
 model=model_2789_obj
-recol1s=61
-recol1d=23488
+recol1s=15855
+recol1d=994
 members=yes
 name=Sulphuric broline
 desc=It's highly poisonous.
@@ -40,8 +43,9 @@ desc=It's highly poisonous.
 2dxan=84
 weight=30g
 param=no_alchemy,1
+tradeable=no
 
-[obj_418]
+[plague_sample]
 name=Plague sample
 desc=Probably best I don't keep this too long.
 cost=1
@@ -53,8 +57,9 @@ model=model_2788_obj
 weight=50g
 members=yes
 param=no_alchemy,1
+tradeable=no
 
-[obj_419]
+[touch_paper]
 name=Touch paper
 desc=A special kind of paper.
 cost=1
@@ -67,8 +72,9 @@ model=model_2781_obj
 weight=10g
 members=yes
 param=no_alchemy,1
+tradeable=no
 
-[obj_420]
+[distillator]
 members=yes
 name=Distillator
 desc=Apparently it distills.
@@ -81,6 +87,7 @@ model=model_2613_obj
 2dxan=304
 weight=20g
 param=no_alchemy,1
+tradeable=no
 
 [obj_421]
 name=Lathas' amulet
@@ -98,8 +105,9 @@ wearpos=front
 manwear=model_282_obj_wear,0
 womanwear=model_446_obj_wear,0
 weight=10g
+tradeable=no
 
-[obj_422]
+[bird_feed]
 name=Bird feed
 desc=Birds love this stuff!
 cost=1
@@ -112,8 +120,9 @@ model=model_2678_obj
 weight=50g
 members=yes
 param=no_alchemy,1
+tradeable=no
 
-[obj_423]
+[biohazard_key]
 name=Key
 desc=Opens things.
 cost=1
@@ -126,8 +135,9 @@ model=model_2372_obj
 weight=10g
 members=yes
 param=no_alchemy,1
+tradeable=no
 
-[obj_424]
+[pigeon_cage]
 cost=1
 name=Pigeon cage
 desc=It's full of pigeons.
@@ -141,8 +151,9 @@ iop1=Open
 weight=2kg
 members=yes
 param=no_alchemy,1
+tradeable=no
 
-[obj_425]
+[pigeon_cage_empty]
 cost=1
 name=Pigeon cage
 desc=It's empty...
@@ -153,13 +164,14 @@ model=model_2663_obj
 weight=500g
 members=yes
 param=no_alchemy,1
+tradeable=no
 
 [priest_gown_top]
 name=Priest gown
 desc=Top half of a priest suit.
 cost=5
 model=model_2786_obj
-recol1s=8741
+recol1s=14724
 recol1d=0
 2dyof=7
 2dzoom=1370
@@ -172,7 +184,6 @@ manwear2=model_170_idk
 womanwear=model_456_idk,0
 womanwear2=model_348_idk
 weight=4lb
-tradeable=yes
 param=prayerbonus,3
 
 [priest_gown_bottom]
@@ -180,7 +191,7 @@ name=Priest gown
 desc=Bottom half of a priest suit.
 cost=5
 model=model_2521_obj
-recol1s=25238
+recol1s=2340
 recol1d=0
 2dyof=1
 2dzoom=1940
@@ -190,16 +201,15 @@ wearpos=legs
 manwear=model_265_obj_wear,0
 womanwear=model_428_idk,0
 weight=4lb
-tradeable=yes
 param=prayerbonus,3
 
-[obj_430]
+[doctors_gown]
 name=Doctors' gown
 desc=Medical looking.
 cost=40
 model=model_2786_obj
-recol1s=8741
-recol1d=127
+recol1s=14724
+recol1d=32767
 2dyof=7
 2dzoom=1370
 2dxan=536
@@ -212,3 +222,4 @@ womanwear=model_456_idk,0
 womanwear2=model_332_idk
 weight=4lb
 members=yes
+tradeable=no

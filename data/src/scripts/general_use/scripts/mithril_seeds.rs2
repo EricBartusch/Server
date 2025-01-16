@@ -1,6 +1,6 @@
 [opheld1,mithril_seeds]
 p_stopaction;
-if (~inzone_coord_pair_table(bank_zones, coord) = true | map_locaddunsafe(coord) = true) {
+if (~area_allow_loc_add(coord) = false) {
     mes("You can't plant your flowers here."); // OSRS
     return;
 } 
@@ -13,9 +13,7 @@ mes("You open the small mithril case.");
 mes("You drop a seed by your feet.");
 inv_del(inv, mithril_seeds, 1);
 loc_add(coord, ~random_flowers, 0, centrepiece_straight, 500);
-def_coord $move_coord = ~free_mithseed_spot;
-p_teleport($move_coord);
-p_delay(1);
+~push_player(coord);
 facesquare(loc_coord);
 def_int $option = ~p_choice2("Pick the flowers.", 1, "Leave the flowers.", 2);
 if($option = 2) {
@@ -29,7 +27,7 @@ anim(human_pickupfloor, 0);
 inv_add(inv, ~flowers_obj(loc_type), 1);
 loc_del(1);
 
-[proc,random_flowers](loc)
+[proc,random_flowers]()(loc)
 def_int $rand = random(1001);
 if($rand < 150) {
     return (loc_2986);
@@ -53,26 +51,14 @@ if($rand < 150) {
 
 [proc,flowers_obj](loc $flowers_loc)(namedobj)
 switch_loc($flowers_loc) {
-    case loc_2980: return (assorted_flowers);
-    case loc_2981: return (red_flowers);
-    case loc_2982: return (blue_flowers);
-    case loc_2983: return (yellow_flowers);
-    case loc_2984: return (purple_flowers);
-    case loc_2985: return (orange_flowers);
-    case loc_2986: return (mixed_flowers);
-    case loc_2987: return (white_flowers);
-    case loc_2988: return (black_flowers);
-    case default: return (mixed_flowers);
+    case loc_2980 : return (assorted_flowers);
+    case loc_2981 : return (red_flowers);
+    case loc_2982 : return (blue_flowers);
+    case loc_2983 : return (yellow_flowers);
+    case loc_2984 : return (purple_flowers);
+    case loc_2985 : return (orange_flowers);
+    case loc_2986 : return (mixed_flowers);
+    case loc_2987 : return (white_flowers);
+    case loc_2988 : return (black_flowers);
+    case default : return (mixed_flowers);
 }
-
-[proc,free_mithseed_spot](coord)
-if (lineofwalk(coord, movecoord(coord, -1, 0, 0)) = true) { // E
-    return (movecoord(coord, -1, 0, 0));
-} else if (lineofwalk(coord, movecoord(coord, 1, 0, 0)) = true) { // W
-    return (movecoord(coord, 1, 0, 0));
-} else if (lineofwalk(coord, movecoord(coord, 0, 0, -1)) = true) { // S
-    return (movecoord(coord, 0, 0, -1));
-} else if (lineofwalk(coord, movecoord(coord, 0, 0, 1)) = true) { // N
-    return (movecoord(coord, 0, 0, 1));
-}
-return (coord);

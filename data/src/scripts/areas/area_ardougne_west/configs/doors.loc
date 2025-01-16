@@ -1,14 +1,35 @@
+[loc_2034]
+name=Door
+desc=It's closed.
+model=model_loc_3
+active=yes
+op1=Open
+retex1s=wall
+retex1d=door
+recol2s=6342
+recol2d=11458
+param=next_loc_stage,loc_2035
+
+[loc_2035]
+name=Door
+desc=It's open.
+model=model_loc_3
+active=yes
+retex1s=wall
+retex1d=door
+recol2s=6342
+recol2d=11458
+
 [loc_2036]
 name=Door
 desc=It's closed.
 model=model_loc_3
 active=yes
 op1=Open
-recol1s=2
-recol1d=0
-recol2s=24
-recol2d=4762
-category=door_closed
+retex1s=wall
+retex1d=door
+recol2s=6342
+recol2d=11458
 param=next_loc_stage,loc_2037
 
 [loc_2037]
@@ -16,12 +37,10 @@ name=Door
 desc=It's open.
 model=model_loc_3
 active=yes
-recol1s=2
-recol1d=0
-recol2s=24
-recol2d=4762
-category=door_opened
-param=next_loc_stage,loc_2036
+retex1s=wall
+retex1d=door
+recol2s=6342
+recol2d=11458
 
 [loc_2528]
 name=Door
@@ -29,23 +48,20 @@ desc=The door is closed.
 model=model_loc_3
 active=yes
 op1=Open
-recol1s=2
-recol1d=0
-recol2s=24
-recol2d=4762
-category=door_closed
+retex1s=wall
+retex1d=door
+recol2s=6342
+recol2d=11458
 param=next_loc_stage,loc_2529
 
 [loc_2529]
 name=Door
 model=model_loc_3
 active=yes
-recol1s=2
-recol1d=0
-recol2s=24
-recol2d=4762
-category=door_opened
-param=next_loc_stage,loc_2528
+retex1s=wall
+retex1d=door
+recol2s=6342
+recol2d=11458
 
 [loc_2534]
 name=Door
@@ -53,11 +69,10 @@ desc=There's black cross on the door.
 model=model_loc_2534
 active=yes
 op1=Open
-recol1s=2
-recol1d=0
-recol2s=24
-recol2d=4762
-category=door_closed
+retex1s=wall
+retex1d=door
+recol2s=6342
+recol2d=11458
 param=next_loc_stage,loc_2536
 
 [loc_2535]
@@ -66,21 +81,19 @@ desc=The door is closed.
 model=model_loc_2534
 active=yes
 op1=Open
-recol1s=2
-recol1d=0
-recol2s=24
-recol2d=4762
+retex1s=wall
+retex1d=door
+recol2s=6342
+recol2d=11458
 
 [loc_2536]
 name=Door
 model=model_loc_2534
 active=yes
-recol1s=2
-recol1d=0
-recol2s=24
-recol2d=4762
-category=door_closed
-param=next_loc_stage,loc_2534
+retex1s=wall
+retex1d=door
+recol2s=6342
+recol2d=11458
 
 [loc_2997]
 name=Door

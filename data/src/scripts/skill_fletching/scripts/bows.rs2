@@ -2,7 +2,7 @@
 [opheldu,_unstrung_bow]
 switch_obj(last_useitem) {
     case bow_string : @string_bow(last_item);
-    case default : @nothing_interesting_happens;
+    case default : ~displaymessage(^dm_default);
 }
 
 [opheldu,bow_string]
@@ -11,13 +11,20 @@ switch_obj(last_useitem) {
         if (oc_category(last_useitem) = unstrung_bow) {
             @string_bow(last_useitem);
         } else {
-            @nothing_interesting_happens;
+            ~displaymessage(^dm_default);
         }
 }
 
 [label,string_bow](obj $unstrung_bow)
-~require_members_fletching;
+if (map_members = false) {
+    mes(^mes_members_fletching); // guess
+    return;
+}
 def_dbrow $data = ~get_fletching_data($unstrung_bow);
+if ($data = null) {
+    ~displaymessage(^dm_default);
+    return;
+}
 def_int $level = db_getfield($data, fletching_table:level, 0);
 if (stat(fletching) < $level) {
     // osrs
@@ -31,5 +38,5 @@ inv_del(inv, bow_string, 1);
 // 2005-osrs, rsc
 mes("You add a string to the bow.");
 
-givexp(fletching, db_getfield($data, fletching_table:experience, 0));
+stat_advance(fletching, db_getfield($data, fletching_table:experience, 0));
 inv_add(inv, db_getfield($data, fletching_table:product, 0));
